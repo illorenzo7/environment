@@ -1,0 +1,251 @@
+#!/bin/bash
+
+# .bashrc
+# Author: Loren Matilsky
+# Created: 07/07/2016
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# Enable auto-completion in bash
+source ~/git-bash-completion
+
+# unload all module files, then load desired ones
+module purge
+module load intel
+module load openmpi
+module load ffmpeg
+
+# Extra appendages to PATH to allow 
+# programs to be installed locally
+export PATH=$PATH:~/bin
+export PATH=$PATH:~/usr/bin
+
+#Change library path to allow initialization of vapor
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home5/loma3853/vapor-2.6.0-Linux_x86_64/lib
+# Allow direct calling of vaporgui
+export PATH=$PATH:/home5/loma3853/vapor-2.6.0-Linux_x86_64/bin
+
+# Commands to activate or deactivate various Conda environments,
+# including radev, the Rayleigh Development environment
+#alias cartopy='conda activate cartopy'
+#alias radev='conda activate radev'
+#alias vapor='conda activate vapor'
+alias base='conda activate base'
+alias custom='conda activate custom'
+
+# Command to deactivate a conda environment
+alias de='conda deactivate'
+
+# Commands to source or edit what used to be my big, sloppy .bashrc
+# .bashrc
+export brc=~/.bashrc
+alias sb="source $brc"
+alias vb="vim $brc"
+
+
+# LCD ssh shortcuts
+export hyp=hyperion
+export fre=freyr
+export bac=bacchus
+export tel=tellus
+export hyd=hydra
+export hyd2=hydra2
+export scy=scylla
+export ffpp=/mizar/loma3853/paperplots/images
+export atpp=/home5/loma3853/Desktop/Publications/allthrees/figure_set
+
+# LCD  hard-disk shortcuts
+export alt=/altair/loma3853
+export pol=/pollux/loma3853
+export cast=/castor/loma3853 #/usr/bin/cas is a program on Freyr
+export sarg=/sargas/loma3853 # /usr/sbin/sargas is a program on Freyr
+export miz=/mizar/loma3853
+
+# Default directory for testing Rayleigh on LCD:
+export ratest=$pol/rayleigh_testing
+
+# Computing/plotting scripts
+export rasource=~/00_Rayleigh-clone
+export rapp=$rasource/post_processing
+export rau=~/rayleigh_utils
+export raco=$rau/compute # /usr/bin/co is a command
+export rapl=$rau/plot # /usr/bin/plot is a command
+export idref=$raco/hydro_ideal_reference_state
+
+# Other
+export so=~/Desktop/00_Solar
+export sob=/Users/loren/Documents/sober
+export st=~/Desktop/00_Stellar
+export fl=~/Desktop/00_Fluids
+export ast=~/Desktop/00_General_Astronomy  
+    # /jilasoft/software/binutils/2.27/as is a command
+
+# Shortcuts to "allthrees" movie folders
+export mov1=/pollux/loma3853/dyn_nkeom3.0_movies/movie_1600Prot/plots/moll_azav_tl_movies
+export mov2=/altair/loma3853/dyn_nkeom3.0-movie_2100Prot/plots/moll_azav_tl_movies
+export mov3=/pollux/loma3853/dyn_nkeom3.0_movies/movie_4200Prot/plots/moll_azav_tl_movies
+
+# Python startup file
+export PYTHONSTARTUP=~/.startup.py
+
+# Aliases
+alias ssh="ssh -Y"   # ssh with X-window privileges
+alias jn='jupyter notebook'
+alias ls="ls --color='auto' --time-style=\"+%m/%d/%Y %T\""
+alias vnc='de; vncserver -geometry 1278x719' # best geometry for Mac
+alias vncv='vncviewer'
+alias fn='find `pwd` -name ' # fn for "full name"
+alias lo='libreoffice'
+
+alias linkra='ln -s $rasource/bin/rayleigh.opt'
+alias runra='mpiexec -np 16 ./rayleigh.opt -nprow 4 -npcol 4'
+alias runra1="./rayleigh.opt -nprow 1 -npcol 1"
+
+# for shiftc (through SUP client)
+#alias shift="sup shiftc --create-tar --index-tar"
+#alias sst="sup shiftc --status"
+# FOR SOME REASON, including these aliases forces the meshkey to be
+# created when sourcing ~/.bashrc, and this is super annoying
+
+# Tar up some sample output (G_Avgs, Shell_Avgs, AZ_Avgs,
+# Equatorial_Slices, Meridional_Slices, Shell_Slices, Shell_Spectra)
+# as well as main_input, reference, transport, and grid_info for
+# a given Rayleigh run directory
+alias make_sample='tar -cvf sample.tar $(find AZ_Avgs/ | sort | tail -n 3) $(find Equatorial_Slices/ | sort | tail -n 3) $(find G_Avgs/ | sort | tail -n 3)  $(find Meridional_Slices/ | sort | tail -n 3) $(find Shell_Avgs/ | sort | tail -n 3) $(find Shell_Slices/ | sort | tail -n 3) $(find Shell_Spectra | sort | tail -n 3) data/ plots/ main_input reference transport grid_info'
+
+
+# Download an entire website (dangerous!)
+alias website-dl='wget --mirror -nH -np -p -k -E -e robots=off'
+
+# Shortcut to remove_spaces routine (replacing ' ' with '_' in all 
+# filenames in a given directory
+alias rmspace="python ~/coding/python/remove_spaces.py"
+
+# Shortcut to open Boulder expenses spreadsheet, year 4
+alias exp='libreoffice ~/Desktop/Boulder_Expenses_year5.ods'
+
+# Look up quantity code in Rayliegh
+alias qi='python $raco/quantity_index.py'
+
+# Rayleigh computing shortcuts
+alias gi="python $raco/grid_info.py"
+alias azav="python $raco/timeavg/AZ_Avgs.py"
+alias shav="python $raco/timeavg/Shell_Avgs.py"
+alias gav="python $raco/timeavg/G_Avgs.py"
+alias gtr="python $raco/timetrace/G_Avgs.py"
+alias shtr="python $raco/timetrace/Shell_Avgs.py"
+alias tl="python $raco/timetrace/time-latitude.py"
+alias trad="python $raco/timetrace/time-radius.py" 
+    # /usr/bin/tr is a command
+alias tlon="python $raco/timetrace/time-longitude.py" 
+alias ltr="python $raco/timetrace/lvals.py"
+alias lmtr="python $raco/timetrace/lmvals.py"
+alias specav="python $raco/timeavg/Shell_Spectra.py"
+alias merav="python $raco/timeavg/Meridional_Slices.py"
+alias tachref="python $raco/ideal_hydro_reference_state/generate_CZ_RZ_reference-quart.py"
+alias ttrans="python $raco/print_translated_times.py"
+alias avjoin="python $raco/timeavg/timeavg_join.py"
+
+export induction_quantities="1604 1605 1609 1610 1614 1615 
+    1619 1620 1623 1624 1629 1630
+    1601 1602 1603 1606 1607 1608 1611 1612 1613
+    1616 1617 1618 1621 1622 1623 1626 1627 1628"
+
+# Rayleigh plotting shortcuts
+# shell slices
+alias ortho="python $rapl/ortho_show.py"
+alias orthorvals="python $rapl/ortho_rvals_sample.py"
+alias orthovars="python $rapl/ortho_vars_sample.py"
+alias orthotimes="python $rapl/ortho_times_sample.py"
+alias orthomov="python $rapl/ortho_movie.py"
+
+# Shell spectra plotting routines
+alias speclm="python $rapl/spec_lm_show.py"
+alias speclmrvals="python $rapl/spec_lm_rvals_sample.py"
+alias speclmvars="python $rapl/spec_lm_vars_sample.py"
+alias speclmtimes="python $rapl/spec_lm_times_sample.py"
+
+alias specl="python $rapl/spec_l_show.py"
+alias speclrvals="python $rapl/spec_l_rvals_sample.py"
+alias speclvars="python $rapl/spec_l_vars_sample.py"
+alias specltimes="python $rapl/spec_l_times_sample.py"
+
+alias specavlm="python $rapl/specav_lm_show.py"
+alias specavlmrvals="python $rapl/specav_lm_rvals_sample.py"
+alias specavlmvars="python $rapl/specav_lm_vars_sample.py"
+
+alias specavl="python $rapl/specav_l_show.py"
+alias specavlrvals="python $rapl/specav_l_rvals_sample.py"
+alias specavlvars="python $rapl/specav_l_vars_sample.py"
+
+alias moll="python $rapl/moll_show.py"
+alias mollrvals="python $rapl/moll_rvals_sample.py"
+alias mollvars="python $rapl/moll_vars_sample.py"
+alias molltimes="python $rapl/moll_times_sample.py"
+alias mollmov="python $rapl/moll_movie.py"
+alias mollazavtl="python $rapl/moll_azav_tl_movie.py"
+
+# ffmpeg shortcut for making movies form img????.png files
+alias ffm="ffmpeg -framerate 20 -i img%04d.png -qscale 5 movie.mp4"
+
+alias dr="python $rapl/diffrot.py"
+alias drr="python $rapl/diffrot_rslice.py"
+alias efr="python $rapl/eflux_radial.py"
+alias eft="python $rapl/eflux_latitudinal.py"
+alias eft2="python $rapl/eflux_latitudinal-2.py"
+alias mc="python $rapl/mercirc.py"
+alias vaz="python $rapl/v_azav.py"
+alias etr="python $rapl/etrace.py"
+alias torque="python $rapl/torque.py"
+
+alias rforce="python $rapl/r_force.py"
+alias tforce="python $rapl/theta_force.py"
+alias pforce="python $rapl/phi_force.py"
+
+alias mefr="python $rapl/eflux_radial_merplane.py"
+alias mefr2="python $rapl/eflux_radial_merplane-2.py"
+alias meft="python $rapl/eflux_latitudinal_merplane.py"
+alias mefp="python $rapl/eflux_zonal_merplane.py"
+alias thermo="python $rapl/thermo_merplane.py"
+
+alias kem="python $rapl/ke_merplane.py"
+
+alias tw="python $rapl/simple_thermal_wind.py"
+alias vv="python $rapl/Ro_vortvel.py"
+
+# Time-latitude stuff
+alias tlb="python $rapl/time-latitude_B.py"
+alias trb="python $rapl/time-radius_B.py"
+alias ltrb="python $rapl/time-lval_B.py"
+alias tlv="python $rapl/time-latitude_v.py"
+alias tlindr="python $rapl/time-lat_induction_r.py"
+alias tlindt="python $rapl/time-lat_induction_theta.py"
+alias tlindp="python $rapl/time-lat_induction_phi.py"
+alias tltransr_fluc="python $rapl/time-lat_transport_r_fluc.py"
+alias tltransr_mean="python $rapl/time-lat_transport_r_mean.py"
+alias tltranst_fluc="python $rapl/time-lat_transport_theta_fluc.py"
+alias tltranst_mean="python $rapl/time-lat_transport_theta_mean.py"
+alias tltransp_fluc="python $rapl/time-lat_transport_phi_fluc.py"
+alias tltransp_mean="python $rapl/time-lat_transport_phi_mean.py"
+alias trv="python $rapl/time-radius_v.py"
+alias ltrv="python $rapl/time-lval_v.py"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home5/loma3853/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home5/loma3853/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home5/loma3853/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home5/loma3853/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+custom
+#eval `ssh-agent -s`
