@@ -41,9 +41,9 @@ export tahy=$nb/tachocline
 export tady=$tahy/dynamo
 
 # Rayleigh environent
-export rasource=$HOME_PFE/00_Rayleigh-clone
+export rasource=$HOME_DEFAULT/00_Rayleigh-clone
 export rapp=$rasource/post_processing
-export rau=$HOME_PFE/rayleigh_utils
+export rau=$HOME_DEFAULT/rayleigh_utils
 export raco=$rau/compute # /usr/bin/co is a command
 export rapl=$rau/plot # /usr/bin/plot is a command
 export idref=$raco/hydro_ideal_reference_state
