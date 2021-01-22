@@ -17,8 +17,8 @@ source ~/git-bash-completion
 
 # unload all module files, then load desired ones
 module purge
-module load intel
-module load openmpi
+#module load intel
+#module load openmpi
 module load ffmpeg
 
 # Extra appendages to PATH to allow 
