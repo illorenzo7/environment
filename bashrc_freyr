@@ -4,10 +4,13 @@
 # Author: Loren Matilsky
 # Created: 07/07/2016
 
+echo "=============================="
 echo "Executing ~/.bashrc"
 echo "ls -l ~/.bashrc"
 echo `ls -l ~/.bashrc`
 echo "=============================="
+
+PS1="\$(pwd) "
 
 # Enable auto-completion in bash
 source ~/git-bash-completion
