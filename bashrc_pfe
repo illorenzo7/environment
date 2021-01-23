@@ -1,0 +1,78 @@
+#!/bin/bash
+
+# .bashrc
+# Author: Loren Matilsky
+# Created: 07/07/2016
+
+# Note: to unmigrate an entire directory from tape:
+#dmfind [dirname] -state MIG -o -state OFL -o -state PAR | dmget
+
+# To debug a RUNNING Pleiades job (perform complete stack trace)
+# /u/scicon/tools/bin/pdsh_gdb -j job_id -d tmp -s -u lmatilsk -n gid
+# this places a whole bunch of stack traces in text files in the directory
+# tmp/, which is created in the current directory
+
+# To verify if a stopped job got evicted due to lustre eviction, run
+# /u/scicon/tools/bin/get_logs job_id
+# and grep SEC_EVENT on the resulting logfile
+
+# To troubleshoot how a job failed, run
+# ssh pbspl1 tracejob -n3 job_id
+# This will ssh into pbspl1 and run tracejob going back 3 days (-n3) for jobid
+
+echo "=============================="
+echo "Executing ~/.bashrc"
+echo "ls -l ~/.bashrc"
+echo `ls -l ~/.bashrc`
+echo "=============================="
+
+# Make prompt show current working directory
+PS1='\w$ '
+
+# Enable auto-completion in git
+source /etc/bash_completion.d/git.sh
+
+#Load desired modules here.
+#module load pkgsrc 
+#module load comp-intel
+module purge
+#module use -a /nasa/modulefiles/testing
+#module load mpi-sgi/mpt
+#module load mpi-hpe
+#module load mpi-hpe/mpt.2.23_24Mar2020
+#module load comp-intel
+#module load firefox # for jupyter notebook
+#module load pkgsrc
+
+# function to get into MPI environment 
+# (for compiling/running Rayleigh)
+loadmpi() {
+    module purge 
+    de 
+    de
+    module load mpi-hpe
+    module load comp-intel
+}
+
+# Pleiades directory shortcuts
+export HOME_LFE=/lou/la2/lmatilsk
+export HOME_PFE=/home1/lmatilsk
+export nb=/nobackup/lmatilsk
+
+# Make terminals white on black
+xrdb $HOME_PFE/.Xresources
+
+# Compiler environment variables
+export INTEL_DISABLE_ISIP=1 # Stop ifort from creating annoying ~/intel/ism/rm empty directory
+export OMP_NUM_THREADS=1
+export FC=mpif90
+export CC=mpicc
+
+# Extra appendages to PATH to allow 
+# programs to be installed locally
+export PATH=$PATH:~/usr/bin
+export PATH=$PATH:~/usr/go/bin
+export PATH=$PATH:~/usr/git-lfs/bin
+
+# the rest goes for everyone
+source ~/environment/bashrc_common
