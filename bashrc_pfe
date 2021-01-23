@@ -70,9 +70,9 @@ export CC=mpicc
 
 # Extra appendages to PATH to allow 
 # programs to be installed locally
+export PATH=$PATH:~/bin
 export PATH=$PATH:~/usr/bin
-export PATH=$PATH:~/usr/go/bin
-export PATH=$PATH:~/usr/git-lfs/bin
+export HOME_DEFAULT=$HOME_PFE
 
 # the rest goes for everyone
 source ~/environment/bashrc_common
