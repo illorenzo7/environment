@@ -138,7 +138,7 @@ alias tradjoin="python $raco/timetrace/time-radius_join.py"
 # PLOTTING routines (parallelized)
 alias dramommc="$ppc $rapl/dr_amom_mc_times_sample"
 alias torquetimes="$ppc $rapl/torque_times_sample"
-#alias molltimes=`$ppc $rapl/moll_times_sample $@`
+alias molltimes="$ppc $rapl/moll_times_sample"
 
 # RAYLEIGH PLOTTING SHORTCUTS (non-parallel)
 # AZ_Avgs routines
