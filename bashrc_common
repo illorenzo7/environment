@@ -82,7 +82,8 @@ python_parallel_call() {
     ldanst='ldan' # on ldan
     nodest='r' # on a node (start with r)
     # arguments to the python script (first arg is funcname)
-    args=("${@:2}") argsst="${@:2}"
+    args=("${@:2}") 
+    argsst="${@:2}"
 
     # set default nproc based on hostname
     if [[ "$host" == *"$ldanst"* ]] || [[ "$host" == *"$nodest"* ]]; then
@@ -98,7 +99,7 @@ python_parallel_call() {
             nproc="${args[$iplus1]}"
         fi
     done
-    echo "mpiexec -n $nproc python -u ${funcname}.py ${pythonargs}"
+    echo "mpiexec -n $nproc python -u ${funcname}.py ${argsst}"
     mpiexec -n $nproc python -u ${funcname}.py $argsst
 }
 export ppc="python_parallel_call"
