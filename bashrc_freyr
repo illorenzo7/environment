@@ -10,6 +10,9 @@ echo "ls -l ~/.bashrc"
 echo `ls -l ~/.bashrc`
 echo "=============================="
 
+# color code directory contents
+alias ls="ls --color='auto'"
+
 PS1="\$(pwd) "
 
 # Enable auto-completion in bash

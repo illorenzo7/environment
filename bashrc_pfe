@@ -26,6 +26,9 @@ echo "ls -l ~/.bashrc"
 echo `ls -l ~/.bashrc`
 echo "=============================="
 
+# color code directory contents
+alias ls="ls --color='auto'"
+
 # Make prompt show current working directory
 PS1='\w$ '
 

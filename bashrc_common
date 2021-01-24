@@ -9,6 +9,9 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc 
 fi
 
+# always ssh with display privileges
+alias ssh='ssh -X'
+
 # Commands to activate or deactivate various Conda environments,
 alias base='conda activate base'
 alias custom='conda activate custom'
