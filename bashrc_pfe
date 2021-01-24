@@ -47,16 +47,6 @@ module purge
 #module load firefox # for jupyter notebook
 #module load pkgsrc
 
-# function to get into MPI environment 
-# (for compiling/running Rayleigh)
-loadmpi() {
-    module purge 
-    de 
-    de
-    module load mpi-hpe
-    module load comp-intel
-}
-
 # Pleiades directory shortcuts
 export HOME_LFE=/lou/la2/lmatilsk
 export HOME_PFE=/home1/lmatilsk
@@ -77,5 +67,51 @@ export CC=mpicc
 export PATH=$PATH:$HOME_DEFAULT/bin
 export PATH=$PATH:$HOME_DEFAULT/usr/bin
 
+# Start the vnc server
+alias vnc='vncserver -localhost -geometry 1280x800'
+alias vncg='vncserver -localhost -geometry 1900x1000' 
+# make vnc window to match the screen dimensions of freyr
+
+# request an ldan for 24 hours
+# must be in lou home directory
+alias ldan='qsub -me -mb -q ldan -lselect=1:mem=750GB,walltime=24:00:00 ldan/ldan_script'
+alias which_ldan='qstat -nu lmatilsk | grep ldan'
+
+# Record account usage for various groups in ~/acct_ytd
+alias acct_ytd_save="acct_ytd >> ~/acct_ytd/$(date +%F_%H.%M)"
+
+# other command aliases
+alias jn='jupyter notebook --ip=0.0.0.0 --port=8080'
+alias fn='find `pwd` -name ' # fn for "full name"
+alias gt='gnome-terminal'
+alias qs="/u/scicon/tools/bin/qs"   # check what nodes are being used currently
+alias less='less -MN' # make less show line numbers and  filename in status bar
+alias quota_nb='lfs quota -h -u lmatilsk /nobackupp2'
+
+# Note: to extract particular files from a *.tar folder, run
+# shiftc --extract-tar --include=[fname] tarname.tar .
+
+alias qst='qstat -u lmatilsk'       # check on status of jobs
+alias sst='shiftc --status'         # check on status of shiftc transfers
+alias shiftc="shiftc --no-mail"           # don't send annoying emails
+#alias shift="shiftc --create-tar --index-tar --hosts=6"
+# For some reason the "shift" alias makes the .bashrc "Read argument lines
+# from stdin" in the (base) environment. Issue on both freyr (with sup) and
+# here on Pleiades
+
+# Shortcut to remove_spaces routine (replacing ' ' with '_' in all 
+# filenames in a given directory
+alias rmspace="python ~/coding/python/remove_spaces.py"
+
 # the rest goes for everyone
 source $HOME_DEFAULT/environment/bashrc_common
+
+# function to get into MPI environment 
+# (for compiling/running Rayleigh)
+loadmpi() {
+    module purge 
+    de 
+    de
+    module load mpi-hpe
+    module load comp-intel
+}
