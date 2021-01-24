@@ -82,11 +82,7 @@ python_parallel_call() {
     ldanst='ldan' # on ldan
     nodest='r' # on a node (start with r)
     # arguments to the python script (first arg is funcname)
-    args=("${@:3}") 
-    argsst="${@:3}"
-    #echo "args = ${args[*]}"
-    dirname=$2
-    #echo "dirname = $dirname"
+    args=("${@:2}") argsst="${@:2}"
 
     # set default nproc based on hostname
     if [[ "$host" == *"$ldanst"* ]] || [[ "$host" == *"$nodest"* ]]; then
@@ -97,14 +93,13 @@ python_parallel_call() {
     # check python args for nproc to change default
     for i in "${!args[@]}"; do
         arg="${args[$i]}"
-        #echo "arg = $arg"
         if [ "$arg" == "-nproc" ]; then
             let iplus1=$i+1
             nproc="${args[$iplus1]}"
         fi
     done
-    #echo "mpiexec -n $nproc python -u ${funcname}.py $argsst"
-    echo "mpiexec -n $nproc python -u ${funcname}.py" #$dirname ${args[*]}
+    echo "mpiexec -n $nproc python -u ${funcname}.py ${pythonargs}"
+    mpiexec -n $nproc python -u ${funcname}.py $argsst
 }
 export ppc="python_parallel_call"
 
@@ -143,7 +138,7 @@ alias tradjoin="python $raco/timetrace/time-radius_join.py"
 # PLOTTING routines (parallelized)
 alias dramommc="$ppc $rapl/dr_amom_mc_times_sample"
 alias torquetimes="$ppc $rapl/torque_times_sample"
-alias molltimes=`$ppc $rapl/moll_times_sample $@`
+#alias molltimes=`$ppc $rapl/moll_times_sample $@`
 
 # RAYLEIGH PLOTTING SHORTCUTS (non-parallel)
 # AZ_Avgs routines
