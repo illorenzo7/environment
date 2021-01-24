@@ -15,12 +15,12 @@ alias custom='conda activate custom'
 alias de='conda deactivate'
 
 # Commands to source or edit my big, sloppy .bashrc
-export brc=~/.bashrc
+export brc=$HOME_DEFAULT/.bashrc
 alias sb="source $brc"
 alias vb="vim $brc"
 
 # Python startup file
-export PYTHONSTARTUP=~/.startup.py
+export PYTHONSTARTUP=$HOME_DEFAULT/.startup.py
 # Note: on Pleaides, there is also /etc/pythonstart, should I worry about this?
 #
 #

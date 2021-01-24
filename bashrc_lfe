@@ -1,0 +1,23 @@
+# Created by: L. Matilsky
+# Date Created: 07/05/2016
+# Location of bash:
+#!/bin/bash
+
+echo "=============================="
+echo "Executing ~/.bashrc ON LFE"
+echo "ls -l ~/.bashrc"
+echo `ls -l ~/.bashrc`
+echo "=============================="
+
+# Note: to unmigrate an entire directory from tape:
+#dmfind [dirname] -state MIG -o -state OFL -o -state PAR | dmget 
+unmigrate() {
+    dmfind $1 -state MIG -o -state OFL -o -state PAR | dmget
+}
+
+get_data() {
+    shiftc --extract-tar --include='equation_coefficients|custom_reference_binary|grid_info|main_input|jobinfo.txt|.*\.o.*|.*script|logfile.*|data/.*|plots/.*' $1 $2
+}
+
+# Source the regular .bashrc on pfe
+source /home1/lmatilsk/.bashrc

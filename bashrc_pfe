@@ -21,7 +21,7 @@
 # This will ssh into pbspl1 and run tracejob going back 3 days (-n3) for jobid
 
 echo "=============================="
-echo "Executing ~/.bashrc"
+echo "Executing ~/.bashrc ON PFE"
 echo "ls -l ~/.bashrc"
 echo `ls -l ~/.bashrc`
 echo "=============================="
@@ -57,6 +57,7 @@ loadmpi() {
 # Pleiades directory shortcuts
 export HOME_LFE=/lou/la2/lmatilsk
 export HOME_PFE=/home1/lmatilsk
+export HOME_DEFAULT=$HOME_PFE
 export nb=/nobackup/lmatilsk
 
 # Make terminals white on black
@@ -70,9 +71,8 @@ export CC=mpicc
 
 # Extra appendages to PATH to allow 
 # programs to be installed locally
-export PATH=$PATH:~/bin
-export PATH=$PATH:~/usr/bin
-export HOME_DEFAULT=$HOME_PFE
+export PATH=$PATH:$HOME_DEFAULT/bin
+export PATH=$PATH:$HOME_DEFAULT/usr/bin
 
 # the rest goes for everyone
-source ~/environment/bashrc_common
+source $HOME_DEFAULT/environment/bashrc_common
