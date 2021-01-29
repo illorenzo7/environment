@@ -126,7 +126,7 @@ alias merav="python $raco/timeavg/Meridional_Slices.py"
 # parallelized ------------------------
 alias gtr="$ppc $raco/timetrace/G_Avgs"
 alias gtr2="$ppc $raco/timetrace/G_Avgs_2dom"
-alias gtrq="$ppc $raco/timetrace/G_Avgs_quadrants"
+alias gtrq="$ppc $raco/timetrace/G_Avgs_quad"
 alias shtr="python $raco/timetrace/Shell_Avgs.py" # maybe get rid of?
 alias tl="$ppc $raco/timetrace/time-latitude"
 alias tlshear="$ppc $raco/timetrace/time-latitude_shear_terms"
