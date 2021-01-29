@@ -75,46 +75,27 @@ alias simt="python $raco/simtime.py"
 alias irate="python $raco/iter_rate.py"
 
 # parallel
-python_parallel_call() {
-    # first the function we are calling in parellel
-    # (full path minus .py)
-    funcname="$1"
-    # host we are on, will possibly determine nproc
-    host=`hostname`
-    # some key strings will determine type of host
-    ldanst='ldan' # on ldan
-    nodest='r' # on a node (start with r)
-    # arguments to the python script (first arg is funcname)
-    args=("${@:2}") 
-    argsst="${@:2}"
-
-    # set default nproc based on hostname
-    if [[ "$host" == *"$ldanst"* ]] || [[ "$host" == *"$nodest"* ]]; then
-        nproc=`nproc --all` # use max number of processes
-    else
-        nproc=1 # process in serial
-    fi
-    # check python args for nproc to change default
-    for i in "${!args[@]}"; do
-        arg="${args[$i]}"
-        if [ "$arg" == "-nproc" ]; then
-            let iplus1=$i+1
-            nproc="${args[$iplus1]}"
-        fi
-    done
-    echo "mpiexec -n $nproc python -u ${funcname}.py ${argsst}"
-    mpiexec -n $nproc python -u ${funcname}.py $argsst
+# set default nproc based on hostname
+if [[ "$host" == *"$ldanst"* ]] || [[ "$host" == *"$nodest"* ]]; then
+    nproc=`nproc --all` # use max number of processes
+else
+    nproc=1 # process in serial
+fi
+# ppc for "python parallel call"
+export ppc="mpiexec -n $nproc python -u"
+setnproc() {
+    nproc=$1
+    export ppc="mpiexec -n $nproc python -u"
 }
-export ppc="python_parallel_call"
 
 # TIMEAVG routines
 # parallelized ------------------------
-alias azav="$ppc $raco/timeavg/AZ_Avgs"
-alias shav="$ppc $raco/timeavg/Shell_Avgs"
-alias specav="$ppc $raco/timeavg/Shell_Spectra"
-alias magtorquemer="$ppc $raco/timeavg/mag_torque_from_mer"
-alias indav="$ppc $raco/timeavg/induction_terms"
-alias indavpol="$ppc $raco/timeavg/induction_pol_terms"
+alias azav="$ppc $raco/timeavg/AZ_Avgs.py"
+alias shav="$ppc $raco/timeavg/Shell_Avgs.py"
+alias specav="$ppc $raco/timeavg/Shell_Spectra.py"
+alias magtorquemer="$ppc $raco/timeavg/mag_torque_from_mer.py"
+alias indav="$ppc $raco/timeavg/induction_terms.py"
+alias indavpol="$ppc $raco/timeavg/induction_pol_terms.py"
 
 # need to parallelize --------------------
 alias gav="python $raco/timeavg/G_Avgs.py"
@@ -124,13 +105,13 @@ alias merav="python $raco/timeavg/Meridional_Slices.py"
 
 # TIMETRACE routines
 # parallelized ------------------------
-alias gtr="$ppc $raco/timetrace/G_Avgs"
-alias gtr2="$ppc $raco/timetrace/G_Avgs_2dom"
-alias gtrq="$ppc $raco/timetrace/G_Avgs_quad"
+alias gtr="$ppc $raco/timetrace/G_Avgs.py"
+alias gtr2="$ppc $raco/timetrace/G_Avgs_2dom.py"
+alias gtrq="$ppc $raco/timetrace/G_Avgs_quad.py"
 alias shtr="python $raco/timetrace/Shell_Avgs.py" # maybe get rid of?
-alias tl="$ppc $raco/timetrace/time-latitude"
-alias tlshear="$ppc $raco/timetrace/time-latitude_shear_terms"
-alias trad="$ppc $raco/timetrace/time-radius" # /usr/bin/tr is a command
+alias tl="$ppc $raco/timetrace/time-latitude.py"
+alias tlshear="$ppc $raco/timetrace/time-latitude_shear_terms.py"
+alias trad="$ppc $raco/timetrace/time-radius.py" # /usr/bin/tr is a command
 # need to parallelize --------------------------------
 alias tlon="python $raco/timetrace/time-longitude.py" 
 alias ltr="python $raco/timetrace/lvals.py"
@@ -141,9 +122,9 @@ alias tljoin="python $raco/timetrace/time-latitude_join.py"
 alias tradjoin="python $raco/timetrace/time-radius_join.py" 
 
 # PLOTTING routines (parallelized)
-alias dramommc="$ppc $rapl/dr_amom_mc_times_sample"
-alias torquetimes="$ppc $rapl/torque_times_sample"
-alias molltimes="$ppc $rapl/moll_times_sample"
+alias dramommc="$ppc $rapl/dr_amom_mc_times_sample.py"
+alias torquetimes="$ppc $rapl/torque_times_sample.py"
+alias molltimes="$ppc $rapl/moll_times_sample.py"
 
 # RAYLEIGH PLOTTING SHORTCUTS (non-parallel)
 # AZ_Avgs routines
