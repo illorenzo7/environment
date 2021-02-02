@@ -5,9 +5,10 @@
 
 echo "=============================="
 echo "Executing ~/.bashrc ON LFE"
-echo "ls -l ~/.bashrc"
-echo `ls -l ~/.bashrc`
+#echo "ls -l ~/.bashrc"
+#echo `ls -l ~/.bashrc`
 echo "=============================="
+#
 
 # Note: to unmigrate an entire directory from tape:
 #dmfind [dirname] -state MIG -o -state OFL -o -state PAR | dmget 

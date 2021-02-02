@@ -20,11 +20,12 @@
 # ssh pbspl1 tracejob -n3 job_id
 # This will ssh into pbspl1 and run tracejob going back 3 days (-n3) for jobid
 
-echo "=============================="
-echo "Executing ~/.bashrc ON PFE"
-echo "ls -l ~/.bashrc"
-echo `ls -l ~/.bashrc`
-echo "=============================="
+echo "====================================="
+echo "Executing home1/lmatilsk/.bashrc --> "
+echo "/home1/lmatilsk/environment/bashrc_pfe"
+#echo "ls -l ~/.bashrc"
+#echo `ls -l ~/.bashrc`
+echo "====================================="
 
 # color code directory contents
 alias ls="ls --color='auto'"
@@ -104,7 +105,7 @@ alias shiftc="shiftc --no-mail"           # don't send annoying emails
 alias rmspace="python ~/coding/python/remove_spaces.py"
 
 # the rest goes for everyone
-source $HOME_DEFAULT/environment/bashrc_common
+source $HOME_PFE/environment/bashrc_common
 
 # function to get into MPI environment 
 # (for compiling/running Rayleigh)

@@ -1,6 +1,11 @@
 #!/bin/bash
 # RAYLEIGH COMPUTING SHORTCUTS
 # non-parallel routines
+echo "Executing /home1/lmatilsk/environment/bashrc_ra_routines"
+#echo "ls -l ~/.bashrc"
+#echo `ls -l ~/.bashrc`
+echo "========================================================="
+
 alias gi="python $raco/grid_info.py"
 alias qi="python $raco/quantity_index.py"
 alias tachref="python $raco/ideal_hydro_reference_state/generate_CZ_RZ_reference-quart.py"
@@ -8,14 +13,19 @@ alias ttrans="python $raco/print_translated_times.py"
 alias simt="python $raco/simtime.py"
 alias irate="python $raco/iter_rate.py"
 
-# TIMEAVG routines # parallelized ------------------------ alias azav="$ppc $raco/timeavg/AZ_Avgs.py" alias shav="$ppc $raco/timeavg/Shell_Avgs.py" alias specav="$ppc $raco/timeavg/Shell_Spectra.py" alias magtorquemer="$ppc $raco/timeavg/mag_torque_from_mer.py" alias indav="$ppc $raco/timeavg/induction_terms.py" alias indavpol="$ppc $raco/timeavg/induction_pol_terms.py"
+# TIMEAVG routines # parallelized ------------------------ 
+alias azav="$ppc $raco/timeavg/AZ_Avgs.py"
+alias shav="$ppc $raco/timeavg/Shell_Avgs.py"
+alias specav="$ppc $raco/timeavg/Shell_Spectra.py"
+alias magtorquemer="$ppc $raco/timeavg/mag_torque_from_mer.py"
+alias indav="$ppc $raco/timeavg/induction_terms.py"
+alias indavpol="$ppc $raco/timeavg/induction_pol_terms.py"
 
 # need to parallelize --------------------
 alias gav="python $raco/timeavg/G_Avgs.py"
 # helper (non-parallel) -------------------------------
 alias tavjoin="python $raco/timeavg/timeavg_join.py"
 alias merav="python $raco/timeavg/Meridional_Slices.py"
-
 
 # TIMETRACE routines
 # parallelized ------------------------
@@ -188,5 +198,3 @@ alias trv="python $rapl/time-radius_v.py"
 
 # time-l degree
 alias ltrv="python $rapl/time-lval_v.py"
-
-

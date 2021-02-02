@@ -1,7 +1,9 @@
 #!/bin/bash
+echo "Executing /home1/lmatilsk/environment/bashrc_common"
+#echo "ls -l ~/.bashrc"
+#echo `ls -l ~/.bashrc`
+echo "==================================================="
 
-echo "Executing ~/environment/bashrc_common"
-echo "=============================="
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     echo "Executing /etc/bashrc"
