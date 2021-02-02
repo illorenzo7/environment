@@ -1,0 +1,192 @@
+#!/bin/bash
+# RAYLEIGH COMPUTING SHORTCUTS
+# non-parallel routines
+alias gi="python $raco/grid_info.py"
+alias qi="python $raco/quantity_index.py"
+alias tachref="python $raco/ideal_hydro_reference_state/generate_CZ_RZ_reference-quart.py"
+alias ttrans="python $raco/print_translated_times.py"
+alias simt="python $raco/simtime.py"
+alias irate="python $raco/iter_rate.py"
+
+# TIMEAVG routines # parallelized ------------------------ alias azav="$ppc $raco/timeavg/AZ_Avgs.py" alias shav="$ppc $raco/timeavg/Shell_Avgs.py" alias specav="$ppc $raco/timeavg/Shell_Spectra.py" alias magtorquemer="$ppc $raco/timeavg/mag_torque_from_mer.py" alias indav="$ppc $raco/timeavg/induction_terms.py" alias indavpol="$ppc $raco/timeavg/induction_pol_terms.py"
+
+# need to parallelize --------------------
+alias gav="python $raco/timeavg/G_Avgs.py"
+# helper (non-parallel) -------------------------------
+alias tavjoin="python $raco/timeavg/timeavg_join.py"
+alias merav="python $raco/timeavg/Meridional_Slices.py"
+
+
+# TIMETRACE routines
+# parallelized ------------------------
+alias gtr="$ppc $raco/timetrace/G_Avgs.py"
+alias gtr2="$ppc $raco/timetrace/G_Avgs_2dom.py"
+alias gtrq="$ppc $raco/timetrace/G_Avgs_quad.py"
+alias shtr="python $raco/timetrace/Shell_Avgs.py" # maybe get rid of?
+alias tl="$ppc $raco/timetrace/time-latitude.py"
+alias tlshear="$ppc $raco/timetrace/time-latitude_shear_terms.py"
+alias trad="$ppc $raco/timetrace/time-radius.py" # /usr/bin/tr is a command
+# need to parallelize --------------------------------
+alias tlon="python $raco/timetrace/time-longitude.py" 
+alias ltr="python $raco/timetrace/lvals.py"
+# helper (non-parallel) -----------------------------------
+alias gtrjoin="python $raco/timetrace/G_Avgs_join.py"
+alias gtr2join="python $raco/timetrace/G_Avgs_2dom_join.py"
+alias tljoin="python $raco/timetrace/time-latitude_join.py"
+alias tradjoin="python $raco/timetrace/time-radius_join.py" 
+
+# PLOTTING routines (parallelized)
+alias dramommc="$ppc $rapl/dr_amom_mc_times_sample.py"
+alias torquetimes="$ppc $rapl/torque_times_sample.py"
+alias molltimes="$ppc $rapl/moll_times_sample.py"
+
+# RAYLEIGH PLOTTING SHORTCUTS (non-parallel)
+# AZ_Avgs routines
+
+# sim parameters
+alias res="python $rapl/resolution.py"
+alias ref="python $rapl/reference.py"
+alias trans="python $rapl/transport.py"
+alias eqconst="python $raco/eq_constants.py"
+
+# mean flows
+alias dr="python $rapl/diffrot.py"
+alias drr="python $rapl/diffrot_rslice.py"
+alias amom="python $rapl/amom.py"
+alias mc="python $rapl/mercirc.py"
+alias vaz="python $rapl/v_azav.py"
+
+# mean fields
+alias Baz="python $rapl/B_azav.py"
+alias Bmaz="python $rapl/Bm_azav.py"
+
+# torque
+alias torque="python $rapl/torque.py"
+alias magtorquert="python $rapl/mag_torque_rtheta.py"
+alias magtorquems="python $rapl/mag_torque_3term_ms.py"
+alias magtorquemm="python $rapl/mag_torque_3term_mm.py"
+
+# thermal state
+alias thermo="python $rapl/thermo_merplane.py"
+alias thermonond="python $rapl/thermo_merplane_nond.py"
+alias tw="python $rapl/simple_thermal_wind.py"
+
+# forces
+alias rforce="python $rapl/forces_radial.py"
+alias tforce="python $rapl/forces_latitudinal.py"
+alias pforce="python $rapl/forces_zonal.py"
+
+# energy stuff
+alias kem="python $rapl/ke_merplane.py"
+alias mefr="python $rapl/eflux_radial_merplane.py"
+alias mefr2="python $rapl/eflux_radial_merplane-2.py"
+alias meft="python $rapl/eflux_latitudinal_merplane.py"
+alias mefp="python $rapl/eflux_zonal_merplane.py"
+alias toten="python $rapl/toten.py"
+alias totenvst="python $rapl/toten_vs_time.py"
+
+# line plots
+alias etr="python $rapl/etrace.py"
+alias efr="python $rapl/eflux_radial.py"
+alias efrvst="python $rapl/eflux_radial_vs_time.py"
+alias vamp="python $rapl/vamp.py"
+alias eft="python $rapl/eflux_latitudinal.py"
+alias eft2="python $rapl/eflux_latitudinal-2.py"
+
+# ortho
+alias ortho="python $rapl/ortho_show.py"
+alias orthorvals="python $rapl/ortho_rvals_sample.py"
+alias orthovars="python $rapl/ortho_vars_sample.py"
+alias orthotimes="python $rapl/ortho_times_sample.py"
+alias orthomov="python $rapl/ortho_movie.py"
+
+# moll
+alias moll="python $rapl/moll_show.py"
+alias mollrvals="python $rapl/moll_rvals_sample.py"
+alias mollvars="python $rapl/moll_vars_sample.py"
+alias mollmov="python $rapl/moll_movie.py"
+alias mollazavtl="python $rapl/moll_azav_tl_movie.py"
+
+# mer
+alias mer="python $rapl/mer_show.py"
+alias merlonvals="python $rapl/mer_lonvals_sample.py"
+alias mervars="python $rapl/mer_vars_sample.py"
+alias mertimes="python $rapl/mer_times_sample.py"
+alias mermov="python $rapl/mer_movie.py"
+
+# eq
+alias eq="python $rapl/eq_show.py"
+alias eqvars="python $rapl/eq_vars_sample.py"
+alias eqtimes="python $rapl/eq_times_sample.py"
+alias eqmov="python $rapl/eq_movie.py"
+
+# speclm
+alias speclm="python $rapl/spec_lm_show.py"
+alias speclmrvals="python $rapl/spec_lm_rvals_sample.py"
+alias speclmvars="python $rapl/spec_lm_vars_sample.py"
+alias speclmtimes="python $rapl/spec_lm_times_sample.py"
+
+alias specavlm="python $rapl/specav_lm_show.py"
+alias specavlmrvals="python $rapl/specav_lm_rvals_sample.py"
+alias specavlmvars="python $rapl/specav_lm_vars_sample.py"
+
+# specl
+alias specl="python $rapl/spec_l_show.py"
+alias speclrvals="python $rapl/spec_l_rvals_sample.py"
+alias speclvars="python $rapl/spec_l_vars_sample.py"
+alias specltimes="python $rapl/spec_l_times_sample.py"
+
+alias specavl="python $rapl/specav_l_show.py"
+alias specavlrvals="python $rapl/specav_l_rvals_sample.py"
+alias specavlvars="python $rapl/specav_l_vars_sample.py"
+
+# time-latitude
+alias tlb="python $rapl/time-lat_B.py"
+alias ltrb="python $rapl/time-lval_B.py"
+alias tlv="python $rapl/time-lat_v.py"
+
+alias tltorque="python $rapl/time-lat_torque.py"
+
+alias indr="python $rapl/induction_r.py"
+alias indt="python $rapl/induction_theta.py"
+alias indp="python $rapl/induction_phi.py"
+
+alias indrmean="python $rapl/induction_r_mean.py"
+alias indtmean="python $rapl/induction_theta_mean.py"
+alias indpmean="python $rapl/induction_phi_mean.py"
+
+alias indrfluc="python $rapl/induction_r_fluc.py"
+alias indtfluc="python $rapl/induction_theta_fluc.py"
+alias indpfluc="python $rapl/induction_phi_fluc.py"
+
+alias indrbd="python $rapl/induction_breakdown_r.py"
+alias indtbd="python $rapl/induction_breakdown_theta.py"
+alias indpbd="python $rapl/induction_breakdown_phi.py"
+
+alias tlindr="python $rapl/time-lat_induction_r.py"
+alias tlindt="python $rapl/time-lat_induction_theta.py"
+alias tlindp="python $rapl/time-lat_induction_phi.py"
+
+alias tlindrmean="python $rapl/time-lat_induction_r_mean.py"
+alias tlindtmean="python $rapl/time-lat_induction_theta_mean.py"
+alias tlindpmean="python $rapl/time-lat_induction_phi_mean.py"
+
+alias tlindrfluc="python $rapl/time-lat_induction_r_fluc.py"
+alias tlindtfluc="python $rapl/time-lat_induction_theta_fluc.py"
+alias tlindpfluc="python $rapl/time-lat_induction_phi_fluc.py"
+
+alias tlindrmeanshear="python $rapl/time-lat_ishear_r_mean.py"
+alias tlindrflucshear="python $rapl/time-lat_ishear_r_fluc.py"
+alias tlindtmeanshear="python $rapl/time-lat_ishear_theta_mean.py"
+alias tlindtflucshear="python $rapl/time-lat_ishear_theta_fluc.py"
+alias tlindpmeanshear="python $rapl/time-lat_ishear_phi_mean.py"
+alias tlindpflucshear="python $rapl/time-lat_ishear_phi_fluc.py"
+
+# time-radius
+alias trb="python $rapl/time-rad_B.py"
+alias trv="python $rapl/time-radius_v.py"
+
+# time-l degree
+alias ltrv="python $rapl/time-lval_v.py"
+
+
