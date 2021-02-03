@@ -30,4 +30,9 @@ export PATH=$PATH:~/bin
 export PATH=$PATH:~/usr/bin
 export HOME_DEFAULT="$HOME"
 
+# some aliases for freyr
+alias vncv='vncviewer'
+alias fn='find `pwd` -name ' # fn for "full name"
+alias lo='libreoffice'
+
 source ~/environment/bashrc_common
