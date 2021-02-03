@@ -57,6 +57,9 @@ export rau=$HOME_DEFAULT/rayleigh_utils
 export raco=$rau/compute # /usr/bin/co is a command
 export rapl=$rau/plot # /usr/bin/plot is a command
 export idref=$raco/hydro_ideal_reference_state
+alias linkra='ln -s $rasource/bin/rayleigh.opt'
+alias runra='mpiexec -np 16 ./rayleigh.opt -nprow 4 -npcol 4'
+alias runra1="./rayleigh.opt -nprow 1 -npcol 1"
 
 # Configure rayleigh with .muck extension
 alias configmuck='EXT=".muck" ./configure'

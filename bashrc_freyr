@@ -36,9 +36,15 @@ export st="$HOME_DEFAULT/Desktop/00_Stellar"
 export fl="$HOME_DEFAULT/Desktop/00_Fluids"
 export ast="$HOME_DEFAULT/Desktop/00_General_Astronomy"
 
+# Shortcut to remove_spaces routine (replacing ' ' with '_' in all 
+# filenames in a given directory
+alias rmspace="python ~/coding/python/remove_spaces.py"
+
 # some aliases for freyr
+alias vnc='de; vncserver -geometry 1278x719' # best geometry for Mac
 alias vncv='vncviewer'
 alias fn='find `pwd` -name ' # fn for "full name"
 alias lo='libreoffice'
+alias jn='jupyter notebook'
 
 source ~/environment/bashrc_common
