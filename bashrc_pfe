@@ -21,11 +21,10 @@
 # This will ssh into pbspl1 and run tracejob going back 3 days (-n3) for jobid
 
 echo "====================================="
-echo "Executing home1/lmatilsk/.bashrc --> "
+echo "Executing /home1/lmatilsk/.bashrc --> "
 echo "/home1/lmatilsk/environment/bashrc_pfe"
 #echo "ls -l ~/.bashrc"
 #echo `ls -l ~/.bashrc`
-echo "====================================="
 
 # color code directory contents
 alias ls="ls --color='auto'"

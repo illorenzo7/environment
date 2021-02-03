@@ -3,6 +3,12 @@
 # Location of bash:
 #!/bin/bash
 
+echo "====================================="
+echo "Executing /lou/la2/lmatilsk/.bashrc --> "
+echo "/home1/lmatilsk/environment/bashrc_lfe"
+#echo "ls -l ~/.bashrc"
+#echo `ls -l ~/.bashrc`
+
 echo "=============================="
 echo "Executing ~/.bashrc ON LFE"
 #echo "ls -l ~/.bashrc"
