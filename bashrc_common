@@ -73,8 +73,11 @@ alias make_sample='tar -cvf sample.tar $(find AZ_Avgs/ | sort | tail -n 3) $(fin
 # Rayleigh routines
 # parallel
 # set default nproc based on hostname
-if [[ "$host" == *"$ldanst"* ]] || [[ "$host" == *"$nodest"* ]]; then
-    nproc=`nproc --all` # use max number of processes
+host=`hostname`
+#if [[ "$host" == *"$ldanst"* ]] || [[ "$host" == *"$nodest"* ]]; then
+if [[ "$host" == "ldan"* ]] || [[ "$host" == *"r"[0-9]* ]]; then
+    nproc=`nproc --all` # use max number of processes, on ldan or
+                        # individual Pleaides node
 else
     nproc=1 # process in serial
 fi
