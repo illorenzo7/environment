@@ -58,6 +58,7 @@ alias res="python $rapl/resolution.py"
 alias ref="python $rapl/reference.py"
 alias trans="python $rapl/transport.py"
 alias eqconst="python $raco/eq_constants.py"
+alias freq="python $raco/output_freq.py"
 
 # mean flows
 alias dr="python $rapl/diffrot.py"
