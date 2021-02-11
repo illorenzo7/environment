@@ -4,6 +4,11 @@
 # Author: Loren Matilsky
 # Created: 07/07/2016
 
+# don't break scp with echo in .bashrc
+if [ -z "$PS1" ]; then
+    return
+fi
+
 echo "=============================="
 echo "Executing ~/.bashrc"
 echo "ls -l ~/.bashrc"
