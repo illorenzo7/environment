@@ -45,7 +45,7 @@ module purge
 #module load mpi-hpe/mpt.2.23_24Mar2020
 #module load comp-intel
 #module load firefox # for jupyter notebook
-#module load pkgsrc
+module load pkgsrc
 
 # Pleiades directory shortcuts
 export HOME_LFE=/lou/la2/lmatilsk
