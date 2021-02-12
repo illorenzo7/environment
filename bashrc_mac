@@ -86,12 +86,6 @@ alias soba="python $sob/add.py"
 alias sobc="python $sob/cal.py"
 alias sobbak="current_dir=`pwd`;cd $sob;git add .; git commit -m 'updated dates';git push; cd $current_dir"
 
-# Remove spaces
-alias rmspace="python ~/Python/remove_spaces.py"
-
-# Look up quantity code in Rayliegh
-alias qi='python $raco/quantity_index.py'
-
 # Use Stroustrup's stupid include file
 #alias g++='g++ -std=c++11 -I/Users/loren/CPLUSPLUS'
 
