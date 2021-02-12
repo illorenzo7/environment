@@ -84,7 +84,7 @@ alias website-dl='wget --mirror -nH -np -p -k -E -e robots=off'
 
 alias soba="python $sob/add.py"
 alias sobc="python $sob/cal.py"
-alias sobbak="scp $sob/sober_dates.npy $fre:~/Documents/sober/"
+alias sobbak="current_dir=`pwd`;cd $sob;git add .; git commit -m 'updated dates';git push; cd $current_dir"
 
 # Remove spaces
 alias rmspace="python ~/Python/remove_spaces.py"
