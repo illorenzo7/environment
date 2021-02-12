@@ -1,0 +1,113 @@
+#!/bin/bash
+
+# .bashrc
+# Author: Loren Matilsky
+# Created: 07/07/2016
+# Modified to work in new "environment" repo: 02/12/2021
+
+# don't break scp with echo in .bashrc
+if [ -z "$PS1" ]; then
+    return
+fi
+
+# HOME directory(s)
+export HOME_DEFAULT=/Users/loren
+
+echo "====================================="
+echo "Executing $HOME_DEFAULT/.bashrc --> "
+echo "$HOME_DEFAULT/environment/bashrc_pfe"
+
+# color code directory contents
+alias ls="ls -G" # Works on Mac
+#alias ls="ls --color='auto'" # Works on general Unix, but not Mac :-( FUCK YOU TIM COOK!!!
+
+# Make prompt show current working directory
+PS1='\w$ '
+
+# Command to deactivate
+alias de='conda deactivate'
+
+# Print full file name
+alias fn='find `pwd` -name '
+
+###############################
+# Mac shortcuts               #
+###############################
+export mu=~/iTunesMusic
+export so=~/Desktop/00_Solar
+export sob=/Users/loren/Documents/sober
+export st=~/Desktop/00_Stellar
+export fl=~/Desktop/00_Fluids
+export ast=~/Desktop/00_General_Astronomy # /usr/bin/as is a command
+export sws=$HOME/Desktop/School_Work_2018_1Spring/ASTR_5700_Stars_with_Steve/
+
+# Switch hidden folder on and off
+alias showhidden='defaults write com.apple.Finder AppleShowAllFiles true && killall Finder'
+alias nohidden='defaults write com.apple.Finder AppleShowAllFiles false && killall Finder'
+
+# Path variables
+# Extra appendages to PATH to allow 
+# programs to be installed locally
+export PATH=$PATH:$HOME_DEFAULT/bin
+export PATH=$PATH:$HOME_DEFAULT/usr/bin
+export PATH=$PATH:/opt/intel/bin
+export PATH=$PATH:/Applications/VAPOR/VAPOR.app/Contents/MacOS
+
+# Necessary to make Rayleigh dynamically link with MKL
+export DYLD_LIBRARY_PATH=/opt/intel/compilers_and_libraries_2019.0.117/mac/mkl/lib
+# Remove duplicate entries in PATH:
+#case ":$PATH:" in
+#	*":$new_entry:"*) :;; # already there
+#	*) PATH="$new_entry:$PATH";; # or PATH="$PATH:$new_entry"
+#esac
+
+# Set the Intel MKL root directory
+export MKLROOT=/opt/intel/mkl
+export MKL_INCLUDE=$MKLROOT/include
+export MKL_LIBRARY=$MKLROOT/lib
+
+# Configure Rayleigh on Mac
+export FC=mpif90
+export CC=gcc
+export FFTWROOT=/usr/local
+export LAPACKROOT=/usr
+export BLASROOT=/usr
+alias configra='./configure --FC=$FC --CC=$CC --with-fftw=$FFTWROOT --with-lapack=$LAPACKROOT --with-blas=$BLASROOT'
+
+# Aliases
+alias osxversion='defaults read loginwindow SystemVersionStampAsString'
+	# print running version of OSX
+alias jn='jupyter notebook'
+
+# Download an entire website (dangerous!)
+alias website-dl='wget --mirror -nH -np -p -k -E -e robots=off'
+
+alias soba="python $sob/add.py"
+alias sobc="python $sob/cal.py"
+alias sobbak="scp $sob/sober_dates.npy $fre:~/Documents/sober/"
+
+# Remove spaces
+alias rmspace="python ~/Python/remove_spaces.py"
+
+# Look up quantity code in Rayliegh
+alias qi='python $raco/quantity_index.py'
+
+# Use Stroustrup's stupid include file
+#alias g++='g++ -std=c++11 -I/Users/loren/CPLUSPLUS'
+
+# Make compiler tell about "All Warnings" ot learn 
+# c++ as a beginner (-Wall option). 
+#alias g++='g++ -Wall'
+
+# Sync folders with papers between Mac and LCD
+alias syncbooks='rsync -avP ~/Desktop/Books/ freyr:~/Desktop/Books && rsync -avP freyr:~/Desktop/Books/ ~/Desktop/Books'
+alias syncproposals='rsync -avP ~/Desktop/Proposals/ freyr:~/Desktop/Proposals && rsync -avP freyr:~/Desktop/Proposals/ ~/Desktop/Proposals'
+alias syncpresentations='rsync -avP ~/Desktop/Presentations/ freyr:~/Desktop/Presentations && rsync -avP freyr:~/Desktop/Presentations/ ~/Desktop/Presentations'
+alias sync_fin="rsync --update -avP ~/Desktop/Financial/ $fre:~/Desktop/Financial && rsync --update -avP $fre:~/Desktop/Financial/ ~/Desktop/Financial"
+
+# Backup gypsy_davy to/from Freyr
+alias gd_tofreyr='scp ~/gypsy_davy freyr:~/gypsy_davy'
+alias gd_fromfreyr='scp freyr:~/gypsy_davy ~/gypsy_davy'
+
+# the rest goes for everyone
+source $HOME_DEFAULT/environment/bashrc_common

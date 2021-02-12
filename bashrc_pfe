@@ -25,11 +25,14 @@ if [ -z "$PS1" ]; then
     return
 fi
 
+# HOME directory(s)
+export HOME_LFE=/lou/la2/lmatilsk
+export HOME_PFE=/home1/lmatilsk
+export HOME_DEFAULT=$HOME_PFE
+
 echo "====================================="
-echo "Executing /home1/lmatilsk/.bashrc --> "
-echo "/home1/lmatilsk/environment/bashrc_pfe"
-#echo "ls -l ~/.bashrc"
-#echo `ls -l ~/.bashrc`
+echo "Executing $HOME_PFE/.bashrc --> "
+echo "$HOME_DEFAULT/environment/bashrc_pfe"
 
 # color code directory contents
 alias ls="ls --color='auto'"
@@ -53,9 +56,6 @@ module purge
 module load pkgsrc
 
 # Pleiades directory shortcuts
-export HOME_LFE=/lou/la2/lmatilsk
-export HOME_PFE=/home1/lmatilsk
-export HOME_DEFAULT=$HOME_PFE
 export nb=/nobackup/lmatilsk
 
 # Make terminals white on black
@@ -109,7 +109,7 @@ alias shiftc="shiftc --no-mail"           # don't send annoying emails
 alias rmspace="python ~/coding/python/remove_spaces.py"
 
 # the rest goes for everyone
-source $HOME_PFE/environment/bashrc_common
+source $HOME_DEFAULT/environment/bashrc_common
 
 # function to get into MPI environment 
 # (for compiling/running Rayleigh)
