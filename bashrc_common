@@ -112,4 +112,5 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # get into 'custom' environment on login
+echo "conda initialized; running 'custom' command"
 custom

@@ -15,7 +15,7 @@ export HOME_DEFAULT=/Users/loren
 
 echo "====================================="
 echo "Executing $HOME_DEFAULT/.bashrc --> "
-echo "$HOME_DEFAULT/environment/bashrc_pfe"
+echo "$HOME_DEFAULT/environment/bashrc_mac"
 
 # color code directory contents
 alias ls="ls -G" # Works on Mac
