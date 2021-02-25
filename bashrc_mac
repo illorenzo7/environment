@@ -34,11 +34,10 @@ alias fn='find `pwd` -name '
 # Mac shortcuts               #
 ###############################
 export mu=~/iTunesMusic
-export so=~/Desktop/00_Solar
+export rp=$HOME_DEFAULT/Desktop/00_Research_Papers
+export so=$rp/00_Solar
+export fl=$rp/00_Fluids
 export sob=/Users/loren/Documents/sober
-export st=~/Desktop/00_Stellar
-export fl=~/Desktop/00_Fluids
-export ast=~/Desktop/00_General_Astronomy # /usr/bin/as is a command
 export sws=$HOME/Desktop/School_Work_2018_1Spring/ASTR_5700_Stars_with_Steve/
 
 # Switch hidden folder on and off
