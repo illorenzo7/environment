@@ -33,6 +33,7 @@ alias merav="python $raco/timeavg/Meridional_Slices.py"
 alias gtr="$ppc $raco/timetrace/G_Avgs.py"
 alias gtr2="$ppc $raco/timetrace/G_Avgs_2dom.py"
 alias gtrq="$ppc $raco/timetrace/G_Avgs_quad.py"
+alias drc="$ppc $raco/timetrace/dr_contrast_2dom.py"
 alias shtr="python $raco/timetrace/Shell_Avgs.py" # maybe get rid of?
 alias tl="$ppc $raco/timetrace/time-latitude.py"
 alias tlshear="$ppc $raco/timetrace/time-latitude_shear_terms.py"
@@ -42,6 +43,7 @@ alias tlon="python $raco/timetrace/time-longitude.py"
 alias ltr="python $raco/timetrace/lvals.py"
 # helper (non-parallel) -----------------------------------
 alias gtrjoin="python $raco/timetrace/G_Avgs_join.py"
+alias drcjoin="python $raco/timetrace/dr_contrast_2dom_join.py"
 alias gtr2join="python $raco/timetrace/G_Avgs_2dom_join.py"
 alias tljoin="python $raco/timetrace/time-latitude_join.py"
 alias tradjoin="python $raco/timetrace/time-radius_join.py" 
@@ -74,6 +76,7 @@ alias Bmaz="python $rapl/Bm_azav.py"
 
 # torque
 alias torque="python $rapl/torque.py"
+alias torquert="python $rapl/torque_rt.py"
 alias magtorquert="python $rapl/mag_torque_rtheta.py"
 alias magtorquems="python $rapl/mag_torque_3term_ms.py"
 alias magtorquemm="python $rapl/mag_torque_3term_mm.py"

@@ -91,7 +91,7 @@ alias fn='find `pwd` -name ' # fn for "full name"
 alias gt='gnome-terminal'
 alias qs="/u/scicon/tools/bin/qs"   # check what nodes are being used currently
 alias less='less -MN' # make less show line numbers and  filename in status bar
-alias quota_nb='lfs quota -h -u lmatilsk /nobackupp2'
+alias quota_nb='lfs quota -h -u lmatilsk /nobackupp11'
 
 # Note: to extract particular files from a *.tar folder, run
 # shiftc --extract-tar --include=[fname] tarname.tar .
