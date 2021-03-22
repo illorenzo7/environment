@@ -66,6 +66,8 @@ alias freq="python $raco/output_freq.py"
 # mean flows
 alias dr="python $rapl/diffrot.py"
 alias drr="python $rapl/diffrot_rslice.py"
+alias drder="python $rapl/diffrot_derivs.py"
+alias drdershav="python $rapl/diffrot_derivs_shav.py"
 alias amom="python $rapl/amom.py"
 alias mc="python $rapl/mercirc.py"
 alias vaz="python $rapl/v_azav.py"
@@ -102,6 +104,7 @@ alias totenvst="python $rapl/toten_vs_time.py"
 
 # line plots
 alias etr="python $rapl/etrace.py"
+alias axiB="python $rapl/how_axisym_B.py"
 alias efr="python $rapl/eflux_radial.py"
 alias efrvst="python $rapl/eflux_radial_vs_time.py"
 alias vamp="python $rapl/vamp.py"
