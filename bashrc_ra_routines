@@ -20,6 +20,7 @@ alias specav="$ppc $raco/timeavg/Shell_Spectra.py"
 alias ssliceav="$ppc $raco/timeavg/Shell_Slices.py"
 alias magtorquemer="$ppc $raco/timeavg/mag_torque_from_mer.py"
 alias indav="$ppc $raco/timeavg/induction_terms.py"
+alias indavnum="$ppc $raco/timeavg/induction_terms_num.py"
 alias vxb="$ppc $raco/timeavg/vcrossB.py"
 
 # need to parallelize --------------------
