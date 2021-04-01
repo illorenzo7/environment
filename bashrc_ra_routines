@@ -40,8 +40,8 @@ alias shtr="python $raco/timetrace/Shell_Avgs.py" # maybe get rid of?
 alias tl="$ppc $raco/timetrace/time-latitude.py"
 alias tlshear="$ppc $raco/timetrace/time-latitude_shear_terms.py"
 alias trad="$ppc $raco/timetrace/time-radius.py" # /usr/bin/tr is a command
+alias tlon="$ppc $raco/timetrace/time-longitude.py" 
 # need to parallelize --------------------------------
-alias tlon="python $raco/timetrace/time-longitude.py" 
 alias ltr="python $raco/timetrace/lvals.py"
 # helper (non-parallel) -----------------------------------
 alias gtrjoin="python $raco/timetrace/G_Avgs_join.py"
