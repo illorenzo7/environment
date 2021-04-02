@@ -167,6 +167,9 @@ alias tlv="python $rapl/time-lat_v.py"
 
 alias tltorque="python $rapl/time-lat_torque.py"
 
+# time-longitude
+alias tlonplot="python $rapl/time-longitude.py"
+
 alias indr="python $rapl/induction_r.py"
 alias indt="python $rapl/induction_theta.py"
 alias indp="python $rapl/induction_phi.py"
