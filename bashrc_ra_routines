@@ -23,6 +23,7 @@ alias indav="$ppc $raco/timeavg/induction_terms.py"
 alias indavnum="$ppc $raco/timeavg/induction_terms_num.py"
 alias vxb="$ppc $raco/timeavg/vcrossB.py"
 alias mage="$ppc $raco/timeavg/mag_energy.py"
+alias mageshear="$ppc $raco/timeavg/mag_energy_shear.py"
 
 # need to parallelize --------------------
 alias gav="python $raco/timeavg/G_Avgs.py"
@@ -208,6 +209,8 @@ alias tlindpmeanshear="python $rapl/time-lat_ishear_phi_mean.py"
 alias tlindpflucshear="python $rapl/time-lat_ishear_phi_fluc.py"
 
 alias magetot="python $rapl/mag_energy_tot.py"
+alias magepol="python $rapl/mag_energy_pol.py"
+alias magetor="python $rapl/mag_energy_tor.py"
 
 # time-radius
 alias trb="python $rapl/time-rad_B.py"
