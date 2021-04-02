@@ -75,11 +75,10 @@ alias make_sample='tar -cvf sample.tar $(find AZ_Avgs/ | sort | tail -n 3) $(fin
 # set default nproc based on hostname
 host=`hostname`
 #if [[ "$host" == *"$ldanst"* ]] || [[ "$host" == *"$nodest"* ]]; then
-if [[ "$host" == "ldan"* ]] || [[ "$host" == *"r"[0-9]* ]]; then
-    nproc=`nproc --all` # use max number of processes, on ldan or
-                        # individual Pleaides node
+if [[ "$host" == "lfe"* ]] || [[ "$host" == "pfe"* ]]; then
+    nproc=1 # process in serial on the lfes and pfes
 else
-    nproc=1 # process in serial
+    nproc=`nproc --all` # by default, use max number of processes
 fi
 # ppc for "python parallel call"
 export ppc="mpiexec -n $nproc python -u"
