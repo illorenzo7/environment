@@ -114,6 +114,7 @@ alias efr="python $rapl/eflux_radial.py"
 alias efrvst="python $rapl/eflux_radial_vs_time.py"
 alias vamp="python $rapl/vamp.py"
 alias bamp="python $rapl/bamp.py"
+alias vavamp="python $rapl/va_to_vamp.py"
 alias eft="python $rapl/eflux_latitudinal.py"
 alias eft2="python $rapl/eflux_latitudinal-2.py"
 
