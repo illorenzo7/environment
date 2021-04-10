@@ -14,6 +14,7 @@ alias simt="python $raco/simtime.py"
 alias irate="python $raco/iter_rate.py"
 
 # TIMEAVG routines # parallelized ------------------------ 
+alias tav="$ppc $raco/timeavg/radata.py"
 alias azav="$ppc $raco/timeavg/AZ_Avgs.py"
 alias shav="$ppc $raco/timeavg/Shell_Avgs.py"
 alias specav="$ppc $raco/timeavg/Shell_Spectra.py"
@@ -42,17 +43,18 @@ alias merav="python $raco/timeavg/Meridional_Slices.py"
 alias gtr="$ppc $raco/timetrace/G_Avgs.py"
 alias gtr2="$ppc $raco/timetrace/G_Avgs_2dom.py"
 alias gtrq="$ppc $raco/timetrace/G_Avgs_quad.py"
-alias drc="$ppc $raco/timetrace/dr_contrast_2dom.py"
+alias drc="$ppc $raco/timetrace/drc_2dom.py"
 alias shtr="python $raco/timetrace/Shell_Avgs.py" # maybe get rid of?
-alias tl="$ppc $raco/timetrace/time-latitude.py"
+alias tl="$ppc $raco/timetrace/timelat.py"
 alias tlshear="$ppc $raco/timetrace/time-latitude_shear_terms.py"
 alias trad="$ppc $raco/timetrace/time-radius.py" # /usr/bin/tr is a command
 alias tlon="$ppc $raco/timetrace/time-longitude.py" 
 # need to parallelize --------------------------------
 alias ltr="python $raco/timetrace/lvals.py"
 # helper (non-parallel) -----------------------------------
+alias ttrjoin="python $raco/timetrace/timetrace_join.py"
 alias gtrjoin="python $raco/timetrace/G_Avgs_join.py"
-alias drcjoin="python $raco/timetrace/dr_contrast_2dom_join.py"
+alias drcjoin="python $raco/timetrace/drc_2dom_join.py"
 alias gtr2join="python $raco/timetrace/G_Avgs_2dom_join.py"
 alias tljoin="python $raco/timetrace/time-latitude_join.py"
 alias tradjoin="python $raco/timetrace/time-radius_join.py" 
