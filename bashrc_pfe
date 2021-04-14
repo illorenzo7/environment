@@ -98,15 +98,15 @@ alias quota_nb='lfs quota -h -u lmatilsk /nobackupp11'
 
 alias qst='qstat -u lmatilsk'       # check on status of jobs
 alias sst='shiftc --status'         # check on status of shiftc transfers
-alias shiftc="shiftc --no-mail"           # don't send annoying emails
-#alias shift="shiftc --create-tar --index-tar --hosts=6"
-# For some reason the "shift" alias makes the .bashrc "Read argument lines
-# from stdin" in the (base) environment. Issue on both freyr (with sup) and
-# here on Pleiades
+#alias shiftc="shiftc --no-mail"           # don't send annoying emails
 
-# Shortcut to remove_spaces routine (replacing ' ' with '_' in all 
-# filenames in a given directory
-alias rmspace="python ~/coding/python/remove_spaces.py"
+shiftfrom () {
+    shiftc --extract-tar --hosts=6 lfe:~/$1/*.tar $2
+}
+
+shiftto () {
+    shiftc --create-tar --index-tar --hosts=6 $1 lfe:~/$2/name.tar
+}
 
 # the rest goes for everyone
 source $HOME_DEFAULT/environment/bashrc_common

@@ -226,4 +226,4 @@ alias trv="python $rapl/time-radius_v.py"
 alias ltrv="python $rapl/time-lval_v.py"
 
 # Remove spaces (not really a Rayleigh routine but need a spot for it)
-alias rmspace="python ~/Python/remove_spaces.py"
+alias rmspace="python $raco/remove_spaces.py"
