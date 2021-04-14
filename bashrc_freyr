@@ -57,4 +57,7 @@ shiftto () {
     sup shiftc --create-tar --index-tar $1 lfe:~/$2/name.tar
 }
 
+shist() {
+    sup shiftc --history --id=$1
+}
 source ~/environment/bashrc_common
