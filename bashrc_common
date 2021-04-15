@@ -11,6 +11,9 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc 
 fi
 
+# start by clearing all aliases
+unalias -a
+
 # always ssh with display privileges
 alias ssh='ssh -X'
 
