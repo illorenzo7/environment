@@ -72,6 +72,9 @@ export CC=mpicc
 export PATH=$PATH:$HOME_DEFAULT/bin
 export PATH=$PATH:$HOME_DEFAULT/usr/bin
 
+# start by clearing all aliases
+unalias -a
+
 # Start the vnc server
 alias vnc='vncserver -localhost -geometry 1280x800'
 alias vncg='vncserver -localhost -geometry 1900x1000' 
