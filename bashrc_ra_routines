@@ -15,10 +15,6 @@ alias irate="python $raco/iter_rate.py"
 
 # TIMEAVG routines # parallelized ------------------------ 
 alias tav="$ppc $raco/timeavg/radata.py"
-alias azav="$ppc $raco/timeavg/AZ_Avgs.py"
-alias shav="$ppc $raco/timeavg/Shell_Avgs.py"
-alias specav="$ppc $raco/timeavg/Shell_Spectra.py"
-alias ssliceav="$ppc $raco/timeavg/Shell_Slices.py"
 alias magtorque="$ppc $raco/timeavg/mag_torque.py"
 alias indav="$ppc $raco/timeavg/induction_terms.py"
 alias indavnum="$ppc $raco/timeavg/induction_terms_num.py"
@@ -67,10 +63,8 @@ alias drder="python $rapl/diffrot_derivs.py"
 alias drdershav="python $rapl/diffrot_derivs_shav.py"
 alias amom="python $rapl/amom.py"
 alias mc="python $rapl/mercirc.py"
-alias vaz="python $rapl/v_azav.py"
 
 # mean fields
-alias Baz="python $rapl/B_azav.py"
 alias Bmaz="python $rapl/Bm_azav.py"
 
 # torque
@@ -85,17 +79,8 @@ alias thermo="python $rapl/thermo_merplane.py"
 alias thermonond="python $rapl/thermo_merplane_nond.py"
 alias tw="python $rapl/simple_thermal_wind.py"
 
-# forces
-alias rforce="python $rapl/forces_radial.py"
-alias tforce="python $rapl/forces_latitudinal.py"
-alias pforce="python $rapl/forces_zonal.py"
-
 # energy stuff
 alias kem="python $rapl/ke_merplane.py"
-alias mefr="python $rapl/eflux_radial_merplane.py"
-alias mefr2="python $rapl/eflux_radial_merplane-2.py"
-alias meft="python $rapl/eflux_latitudinal_merplane.py"
-alias mefp="python $rapl/eflux_zonal_merplane.py"
 alias toten="python $rapl/toten.py"
 alias totenvst="python $rapl/toten_vs_time.py"
 
