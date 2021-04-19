@@ -56,7 +56,7 @@ alias eqconst="python $raco/eq_constants.py"
 alias freq="python $raco/output_freq.py"
 
 # AZ_Avgs routines
-alias azav="python $rapl/azav.py"
+alias azav="python $rapl/azav/azav.py"
 
 # mean flows
 alias dr="python $rapl/diffrot.py"
@@ -154,18 +154,6 @@ alias tltorque="python $rapl/time-lat_torque.py"
 # time-longitude
 alias tlonplot="python $rapl/time-longitude.py"
 
-alias indr="python $rapl/induction_r.py"
-alias indt="python $rapl/induction_theta.py"
-alias indp="python $rapl/induction_phi.py"
-
-alias indrmean="python $rapl/induction_r_mean.py"
-alias indtmean="python $rapl/induction_theta_mean.py"
-alias indpmean="python $rapl/induction_phi_mean.py"
-
-alias indrfluc="python $rapl/induction_r_fluc.py"
-alias indtfluc="python $rapl/induction_theta_fluc.py"
-alias indpfluc="python $rapl/induction_phi_fluc.py"
-
 alias indrbd="python $rapl/induction_breakdown_r.py"
 alias indtbd="python $rapl/induction_breakdown_theta.py"
 alias indpbd="python $rapl/induction_breakdown_phi.py"
@@ -202,9 +190,6 @@ alias magesumtor="python $rapl/mag_energy_sum_tor.py"
 # time-radius
 alias trb="python $rapl/time-rad_B.py"
 alias trv="python $rapl/time-radius_v.py"
-
-# time-l degree
-alias ltrv="python $rapl/time-lval_v.py"
 
 # Remove spaces (not really a Rayleigh routine but need a spot for it)
 alias rmspace="python $raco/remove_spaces.py"

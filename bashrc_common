@@ -83,10 +83,16 @@ fi
 # ppc for "python parallel call"
 export ppc="mpiexec -n $nproc python -u"
 source $HOME_DEFAULT/environment/bashrc_ra_routines
+
 setnproc() {
     nproc=$1
     export ppc="mpiexec -n $nproc python -u"
     source $HOME_DEFAULT/environment/bashrc_ra_routines
+}
+
+# count lines in a directory
+countlines() {
+    find $1 -name $2 | xargs wc -l
 }
 
 # ffmpeg shortcut for making movies form img????.png files
