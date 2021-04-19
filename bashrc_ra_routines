@@ -42,9 +42,9 @@ alias ltr="python $raco/timetrace/lvals.py"
 alias ttrjoin="python $raco/timetrace/timetrace_join.py"
 
 # PLOTTING routines (parallelized)
-alias dramommc="$ppc $rapl/dr_amom_mc_times_sample.py"
-alias torquetimes="$ppc $rapl/torque_times_sample.py"
-alias molltimes="$ppc $rapl/moll_times_sample.py"
+alias dramommc="$ppc $rapl/azav/dr_amom_mc_times_sample.py"
+alias torquetimes="$ppc $rapl/azav/torque_times_sample.py"
+alias molltimes="$ppc $rapl/azav/moll_times_sample.py"
 
 # RAYLEIGH PLOTTING SHORTCUTS (non-parallel)
 
@@ -70,7 +70,7 @@ alias mc="python $rapl/mercirc.py"
 alias Bmaz="python $rapl/Bm_azav.py"
 
 # torque
-alias torque="python $rapl/torque.py"
+alias torque="python $rapl/azav/torque.py"
 alias torquert="python $rapl/torque_rt.py"
 alias magtorquert="python $rapl/mag_torque_rtheta.py"
 alias magtorquems="python $rapl/mag_torque_3term_ms.py"
