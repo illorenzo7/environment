@@ -25,6 +25,9 @@ if [ -z "$PS1" ]; then
     return
 fi
 
+# start by clearing all aliases
+unalias -a
+
 # HOME directory(s)
 export HOME_LFE=/lou/la2/lmatilsk
 export HOME_PFE=/home1/lmatilsk
@@ -71,9 +74,6 @@ export CC=mpicc
 # programs to be installed locally
 export PATH=$PATH:$HOME_DEFAULT/bin
 export PATH=$PATH:$HOME_DEFAULT/usr/bin
-
-# start by clearing all aliases
-unalias -a
 
 # Start the vnc server
 alias vnc='vncserver -localhost -geometry 1280x800'

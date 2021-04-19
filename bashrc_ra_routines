@@ -47,7 +47,6 @@ alias torquetimes="$ppc $rapl/torque_times_sample.py"
 alias molltimes="$ppc $rapl/moll_times_sample.py"
 
 # RAYLEIGH PLOTTING SHORTCUTS (non-parallel)
-# AZ_Avgs routines
 
 # sim parameters
 alias res="python $rapl/resolution.py"
@@ -55,6 +54,9 @@ alias ref="python $rapl/reference.py"
 alias trans="python $rapl/transport.py"
 alias eqconst="python $raco/eq_constants.py"
 alias freq="python $raco/output_freq.py"
+
+# AZ_Avgs routines
+alias azav="python $rapl/azav.py"
 
 # mean flows
 alias dr="python $rapl/diffrot.py"
