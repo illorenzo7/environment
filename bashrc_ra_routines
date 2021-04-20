@@ -16,17 +16,14 @@ alias irate="python $raco/iter_rate.py"
 # TIMEAVG routines # parallelized ------------------------ 
 alias tav="$ppc $raco/timeavg/radata.py"
 alias magtorque="$ppc $raco/timeavg/mag_torque.py"
-alias indav="$ppc $raco/timeavg/induction_terms.py"
-alias indavnum="$ppc $raco/timeavg/induction_terms_num.py"
+alias indalt="$ppc $raco/timeavg/induct_alt.py"
+alias indaltnum="$ppc $raco/timeavg/induct_alt_num.py"
 alias vxb="$ppc $raco/timeavg/vcrossb.py"
-alias mage="$ppc $raco/timeavg/mag_energy.py"
-alias magemm="$ppc $raco/timeavg/mag_energy_mm_exact.py"
+alias meprod="$ppc $raco/timeavg/me_prod.py"
+alias meprodmean="$ppc $raco/timeavg/me_prod_mean.py"
 
-# need to parallelize --------------------
-alias gav="python $raco/timeavg/G_Avgs.py"
 # helper (non-parallel) -------------------------------
 alias tavjoin="python $raco/timeavg/timeavg_join.py"
-alias merav="python $raco/timeavg/Meridional_Slices.py"
 
 # TIMETRACE routines
 # parallelized ------------------------
