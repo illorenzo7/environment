@@ -20,6 +20,7 @@ alias indalt="$ppc $raco/timeavg/induct_alt.py"
 alias indaltnum="$ppc $raco/timeavg/induct_alt_num.py"
 alias vxb="$ppc $raco/timeavg/vcrossb.py"
 alias meprod="$ppc $raco/timeavg/me_prod.py"
+alias meprodshear="$ppc $raco/timeavg/me_prod_shear.py"
 alias meprodmean="$ppc $raco/timeavg/me_prod_mean.py"
 
 # helper (non-parallel) -------------------------------
@@ -41,7 +42,7 @@ alias ttrjoin="python $raco/timetrace/timetrace_join.py"
 # PLOTTING routines (parallelized)
 alias dramommc="$ppc $rapl/azav/dr_amom_mc_times_sample.py"
 alias torquetimes="$ppc $rapl/azav/torque_times_sample.py"
-alias molltimes="$ppc $rapl/azav/moll_times_sample.py"
+alias molltimes="$ppc $rapl/sslice/moll_times_sample.py"
 
 # RAYLEIGH PLOTTING SHORTCUTS (non-parallel)
 
@@ -56,32 +57,29 @@ alias freq="python $raco/output_freq.py"
 alias azav="python $rapl/azav/azav.py"
 
 # mean flows
-alias dr="python $rapl/diffrot.py"
-alias drr="python $rapl/diffrot_rslice.py"
-alias drder="python $rapl/diffrot_derivs.py"
-alias drdershav="python $rapl/diffrot_derivs_shav.py"
-alias amom="python $rapl/amom.py"
-alias mc="python $rapl/mercirc.py"
+alias dr="python $rapl/azav/diffrot.py"
+alias drr="python $rapl/azav/diffrot_rslice.py"
+alias drder="python $rapl/azav/diffrot_derivs.py"
+alias drdershav="python $rapl/azav/diffrot_derivs_shav.py"
+alias amom="python $rapl/azav/amom.py"
+alias mc="python $rapl/azav/mercirc.py"
 
 # mean fields
-alias Bmaz="python $rapl/Bm_azav.py"
+alias Bmaz="python $rapl/azav/Bm_azav.py"
 
 # torque
-alias torque="python $rapl/azav/torque.py"
-alias torquert="python $rapl/torque_rt.py"
-alias magtorquert="python $rapl/mag_torque_rtheta.py"
-alias magtorquems="python $rapl/mag_torque_3term_ms.py"
-alias magtorquemm="python $rapl/mag_torque_3term_mm.py"
+alias torque="python $rapl/azav/azav/torque.py"
+alias torquert="python $rapl/azav/torque_rt.py"
 
 # thermal state
-alias thermo="python $rapl/thermo_merplane.py"
-alias thermonond="python $rapl/thermo_merplane_nond.py"
-alias tw="python $rapl/simple_thermal_wind.py"
+alias thermo="python $rapl/azav/thermo_merplane.py"
+alias thermonond="python $rapl/azav/thermo_merplane_nond.py"
+alias tw="python $rapl/azav/simple_thermal_wind.py"
 
 # energy stuff
-alias kem="python $rapl/ke_merplane.py"
-alias toten="python $rapl/toten.py"
-alias totenvst="python $rapl/toten_vs_time.py"
+alias kem="python $rapl/azav/ke_merplane.py"
+alias toten="python $rapl/azav/toten.py"
+alias totenvst="python $rapl/azav/toten_vs_time.py"
 
 # line plots
 alias etr="python $rapl/trace/etrace.py"
@@ -95,18 +93,18 @@ alias eft="python $rapl/eflux_latitudinal.py"
 alias eft2="python $rapl/eflux_latitudinal-2.py"
 
 # ortho
-alias ortho="python $rapl/ortho_show.py"
-alias orthorvals="python $rapl/ortho_rvals_sample.py"
-alias orthovars="python $rapl/ortho_vars_sample.py"
-alias orthotimes="python $rapl/ortho_times_sample.py"
-alias orthomov="python $rapl/ortho_movie.py"
+alias ortho="python $rapl/sslice/ortho_show.py"
+alias orthorvals="python $rapl/sslice/ortho_rvals_sample.py"
+alias orthovars="python $rapl/sslice/ortho_vars_sample.py"
+alias orthotimes="python $rapl/sslice/ortho_times_sample.py"
+alias orthomov="python $rapl/sslice/ortho_movie.py"
 
 # moll
-alias moll="python $rapl/moll_show.py"
-alias mollrvals="python $rapl/moll_rvals_sample.py"
-alias mollvars="python $rapl/moll_vars_sample.py"
-alias mollmov="python $rapl/moll_movie.py"
-alias mollazavtl="python $rapl/moll_azav_tl_movie.py"
+alias moll="python $rapl/sslice/moll_show.py"
+alias mollrvals="python $rapl/sslice/moll_rvals_sample.py"
+alias mollvars="python $rapl/sslice/moll_vars_sample.py"
+alias mollmov="python $rapl/sslice/moll_movie.py"
+alias mollazavtl="python $rapl/sslice/moll_azav_tl_movie.py"
 
 # mer
 alias mer="python $rapl/mer_show.py"
