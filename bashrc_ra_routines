@@ -68,7 +68,7 @@ alias mc="python $rapl/azav/mercirc.py"
 alias Bmaz="python $rapl/azav/Bm_azav.py"
 
 # torque
-alias torque="python $rapl/azav/azav/torque.py"
+alias torque="python $rapl/azav/torque.py"
 alias torquert="python $rapl/azav/torque_rt.py"
 
 # thermal state
