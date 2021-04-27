@@ -140,7 +140,7 @@ alias specavlrvals="python $rapl/specav_l_rvals_sample.py"
 alias specavlvars="python $rapl/specav_l_vars_sample.py"
 
 # time-latitude
-alias tlb="python $rapl/time-lat_B.py"
+alias tlb="python $rapl/tlrad/time-lat_B.py"
 alias ltrb="python $rapl/time-lval_B.py"
 alias tlv="python $rapl/time-lat_v.py"
 
