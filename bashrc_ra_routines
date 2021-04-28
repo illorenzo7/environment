@@ -84,11 +84,11 @@ alias totenvst="python $rapl/azav/toten_vs_time.py"
 # line plots
 alias etr="python $rapl/trace/etrace.py"
 alias axiB="python $rapl/how_axisym_B.py"
-alias efr="python $rapl/eflux_radial.py"
-alias efrvst="python $rapl/eflux_radial_vs_time.py"
-alias vamp="python $rapl/vamp.py"
-alias bamp="python $rapl/bamp.py"
-alias vavamp="python $rapl/va_to_vamp.py"
+alias efr="python $rapl/shav/eflux_radial.py"
+alias efrvst="python $rapl/shav/eflux_radial_vs_time.py"
+alias vamp="python $rapl/shav/vamp.py"
+alias bamp="python $rapl/shav/bamp.py"
+alias vavamp="python $rapl/shav/va_to_vamp.py"
 alias eft="python $rapl/eflux_latitudinal.py"
 alias eft2="python $rapl/eflux_latitudinal-2.py"
 
@@ -140,7 +140,7 @@ alias specavlrvals="python $rapl/specav_l_rvals_sample.py"
 alias specavlvars="python $rapl/specav_l_vars_sample.py"
 
 # time-latitude
-alias tlb="python $rapl/time-lat_B.py"
+alias tlb="python $rapl/tlrad/time-lat_B.py"
 alias ltrb="python $rapl/time-lval_B.py"
 alias tlv="python $rapl/time-lat_v.py"
 
