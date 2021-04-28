@@ -1,0 +1,54 @@
+XAuthLocation /usr/bin/xauth
+ForwardX11 yes
+
+Host rcomp
+HostName login.rc.colorado.edu
+User loma3853
+
+Host freyr
+HostName freyr.colorado.edu
+User loma3853
+
+Host hyperion 
+HostName hyperion.colorado.edu
+User loma3853
+
+Host hyperion-dmz
+HostName hyperion-dmz.colorado.edu
+User loma3853
+
+Host bacchus
+HostName bacchus.colorado.edu
+User loma3853
+
+Host nyx
+HostName nyx.colorado.edu
+User loma3853
+
+Host nike 
+HostName nike.colorado.edu
+User loma3853
+
+Host scylla 
+HostName scylla.colorado.edu
+User loma3853
+
+Host hydra 
+HostName hydra.colorado.edu
+User loma3853
+
+Host hydra2 
+HostName hydra2.colorado.edu
+User loma3853
+
+Host charybdis 
+HostName charybdis.colorado.edu
+User loma3853
+
+Host electra
+HostName electra.colorado.edu
+User loma3853
+
+Host lcd 
+HostName lcd.colorado.edu
+User loma3853
