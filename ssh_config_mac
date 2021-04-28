@@ -53,7 +53,7 @@ Host lcd
 HostName lcd.colorado.edu
 User loma3853
 
-# for Pleiades
+# for Pleiades; DO NOT INCLUDE ON PLEIADES ITSELF
 #Updated 20210308
 
 Host sfe
