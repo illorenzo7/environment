@@ -33,12 +33,36 @@ alias fn='find `pwd` -name '
 ###############################
 # Mac shortcuts               #
 ###############################
+# Rayleigh simulation root directories on Mac (data previews)
+export rasim=$HOME_DEFAULT/rayleigh/sims
+export tahy=$rasim/tachocline
+export tady=$tahy/dynamo
+
+# Main folders
 export mu=~/iTunesMusic
-export rp=$HOME_DEFAULT/Desktop/00_Research_Papers
-export so=$rp/00_Solar
-export fl=$rp/00_Fluids
-export sob=/Users/loren/Documents/sober
-export sws=$HOME/Desktop/School_Work_2018_1Spring/ASTR_5700_Stars_with_Steve/
+export doc=$HOME_DEFAULT/Documents
+export down=$HOME_DEFAULT/Downloads
+export desk=$HOME_DEFAULT/Desktop
+
+# Desktop sub dirs
+export pubrev=$desk/Publication_Review
+export thesis=$desk/Thesis
+export pres=$desk/Presentations
+export cv=$desk/CV
+
+export papers=$desk/Paper_Library
+export so=$papers/00_Solar
+export fl=$papers/00_Fluids
+
+export pub=$desk/Publications
+export tach=$pub/Tacho_Letter
+export tachplots=$pub/Tacho_Letter_Plots
+
+export prop=$desk/Proposals
+export proprsr=$doc/Proposal_to_Recruit_Support_Retain_UrMs_APS
+
+export sob=$doc/sober
+export fin=$doc/Financial
 
 # Switch hidden folder on and off
 alias showhidden='defaults write com.apple.Finder AppleShowAllFiles true && killall Finder'

@@ -45,19 +45,15 @@ export cast=/castor/loma3853 #/usr/bin/cas is a program on Freyr
 export sarg=/sargas/loma3853 # /usr/sbin/sargas is a program on Freyr
 export miz=/mizar/loma3853
 
-# Rayleigh simulation root directories on Pleiades
-export ra=$nb/rayleigh
-export tahy=$nb/tachocline
-export tady=$tahy/dynamo
-
 # Rayleigh environent
-export rasource=$HOME_DEFAULT/00_Rayleigh-clone
-export rapp=$rasource/post_processing
-export rau=$HOME_DEFAULT/rayleigh_utils
+export ra=$HOME_DEFAULT/rayleigh
+export racode=$ra/code
+export rapp=$racode/post_processing
+alias linkra='ln -s $racode/bin/rayleigh.opt'
+export rau=$ra/utils
 export raco=$rau/compute # /usr/bin/co is a command
 export rapl=$rau/plot # /usr/bin/plot is a command
 export idref=$raco/hydro_ideal_reference_state
-alias linkra='ln -s $rasource/bin/rayleigh.opt'
 alias runra='mpiexec -np 16 ./rayleigh.opt -nprow 4 -npcol 4'
 alias runra1="./rayleigh.opt -nprow 1 -npcol 1"
 
@@ -78,7 +74,7 @@ host=`hostname`
 #if [[ "$host" == *"$ldanst"* ]] || [[ "$host" == *"$nodest"* ]]; then
 if [[ "$host" == "lfe"* ]] || [[ "$host" == "pfe"* ]]; then
     nproc=1 # process in serial on the lfes and pfes
-elif [[ "$host" == "lorensMac.local" ]]; then
+elif [[ "$host" == "lorensMac"* ]] || [[ "$host" == "cu-genvpn"* ]]; then
     nproc=2
 else
     nproc=`nproc --all` # by default, use max number of processes
