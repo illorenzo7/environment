@@ -17,6 +17,7 @@ alias ssh='ssh -X'
 # Commands to activate or deactivate various Conda environments,
 alias base='conda activate base'
 alias custom='conda activate custom'
+alias idp='conda activate idp'
 alias de='conda deactivate'
 
 # Commands to source or edit my big, sloppy .bashrc
