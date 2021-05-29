@@ -116,5 +116,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# get into 'custom' environment on login
-custom
+# get into 'idp' environment on login
+idp
