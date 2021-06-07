@@ -26,6 +26,7 @@ alias meprodmean="$ppc $raco/timeavg/me_prod_mean.py"
 
 # helper (non-parallel) -------------------------------
 alias tavjoin="python $raco/timeavg/timeavg_join.py"
+alias ttrjoin="python $raco/timetrace/timetrace_join.py"
 
 # TIMETRACE routines
 # parallelized ------------------------
@@ -37,8 +38,6 @@ alias tlrad="$ppc $raco/timetrace/time_lat_or_rad.py"
 alias tlon="$ppc $raco/timetrace/time_lon.py" 
 # need to parallelize --------------------------------
 alias ltr="python $raco/timetrace/lvals.py"
-# helper (non-parallel) -----------------------------------
-alias ttrjoin="python $raco/timetrace/timetrace_join.py"
 
 # PLOTTING routines (parallelized)
 alias dramommc="$ppc $rapl/azav/dr_amom_mc_times_sample.py"
