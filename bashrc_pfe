@@ -74,6 +74,7 @@ export INTEL_DISABLE_ISIP=1 # Stop ifort from creating annoying ~/intel/ism/rm e
 export OMP_NUM_THREADS=1
 export FC=mpif90
 export CC=mpicc
+export tachplots=$HOME_DEFAULT/Tacho_Letter_Plots
 
 # Extra appendages to PATH to allow 
 # programs to be installed locally
