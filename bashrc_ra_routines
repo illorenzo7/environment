@@ -139,52 +139,8 @@ alias specavl="python $rapl/specav_l_show.py"
 alias specavlrvals="python $rapl/specav_l_rvals_sample.py"
 alias specavlvars="python $rapl/specav_l_vars_sample.py"
 
-# time-latitude
-alias tlb="python $rapl/tlrad/time-lat_B.py"
-alias ltrb="python $rapl/time-lval_B.py"
-alias tlv="python $rapl/time-lat_v.py"
-
-alias tltorque="python $rapl/time-lat_torque.py"
-
-# time-longitude
-alias tlonplot="python $rapl/time-longitude.py"
-
-alias indrbd="python $rapl/induction_breakdown_r.py"
-alias indtbd="python $rapl/induction_breakdown_theta.py"
-alias indpbd="python $rapl/induction_breakdown_phi.py"
-
-alias vxbfluc="python $rapl/vcrossb_fluc.py"
-
-alias tlindr="python $rapl/time-lat_induction_r.py"
-alias tlindt="python $rapl/time-lat_induction_theta.py"
-alias tlindp="python $rapl/time-lat_induction_phi.py"
-
-alias tlindrmean="python $rapl/time-lat_induction_r_mean.py"
-alias tlindtmean="python $rapl/time-lat_induction_theta_mean.py"
-alias tlindpmean="python $rapl/time-lat_induction_phi_mean.py"
-
-alias tlindrfluc="python $rapl/time-lat_induction_r_fluc.py"
-alias tlindtfluc="python $rapl/time-lat_induction_theta_fluc.py"
-alias tlindpfluc="python $rapl/time-lat_induction_phi_fluc.py"
-
-alias tlindrmeanshear="python $rapl/time-lat_ishear_r_mean.py"
-alias tlindrflucshear="python $rapl/time-lat_ishear_r_fluc.py"
-alias tlindtmeanshear="python $rapl/time-lat_ishear_theta_mean.py"
-alias tlindtflucshear="python $rapl/time-lat_ishear_theta_fluc.py"
-alias tlindpmeanshear="python $rapl/time-lat_ishear_phi_mean.py"
-alias tlindpflucshear="python $rapl/time-lat_ishear_phi_fluc.py"
-
-alias magetot="python $rapl/mag_energy_tot.py"
-alias magepol="python $rapl/mag_energy_pol.py"
-alias magetor="python $rapl/mag_energy_tor.py"
-
-alias magesumtot="python $rapl/mag_energy_sum_tot.py"
-alias magesumpol="python $rapl/mag_energy_sum_pol.py"
-alias magesumtor="python $rapl/mag_energy_sum_tor.py"
-
-# time-radius
-alias trb="python $rapl/time-rad_B.py"
-alias trv="python $rapl/time-radius_v.py"
+# time-(something), i.e., timey
+alias timeyplot="python $rapl/timetrace/timey.py"
 
 # Remove spaces (not really a Rayleigh routine but need a spot for it)
 alias rmspace="python $raco/remove_spaces.py"
