@@ -82,7 +82,7 @@ alias toten="python $rapl/azav/toten.py"
 alias totenvst="python $rapl/azav/toten_vs_time.py"
 
 # line plots
-alias etr="python $rapl/trace/etrace.py"
+alias etr="python $rapl/timetrace/etrace.py"
 alias axiB="python $rapl/how_axisym_B.py"
 alias efr="python $rapl/shav/eflux_radial.py"
 alias efrvst="python $rapl/shav/eflux_radial_vs_time.py"
@@ -140,7 +140,7 @@ alias specavlrvals="python $rapl/specav_l_rvals_sample.py"
 alias specavlvars="python $rapl/specav_l_vars_sample.py"
 
 # time-(something), i.e., timey
-alias timeyplot="python $rapl/timetrace/timey.py"
+alias timey="python $rapl/timetrace/timey.py"
 
 # Remove spaces (not really a Rayleigh routine but need a spot for it)
 alias rmspace="python $raco/remove_spaces.py"
