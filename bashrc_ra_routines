@@ -23,6 +23,7 @@ alias bcor="$ppc $raco/timeavg/bcor.py"
 alias meprod="$ppc $raco/timeavg/me_prod.py"
 alias meprodshear="$ppc $raco/timeavg/me_prod_shear.py"
 alias meprodmean="$ppc $raco/timeavg/me_prod_mean.py"
+alias ferraro="$ppc $raco/timeavg/ferraro.py"
 
 # helper (non-parallel) -------------------------------
 alias tavjoin="python $raco/timeavg/timeavg_join.py"
