@@ -35,8 +35,8 @@ alias gtr="$ppc $raco/timetrace/G_Avgs.py"
 alias gtr2="$ppc $raco/timetrace/G_Avgs_2dom.py"
 alias gtrq="$ppc $raco/timetrace/G_Avgs_quad.py"
 alias drc="$ppc $raco/timetrace/drc_2dom.py"
-alias tlrad="$ppc $raco/timetrace/time_lat_or_rad.py"
-alias tlon="$ppc $raco/timetrace/time_lon.py" 
+alias ty="$ppc $raco/timetrace/timey.py"
+alias tlon="$ppc $raco/timetrace/timelon.py" 
 # need to parallelize --------------------------------
 alias ltr="python $raco/timetrace/lvals.py"
 
