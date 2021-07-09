@@ -123,24 +123,25 @@ alias eqtimes="python $rapl/eq_times_sample.py"
 alias eqmov="python $rapl/eq_movie.py"
 
 # speclm
-alias speclm="python $rapl/spec_lm_show.py"
-alias speclmrvals="python $rapl/spec_lm_rvals_sample.py"
-alias speclmvars="python $rapl/spec_lm_vars_sample.py"
-alias speclmtimes="python $rapl/spec_lm_times_sample.py"
+alias speclm="python $rapl/spec/spec_lm_show.py"
+alias speclmrvals="python $rapl/spec/spec_lm_rvals_sample.py"
+alias speclmvars="python $rapl/spec/spec_lm_vars_sample.py"
+alias speclmtimes="python $rapl/spec/spec_lm_times_sample.py"
 
-alias specavlm="python $rapl/specav_lm_show.py"
-alias specavlmrvals="python $rapl/specav_lm_rvals_sample.py"
-alias specavlmvars="python $rapl/specav_lm_vars_sample.py"
+
+alias specavlm="python $rapl/spec/specav_lm_show.py"
+alias specavlmrvals="python $rapl/spec/specav_lm_rvals_sample.py"
+alias specavlmvars="python $rapl/spec/specav_lm_vars_sample.py"
 
 # specl
-alias specl="python $rapl/spec_l_show.py"
-alias speclrvals="python $rapl/spec_l_rvals_sample.py"
-alias speclvars="python $rapl/spec_l_vars_sample.py"
-alias specltimes="python $rapl/spec_l_times_sample.py"
+alias specl="python $rapl/spec/spec_l_show.py"
+alias speclrvals="python $rapl/spec/spec_l_rvals_sample.py"
+alias speclvars="python $rapl/spec/spec_l_vars_sample.py"
+alias specltimes="python $rapl/spec/spec_l_times_sample.py"
 
-alias specavl="python $rapl/specav_l_show.py"
-alias specavlrvals="python $rapl/specav_l_rvals_sample.py"
-alias specavlvars="python $rapl/specav_l_vars_sample.py"
+alias specavl="python $rapl/spec/specav_l_show.py"
+alias specavlrvals="python $rapl/spec/specav_l_rvals_sample.py"
+alias specavlvars="python $rapl/spec/specav_l_vars_sample.py"
 
 # time-(something), i.e., timey
 alias timey="python $rapl/timetrace/timey.py"
