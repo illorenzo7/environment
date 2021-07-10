@@ -95,53 +95,13 @@ alias vavamp="python $rapl/shav/va_to_vamp.py"
 alias eft="python $rapl/eflux_latitudinal.py"
 alias eft2="python $rapl/eflux_latitudinal-2.py"
 
-# ortho
-alias ortho="python $rapl/sslice/ortho_show.py"
-alias orthorvals="python $rapl/sslice/ortho_rvals_sample.py"
-alias orthovars="python $rapl/sslice/ortho_vars_sample.py"
-alias orthotimes="python $rapl/sslice/ortho_times_sample.py"
-alias orthomov="python $rapl/sslice/ortho_movie.py"
-
-# moll
-alias moll="python $rapl/sslice/moll_show.py"
-alias mollrvals="python $rapl/sslice/moll_rvals_sample.py"
-alias mollvars="python $rapl/sslice/moll_vars_sample.py"
-alias mollmov="python $rapl/sslice/moll_movie.py"
-alias mollazavtl="python $rapl/sslice/moll_azav_tl_movie.py"
-
-# mer
-alias mer="python $rapl/mer_show.py"
-alias merlonvals="python $rapl/mer_lonvals_sample.py"
-alias mervars="python $rapl/mer_vars_sample.py"
-alias mertimes="python $rapl/mer_times_sample.py"
-alias mermov="python $rapl/mer_movie.py"
-
-# eq
-alias eq="python $rapl/eq_show.py"
-alias eqvars="python $rapl/eq_vars_sample.py"
-alias eqtimes="python $rapl/eq_times_sample.py"
-alias eqmov="python $rapl/eq_movie.py"
-
-# speclm
-alias speclm="python $rapl/spec/spec_lm_show.py"
-alias speclmrvals="python $rapl/spec/spec_lm_rvals_sample.py"
-alias speclmvars="python $rapl/spec/spec_lm_vars_sample.py"
-alias speclmtimes="python $rapl/spec/spec_lm_times_sample.py"
-
-
-alias specavlm="python $rapl/spec/specav_lm_show.py"
-alias specavlmrvals="python $rapl/spec/specav_lm_rvals_sample.py"
-alias specavlmvars="python $rapl/spec/specav_lm_vars_sample.py"
-
-# specl
-alias specl="python $rapl/spec/spec_l_show.py"
-alias speclrvals="python $rapl/spec/spec_l_rvals_sample.py"
-alias speclvars="python $rapl/spec/spec_l_vars_sample.py"
-alias specltimes="python $rapl/spec/spec_l_times_sample.py"
-
-alias specavl="python $rapl/spec/specav_l_show.py"
-alias specavlrvals="python $rapl/spec/specav_l_rvals_sample.py"
-alias specavlvars="python $rapl/spec/specav_l_vars_sample.py"
+# slice plotting routines
+alias raslice="python $rapl/slice/generic.py"
+#alias ortho="python $rapl/slice/ortho.py"
+#alias mer="python $rapl/mer_show.py"
+#alias eq="python $rapl/slice/eqslice.py"
+#talias speclm="python $rapl/slice/spec_lm.py"
+alias specl="python $rapl/slice/spec_l.py"
 
 # time-(something), i.e., timey
 alias timey="python $rapl/timetrace/timey.py"
