@@ -30,6 +30,7 @@ alias ferraro="$ppc $raco/timeavg/ferraro.py"
 # helper (non-parallel) -------------------------------
 alias tavjoin="python $raco/timeavg/timeavg_join.py"
 alias ttrjoin="python $raco/timetrace/timetrace_join.py"
+alias timeread="python $raco/timeread.py"
 
 # TIMETRACE routines
 # parallelized ------------------------
@@ -39,6 +40,7 @@ alias gtrq="$ppc $raco/timetrace/G_Avgs_quad.py"
 alias drc="$ppc $raco/timetrace/drc_2dom.py"
 alias ty="$ppc $raco/timetrace/timey.py"
 alias tlon="$ppc $raco/timetrace/timelon.py" 
+alias tspec="$ppc $raco/timetrace/tspec.py"
 # need to parallelize --------------------------------
 alias ltr="python $raco/timetrace/lvals.py"
 
@@ -105,6 +107,7 @@ alias specl="python $rapl/slice/spec_l.py"
 
 # time-(something), i.e., timey
 alias timey="python $rapl/timetrace/timey.py"
+alias plottspec="python $rapl/timetrace/tspec.py"
 
 # Remove spaces (not really a Rayleigh routine but need a spot for it)
 alias rmspace="python $raco/remove_spaces.py"
