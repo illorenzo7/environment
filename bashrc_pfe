@@ -109,6 +109,33 @@ alias qst='qstat -u lmatilsk'       # check on status of jobs
 alias sst='shiftc --status'         # check on status of shiftc transfers
 #alias shiftc="shiftc --no-mail"           # don't send annoying emails
 
+devel () {
+    if [ $1 == 'bro' ]
+    then
+        ncpus=28
+    elif [ $1 == 'has' ]
+    then
+        ncpus=24
+    elif [ $1 == 'ivy' ] 
+    then
+        ncpus=20
+    elif [ $1 == 'san' ] 
+    then
+        ncpus=16
+    else
+        echo "unknown model type"
+    fi
+
+    select=$(($2/$ncpus + 1))
+    if [ $1 == 'san' ] 
+    then
+        select=$(($select - 1))
+    fi
+
+    echo "qsub -I -q devel -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00"
+    qsub -I -q devel -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
+}
+
 shiftfrom () {
     shiftc --extract-tar --hosts=6 lfe:~/$1/*.tar $2
 }
