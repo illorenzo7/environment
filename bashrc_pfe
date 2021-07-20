@@ -12,6 +12,15 @@
 # this places a whole bunch of stack traces in text files in the directory
 # tmp/, which is created in the current directory
 
+# can do this more modularly
+# qstsat -nu lmatilsk       shows list of nodes I am using
+# ssh [one of the nodes]
+# ps -u lmatilsk            shows a bunch of process IDs, probably running 
+#                           Rayleigh    
+# sg [group no.] -c "strace -p [PID]" 
+# .... gets stacktrace (lots of output to give you a seizure!) must run 
+# with sg if not submitted with your default group no.
+
 # To verify if a stopped job got evicted due to lustre eviction, run
 # /u/scicon/tools/bin/get_logs job_id
 # and grep SEC_EVENT on the resulting logfile
