@@ -137,8 +137,9 @@ devel () {
         echo "unknown model type $modeltype"
     fi
 
-    select=$(($2/$ncpus + 1*$2%$ncpus))
-    if [ $1 == 'san' ] 
+    nprocs=$2
+    select=$(($nprocs/$ncpus + 1))
+    if [ $(($nprocs%$ncpus)) == 0 ]
     then
         select=$(($select - 1))
     fi
