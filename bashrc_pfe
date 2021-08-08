@@ -68,12 +68,17 @@ module purge
 module load pkgsrc
 
 # Pleiades directory shortcuts
-export nb=/nobackup/lmatilsk
+export nb=/nobackupp18/lmatilsk
+export nb11=/nobackup/lmatilsk
 
 # Rayleigh simulation root directories on Pleiades
 export rasim=$nb
 export tahy=$rasim/tachocline
 export tady=$tahy/dynamo
+
+export rasim11=$nb11
+export tahy11=$rasim11/tachocline
+export tady11=$tahy11/dynamo
 
 # Make terminals white on black
 xrdb $HOME_PFE/.Xresources

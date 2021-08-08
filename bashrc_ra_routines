@@ -34,7 +34,8 @@ alias timeread="python $raco/timeread.py"
 
 # TIMETRACE routines
 # parallelized ------------------------
-alias gtr="$ppc $raco/timetrace/G_Avgs.py"
+alias gtr="$ppc $raco/timetrace/radata.py"
+alias ttr="$ppc $raco/timetrace/radata.py"
 alias gtr2="$ppc $raco/timetrace/G_Avgs_2dom.py"
 alias gtrq="$ppc $raco/timetrace/G_Avgs_quad.py"
 alias drc="$ppc $raco/timetrace/drc_2dom.py"
