@@ -49,6 +49,12 @@ export miz=/mizar/loma3853
 export ra=$HOME_DEFAULT/rayleigh
 export racode=$ra/code
 export rapp=$racode/post_processing
+
+
+export raRyan=$HOME_DEFAULT/rayleigh_Ryan
+export racodeRyan=$raRyan/code
+export rappRyan=$racodeRyan/post_processing
+
 alias linkra='ln -s $racode/bin/rayleigh.opt'
 alias linkmaster='ln -s $racode/bin/master/rayleigh.* .'
 alias linkcustom='ln -s $racode/bin/custom/rayleigh.* .'
