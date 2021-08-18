@@ -90,6 +90,7 @@ alias totenvst="python $rapl/azav/toten_vs_time.py"
 # line plots
 alias etr="python $rapl/timetrace/etrace.py"
 alias etrq="python $rapl/timetrace/etrace_quad.py"
+alias timetrq="python $rapl/timetrace/timetrace_quad.py"
 alias amomtr="python $rapl/timetrace/Ltrace.py"
 alias amomtrq="python $rapl/timetrace/Ltrace_quad.py"
 alias efr="python $rapl/shav/eflux_radial.py"
