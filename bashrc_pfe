@@ -12,6 +12,15 @@
 # this places a whole bunch of stack traces in text files in the directory
 # tmp/, which is created in the current directory
 
+# can do this more modularly
+# qstsat -nu lmatilsk       shows list of nodes I am using
+# ssh [one of the nodes]
+# ps -u lmatilsk            shows a bunch of process IDs, probably running 
+#                           Rayleigh    
+# sg [group no.] -c "strace -p [PID]" 
+# .... gets stacktrace (lots of output to give you a seizure!) must run 
+# with sg if not submitted with your default group no.
+
 # To verify if a stopped job got evicted due to lustre eviction, run
 # /u/scicon/tools/bin/get_logs job_id
 # and grep SEC_EVENT on the resulting logfile
@@ -59,12 +68,17 @@ module purge
 module load pkgsrc
 
 # Pleiades directory shortcuts
-export nb=/nobackup/lmatilsk
+export nb=/nobackupp18/lmatilsk
+export nb11=/nobackup/lmatilsk
 
 # Rayleigh simulation root directories on Pleiades
 export rasim=$nb
 export tahy=$rasim/tachocline
 export tady=$tahy/dynamo
+
+export rasim11=$nb11
+export tahy11=$rasim11/tachocline
+export tady11=$tahy11/dynamo
 
 # Make terminals white on black
 xrdb $HOME_PFE/.Xresources
@@ -108,6 +122,36 @@ alias quota_nb='lfs quota -h -u lmatilsk /nobackupp11'
 alias qst='qstat -u lmatilsk'       # check on status of jobs
 alias sst='shiftc --status'         # check on status of shiftc transfers
 #alias shiftc="shiftc --no-mail"           # don't send annoying emails
+
+alias lscript='bash $rau/zz_runscripts/lscript.sh'
+devel () {
+    modeltype=$1
+    if [ $modeltype == 'bro' ]
+    then
+        ncpus=28
+    elif [ $modeltype == 'has' ]
+    then
+        ncpus=24
+    elif [ $modeltype == 'ivy' ] 
+    then
+        ncpus=20
+    elif [ $modeltype == 'san' ] 
+    then
+        ncpus=16
+    else
+        echo "unknown model type $modeltype"
+    fi
+
+    nprocs=$2
+    select=$(($nprocs/$ncpus + 1))
+    if [ $(($nprocs%$ncpus)) == 0 ]
+    then
+        select=$(($select - 1))
+    fi
+
+    echo "qsub -I -q devel -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00"
+    qsub -I -q devel -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
+}
 
 shiftfrom () {
     shiftc --extract-tar --hosts=6 lfe:~/$1/*.tar $2
