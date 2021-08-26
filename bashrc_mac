@@ -39,7 +39,7 @@ export tahy=$rasim/tachocline
 export tady=$tahy/dynamo
 
 # Main folders
-export mu=~/iTunesMusic
+export mu=$HOME_DEFAULT/Music/Music/Media
 export doc=$HOME_DEFAULT/Documents
 export down=$HOME_DEFAULT/Downloads
 export desk=$HOME_DEFAULT/Desktop
