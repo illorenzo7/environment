@@ -111,6 +111,8 @@ alias ffm="ffmpeg3 -framerate 20 -i img%04d.png -qscale 5 movie.mp4"
 # BASH SHORTCUTS
 alias rmsslice="bash $rau/bash/rm_sslice.sh"
 
+alias gittrackall="for i in $(git branch -r | grep -vE "HEAD|master"); do git branch --track ${i#*/} $i; done"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home5/loma3853/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
