@@ -153,6 +153,34 @@ devel () {
     qsub -I -q devel -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
 }
 
+debug () {
+    modeltype=$1
+    if [ $modeltype == 'bro' ]
+    then
+        ncpus=28
+    elif [ $modeltype == 'has' ]
+    then
+        ncpus=24
+    elif [ $modeltype == 'ivy' ] 
+    then
+        ncpus=20
+    elif [ $modeltype == 'san' ] 
+    then
+        ncpus=16
+    else
+        echo "unknown model type $modeltype"
+    fi
+
+    nprocs=$2
+    select=$(($nprocs/$ncpus + 1))
+    if [ $(($nprocs%$ncpus)) == 0 ]
+    then
+        select=$(($select - 1))
+    fi
+
+    echo "qsub -I -q debug -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00"
+    qsub -I -q debug -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
+}
 shiftfrom () {
     shiftc --extract-tar --hosts=6 lfe:~/$1/*.tar $2
 }
