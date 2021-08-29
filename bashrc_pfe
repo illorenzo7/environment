@@ -68,8 +68,8 @@ module purge
 module load pkgsrc
 
 # Pleiades directory shortcuts
-export nb=/nobackupp18/lmatilsk
-export nb11=/nobackup/lmatilsk
+export nb18=/nobackupp18/lmatilsk
+export nb=/nobackup/lmatilsk
 
 # Rayleigh simulation root directories on Pleiades
 export rasim=$nb
