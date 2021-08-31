@@ -182,11 +182,11 @@ debug () {
     qsub -I -q debug -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
 }
 shiftfrom () {
-    shiftc --extract-tar --hosts=6 lfe:~/$1/*.tar $2
+    shiftc --extract-tar --hosts=6 $1/*.tar $2
 }
 
 shiftto () {
-    shiftc --create-tar --index-tar --hosts=6 $1 lfe:~/$2/name.tar
+    shiftc --create-tar --index-tar --hosts=6 $1 $2/name.tar
 }
 
 shist() {
