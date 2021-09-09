@@ -191,12 +191,3 @@ acct_ytd_save() {
 # the rest goes for everyone
 source $HOME_DEFAULT/environment/bashrc_common
 
-# function to get into MPI environment 
-# (for compiling/running Rayleigh)
-loadmpi() {
-    module purge 
-    de 
-    de
-    module load mpi-hpe
-    module load comp-intel
-}
