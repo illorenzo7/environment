@@ -190,4 +190,3 @@ acct_ytd_save() {
 
 # the rest goes for everyone
 source $HOME_DEFAULT/environment/bashrc_common
-

@@ -19,5 +19,19 @@ get_data() {
     shiftc --extract-tar --include='equation_coefficients|custom_reference_binary|grid_info|main_input|jobinfo.txt|.*\.o.*|.*script|logfile.*|data/.*|plots/.*' $1 $2
 }
 
+# Backup the whole /nobackup directory (USE CAUTION!!!)
+backup_nobackup() {
+    backupdir=$HOME_LFE/nb_$(date +%F_%H.%M)
+    mkdir $backupdir
+    shiftc --create-tar --index-tar --hosts=6 $nb/ $backupdir/name.tar
+}
+#
+# Backup the whole PFE home directory (USE CAUTION!!!)
+backup_homepfe() {
+    backupdir=$HOME_LFE/homepfe_$(date +%F_%H.%M)
+    mkdir $backupdir
+    shiftc --create-tar --index-tar --hosts=6 $HOME_PFE/ $backupdir/name.tar
+}
+
 # Source the regular .bashrc on pfe
 source /home1/lmatilsk/.bashrc
