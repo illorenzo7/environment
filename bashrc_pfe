@@ -106,9 +106,6 @@ alias vncg='vncserver -localhost -geometry 1900x1000'
 alias ldan='qsub -me -mb -q ldan -lselect=1:mem=750GB,walltime=24:00:00 ldan/ldan_script'
 alias which_ldan='qstat -nu lmatilsk | grep ldan'
 
-# Record account usage for various groups in ~/acct_ytd
-alias acct_ytd_save="acct_ytd >> ~/acct_ytd/$(date +%F_%H.%M)"
-
 # other command aliases
 alias jn='jupyter notebook --ip=0.0.0.0 --port=8080'
 alias fn='find `pwd` -name ' # fn for "full name"
@@ -192,6 +189,11 @@ shiftto () {
 
 shist() {
     shiftc --history --id=$1
+}
+
+# Record account usage for various groups in ~/acct_ytd
+acct_ytd_save() {
+    acct_ytd >> ~/acct_ytd/$(date +%F_%H.%M)
 }
 
 # the rest goes for everyone
