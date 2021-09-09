@@ -56,20 +56,12 @@ PS1='\w$ '
 source /etc/bash_completion.d/git.sh
 
 #Load desired modules here.
-#module load pkgsrc 
-#module load comp-intel
 module purge
-#module use -a /nasa/modulefiles/testing
-#module load mpi-sgi/mpt
-#module load mpi-hpe
-#module load mpi-hpe/mpt.2.23_24Mar2020
-#module load comp-intel
-#module load firefox # for jupyter notebook
-module load pkgsrc
+#module load pkgsrc  # dunno if this is necessary
 
 # Pleiades directory shortcuts
 export nb=/nobackup/lmatilsk
-export nb11=/nobackupp11/lmatilsk
+#export nb11=/nobackupp11/lmatilsk # no longer needed
 export nb17=/nobackupp17/lmatilsk
 
 # Rayleigh simulation root directories on Pleiades
