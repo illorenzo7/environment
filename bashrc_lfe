@@ -21,3 +21,10 @@ get_data() {
 
 # Source the regular .bashrc on pfe
 source /home1/lmatilsk/.bashrc
+
+# Commands to source or edit my big, sloppy .bashrc
+# need to redo these to point to the one on the LFEs
+export brc=$HOME_LFE/.bashrc
+alias sb="source $brc"
+alias vb="vim $brc"
+
