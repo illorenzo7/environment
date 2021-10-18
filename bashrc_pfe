@@ -34,10 +34,6 @@ export brcpfe=/home1/lmatilsk/environment/bashrc_pfe
 echo $bufferstring
 echo "Executing $brcpfe"
 
-# commands to edit this particular file
-alias sbpfe="source $brcpfe"
-alias vbpfe="vim $brcpfe"
-
 # don't break scp with echo in .bashrc
 if [ -z "$PS1" ]; then
     return
@@ -45,6 +41,10 @@ fi
 
 # start by clearing all aliases
 unalias -a
+
+# commands to edit this particular file
+alias sbpfe="source $brcpfe"
+alias vbpfe="vim $brcpfe"
 
 # HOME directory(s)
 export HOME_LFE=/lou/la2/lmatilsk
