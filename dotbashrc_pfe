@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# .bashrc on PFE
+
+export bufferstring="============================================================"
+
+# Commands to source or edit my big, sloppy .bashrc and/or load MPI
+# (want these here no matter what)
+export brcpfe=/home1/lmatilsk/environment/bashrc_pfe
+alias sbpfe="source $brcpfe"
+alias vbpfe="vim $brcpfe"
+
+# function to get into MPI environment 
+# (for compiling/running Rayleigh)
+loadmpi() {
+    module purge 
+    module load mpi-hpe
+    module load comp-intel
+}
+
+# only source bashrc_pfe automatically on LFE, PFE, or LDAN
+export host=`hostname`
+if [[ "$host" == "lfe"* ]] || [[ "$host" == "pfe"* ]] || [[ "$host" == "ldan"* ]]; then
+    sbpfe
+fi
+
+# load firefox
+alias loadff="module load firefox"
