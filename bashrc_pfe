@@ -29,6 +29,15 @@
 # ssh pbspl1 tracejob -n3 job_id
 # This will ssh into pbspl1 and run tracejob going back 3 days (-n3) for jobid
 
+# state what's going on
+export brcpfe=/home1/lmatilsk/environment/bashrc_pfe
+echo $bufferstring
+echo "Executing $brcpfe"
+
+# commands to edit this particular file
+alias sbpfe="source $brcpfe"
+alias vbpfe="vim $brcpfe"
+
 # don't break scp with echo in .bashrc
 if [ -z "$PS1" ]; then
     return
@@ -41,10 +50,6 @@ unalias -a
 export HOME_LFE=/lou/la2/lmatilsk
 export HOME_PFE=/home1/lmatilsk
 export HOME_DEFAULT=$HOME_PFE
-
-echo "====================================="
-echo "Executing $HOME_PFE/.bashrc --> "
-echo "$HOME_DEFAULT/environment/bashrc_pfe"
 
 # color code directory contents
 alias ls="ls --color='auto'"

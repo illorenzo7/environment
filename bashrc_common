@@ -1,13 +1,11 @@
 #!/bin/bash
+echo $bufferstring
 echo "Executing /home1/lmatilsk/environment/bashrc_common"
-#echo "ls -l ~/.bashrc"
-#echo `ls -l ~/.bashrc`
-echo "==================================================="
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
+    echo $bufferstring
     echo "Executing /etc/bashrc"
-    echo "=============================="
     . /etc/bashrc 
 fi
 

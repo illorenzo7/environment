@@ -1,10 +1,9 @@
 #!/bin/bash
 # RAYLEIGH COMPUTING SHORTCUTS
 # non-parallel routines
+echo $bufferstring
 echo "Executing /home1/lmatilsk/environment/bashrc_ra_routines"
-#echo "ls -l ~/.bashrc"
-#echo `ls -l ~/.bashrc`
-echo "========================================================="
+echo $bufferstring
 
 alias gi="python $raco/grid_info.py"
 alias qi="python $raco/quantity_index.py"
