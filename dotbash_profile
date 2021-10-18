@@ -1,0 +1,11 @@
+# .bash_profile
+export bufferstring="============================================================"
+echo $bufferstring
+export homedir=/lou/la2/lmatilsk
+
+echo "Executing $homedir/.bash_profile"
+if [ -f ~/.bashrc ]; then
+    echo "$homedir/.bashrc not yet executed"
+    echo "Executing it."
+    . ~/.bashrc
+fi
