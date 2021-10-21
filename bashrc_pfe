@@ -99,8 +99,7 @@ alias vncg='vncserver -localhost -geometry 1900x1000'
 # make vnc window to match the screen dimensions of freyr
 
 # request an ldan for 24 hours
-# must be in lou home directory
-alias ldan='qsub -me -mb -q ldan -lselect=1:mem=750GB,walltime=24:00:00 ldan/ldan_script'
+alias ldan='qsub -me -mb -q ldan -lselect=1:mem=750GB,walltime=24:00:00 $HOME_DEFAULT/environment/ldan_script'
 alias which_ldan='qstat -nu lmatilsk | grep ldan'
 
 # other command aliases
