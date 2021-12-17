@@ -18,6 +18,7 @@ alias irate="python $raco/iter_rate.py"
 
 # TIMEAVG routines # parallelized ------------------------ 
 alias tav="$ppc $raco/timeavg/radata.py"
+alias indspecav="$ppc $raco/timeavg/induct_spec.py"
 alias magtorque="$ppc $raco/timeavg/mag_torque.py"
 alias indalt="$ppc $raco/timeavg/induct_alt.py"
 alias indaltnum="$ppc $raco/timeavg/induct_alt_num.py"
