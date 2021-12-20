@@ -25,9 +25,6 @@ alias vb="vim $brc"
 # Python startup file
 export PYTHONSTARTUP=$HOME_DEFAULT/environment/python_startup.py
 # Note: on Pleaides, there is also /etc/pythonstart, should I worry about this?
-# make everything in 'environment' findable
-export PYTHONPATH=$PYTHONPATH:$HOME_DEFAULT/environment
-#
 #
 # LCD ssh shortcuts
 export hyp=hyperion
