@@ -55,8 +55,8 @@ export so=$papers/00_Solar
 export fl=$papers/00_Fluids
 
 export pub=$desk/Publications
-export tach=$pub/Tacho_Paper
-export tachplots=$pub/Tacho_Plots
+export tach=$pub/Science_Paper
+export tachplots=$pub/Science_Paper_Plots
 
 export prop=$desk/Proposals
 export proprsr=$doc/Proposal_to_Recruit_Support_Retain_UrMs_APS
