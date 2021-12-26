@@ -187,6 +187,11 @@ shist() {
     shiftc --history --id=$1
 }
 
+# Get disk usage
+get_du() {
+    du -hsc * >> $(date +%F)_du
+}
+
 # Record account usage for various groups in ~/acct_ytd
 acct_ytd_save() {
     acct_ytd >> ~/acct_ytd/$(date +%F_%H.%M)
