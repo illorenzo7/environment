@@ -191,6 +191,9 @@ shist() {
 get_du() {
     du -hsc * >> $(date +%F)_du
 }
+get_du_app() {
+    du -hsc --apparent-size * >> $(date +%F)_du_app
+}
 
 # Record account usage for various groups in ~/acct_ytd
 acct_ytd_save() {
