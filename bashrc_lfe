@@ -33,9 +33,17 @@ backup_homepfe() {
 # Source the regular .bashrc on pfe
 source /home1/lmatilsk/.bashrc
 #
-# Backup the whole /nobackup directory (USE CAUTION!!!)
+# Backup the whole /nobackup/backitup directory (USE CAUTION!!!)
 backup_nobackup() {
     backupdir=$HOME_LFE/backitup_$(date +%F_%H.%M)
     mkdir $backupdir
     bash $rau/bash/backup_subdirs.sh $nb/backitup/ $backupdir/
+}
+
+# Backup the whole /nobackup directory (USE ULTRA CAUTION!!!)
+#
+backup_nobackup_whole() {
+    backupdir=$HOME_LFE/nb_$(date +%F_%H.%M)
+    mkdir $backupdir
+    bash $rau/bash/backup_subdirs.sh $nb/ $backupdir/
 }
