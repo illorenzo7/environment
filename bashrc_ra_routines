@@ -45,6 +45,7 @@ alias gtrq="$ppc $raco/timetrace/G_Avgs_quad.py"
 alias ty="$ppc $raco/timetrace/timey.py"
 alias tlon="$ppc $raco/timetrace/timelon.py" 
 alias tspec="$ppc $raco/timetrace/tspec.py"
+alias tmspec="$ppc $raco/timetrace/tmspec.py"
 
 # PLOTTING routines (parallelized)
 alias dramommc="$ppc $rapl/azav/dr_amom_mc_times_sample.py"
@@ -113,7 +114,9 @@ alias specl="python $rapl/slice/spec_l.py"
 # time-(something), i.e., timey
 alias timey="python $rapl/timetrace/timey.py"
 alias plottspec="python $rapl/timetrace/tspec.py"
+alias plottmspec="python $rapl/timetrace/tmspec.py"
 alias powerrange="python $rapl/timetrace/tspec_power_in_range.py"
+alias powerrangetm="python $rapl/timetrace/tmspec_power_in_range.py"
 
 # Remove spaces (not really a Rayleigh routine but need a spot for it)
 alias rmspace="python $raco/remove_spaces.py"
