@@ -58,7 +58,7 @@ alias ls="ls --color='auto'"
 PS1='\w$ '
 
 # Enable auto-completion in git
-source /etc/bash_completion.d/git.sh
+source /etc/bash_completion.d/git
 
 #Load desired modules here.
 module purge
