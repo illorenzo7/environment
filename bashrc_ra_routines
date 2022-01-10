@@ -36,6 +36,7 @@ alias ferraro="$ppc $raco/timeavg/ferraro.py"
 alias tavjoin="python $raco/timeavg/timeavg_join.py"
 alias ttrjoin="python $raco/timetrace/timetrace_join.py"
 alias timeread="python $raco/timeread.py"
+alias findcorrupt="$ppc $raco/findcorrupt.py"
 
 # TIMETRACE routines
 # parallelized ------------------------
