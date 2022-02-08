@@ -27,7 +27,7 @@ source ~/git-bash-completion
 module purge
 #module load intel
 #module load openmpi
-module load ffmpeg
+#module load ffmpeg
 
 # Extra appendages to PATH to allow 
 # programs to be installed locally
@@ -35,11 +35,18 @@ export PATH=$PATH:~/bin
 export PATH=$PATH:~/usr/bin
 export HOME_DEFAULT="$HOME"
 
-# papers directories
-export so="$HOME_DEFAULT/Desktop/00_Solar"
-export st="$HOME_DEFAULT/Desktop/00_Stellar"
-export fl="$HOME_DEFAULT/Desktop/00_Fluids"
-export ast="$HOME_DEFAULT/Desktop/00_General_Astronomy"
+# Main folders
+export doc=$HOME_DEFAULT/Documents
+export down=$HOME_DEFAULT/Downloads
+export desk=$HOME_DEFAULT/Desktop
+
+# Desktop sub dirs
+export pubrev=$desk/Publication_Review
+export pres=$desk/Presentations
+export papers=$desk/Paper_Library
+export pub=$desk/Publications
+export prop=$desk/Proposals
+export fin=$desk/Financial
 
 # some aliases for freyr
 alias vnc='de; vncserver -geometry 1278x719' # best geometry for Mac

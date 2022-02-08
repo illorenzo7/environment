@@ -51,8 +51,6 @@ export pres=$desk/Presentations
 export cv=$desk/CV
 
 export papers=$desk/Paper_Library
-export so=$papers/00_Solar
-export fl=$papers/00_Fluids
 
 export pub=$desk/Publications
 export tach=$pub/Science_Paper
