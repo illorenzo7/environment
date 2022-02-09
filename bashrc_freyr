@@ -49,7 +49,7 @@ export prop=$desk/Proposals
 export fin=$desk/Financial
 
 # some aliases for freyr
-alias vnc='de; vncserver -geometry 1278x719' # best geometry for Mac
+alias vnc='de; vncserver -geometry 1920x1080' # best geometry for Mac
 alias vncv='vncviewer'
 alias fn='find `pwd` -name ' # fn for "full name"
 alias lo='libreoffice'
