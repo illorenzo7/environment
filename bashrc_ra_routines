@@ -31,12 +31,13 @@ alias meprodadvec="$ppc $raco/timeavg/me_prod_advec.py"
 alias meprodmean="$ppc $raco/timeavg/me_prod_mean.py"
 alias meprodt="$ppc $raco/timeavg/me_prod_theta.py"
 alias ferraro="$ppc $raco/timeavg/ferraro.py"
+alias findcorrupt="$ppc $raco/findcorrupt.py"
 
 # helper (non-parallel) -------------------------------
 alias tavjoin="python $raco/timeavg/timeavg_join.py"
 alias ttrjoin="python $raco/timetrace/timetrace_join.py"
 alias timeread="python $raco/timeread.py"
-alias findcorrupt="$ppc $raco/findcorrupt.py"
+alias getrvals="python $raco/get_rvals.py"
 
 # TIMETRACE routines
 # parallelized ------------------------
@@ -47,6 +48,7 @@ alias ty="$ppc $raco/timetrace/timey.py"
 alias tlon="$ppc $raco/timetrace/timelon.py" 
 alias tspec="$ppc $raco/timetrace/tspec.py"
 alias tmspec="$ppc $raco/timetrace/tmspec.py"
+alias mtrace="$ppc $raco/timetrace/mtrace.py"
 
 # PLOTTING routines (parallelized)
 alias dramommc="$ppc $rapl/azav/dr_amom_mc_times_sample.py"
@@ -114,6 +116,7 @@ alias specl="python $rapl/slice/spec_l.py"
 
 # time-(something), i.e., timey
 alias timey="python $rapl/timetrace/timey.py"
+alias torsosc="python $rapl/timetrace/tors_osc.py"
 alias plottspec="python $rapl/timetrace/tspec.py"
 alias plottmspec="python $rapl/timetrace/tmspec.py"
 alias powerrange="python $rapl/timetrace/tspec_power_in_range.py"
