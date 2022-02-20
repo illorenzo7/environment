@@ -116,6 +116,7 @@ alias specl="python $rapl/slice/spec_l.py"
 
 # time-(something), i.e., timey
 alias timey="python $rapl/timetrace/timey.py"
+alias timelon="python $rapl/timetrace/timelon.py"
 alias torsosc="python $rapl/timetrace/tors_osc.py"
 alias plottspec="python $rapl/timetrace/tspec.py"
 alias plottmspec="python $rapl/timetrace/tmspec.py"
