@@ -49,6 +49,7 @@ alias tlon="$ppc $raco/timetrace/timelon.py"
 alias tspec="$ppc $raco/timetrace/tspec.py"
 alias tmspec="$ppc $raco/timetrace/tmspec.py"
 alias mtrace="$ppc $raco/timetrace/mtrace.py"
+alias mtracemer="$ppc $raco/timetrace/mtrace_mer.py"
 
 # PLOTTING routines (parallelized)
 alias dramommc="$ppc $rapl/azav/dr_amom_mc_times_sample.py"
@@ -120,6 +121,7 @@ alias timelon="python $rapl/timetrace/timelon.py"
 alias torsosc="python $rapl/timetrace/tors_osc.py"
 alias plottspec="python $rapl/timetrace/tspec.py"
 alias plottmspec="python $rapl/timetrace/tmspec.py"
+alias plotmtrace="python $rapl/timetrace/mtrace.py"
 alias powerrange="python $rapl/timetrace/tspec_power_in_range.py"
 alias powerrangetm="python $rapl/timetrace/tmspec_power_in_range.py"
 

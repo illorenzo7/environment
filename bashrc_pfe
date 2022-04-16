@@ -79,7 +79,7 @@ export tahy11=$rasim11/tachocline
 export tady11=$tahy11/dynamo
 
 # Make terminals white on black
-xrdb $HOME_PFE/.Xresources
+#xrdb $HOME_PFE/.Xresources
 
 # Compiler environment variables
 export INTEL_DISABLE_ISIP=1 # Stop ifort from creating annoying ~/intel/ism/rm empty directory
