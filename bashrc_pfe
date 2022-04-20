@@ -83,12 +83,12 @@ export INTEL_DISABLE_ISIP=1 # Stop ifort from creating annoying ~/intel/ism/rm e
 export OMP_NUM_THREADS=1
 export FC=mpif90
 export CC=mpicc
-export tachplots=$HOME_DEFAULT/Science_Paper_Plots
+export tachplots=$HOME_PFE/Science_Paper_Plots
 
 # Extra appendages to PATH to allow 
 # programs to be installed locally
-export PATH=$PATH:$HOME_DEFAULT/bin
-export PATH=$PATH:$HOME_DEFAULT/usr/bin
+export PATH=$PATH:$HOME_PFE/bin
+export PATH=$PATH:$HOME_PFE/usr/bin
 
 # Start the vnc server
 alias vnc='vncserver -localhost -geometry 1280x800'
@@ -96,7 +96,7 @@ alias vncg='vncserver -localhost -geometry 1900x1000'
 # make vnc window to match the screen dimensions of freyr
 
 # request an ldan for 24 hours
-alias ldan='qsub -me -mb -q ldan -lselect=1:mem=750GB,walltime=24:00:00 $HOME_DEFAULT/environment/ldan_script'
+alias ldan='qsub -me -mb -q ldan -lselect=1:mem=750GB,walltime=24:00:00 $HOME_PFE/environment/ldan_script'
 alias which_ldan='qstat -nu lmatilsk | grep ldan'
 
 # other command aliases
@@ -198,4 +198,4 @@ acct_ytd_save() {
 }
 
 # the rest goes for everyone
-source $HOME_DEFAULT/environment/bashrc_common
+source $HOME_PFE/environment/bashrc_common

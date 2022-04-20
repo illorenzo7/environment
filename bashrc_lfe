@@ -8,17 +8,18 @@ export brclfe=/home1/lmatilsk/environment/bashrc_lfe
 echo $bufferstring
 echo "Executing $brclfe"
 
-# Note: to unmigrate an entire directory from tape:
-#dmfind [dirname] -state MIG -o -state OFL -o -state PAR | dmget 
+# Note: to unmigrate an entire directory from tape, do
+# unmigrate dir_name on an LFE
 unmigrate() {
     dmfind $1 -state MIG -o -state OFL -o -state PAR | dmget
 }
 
+# command to extract the post-processed data (but not whole binary folder)
+# from a tarball on LFE
 get_data() {
     shiftc --extract-tar --include='equation_coefficients|custom_reference_binary|grid_info|main_input|jobinfo.txt|.*\.o.*|.*script|logfile.*|data/.*|plots/.*' $1 $2
 }
 
-#
 # Backup the whole PFE home directory (USE CAUTION!!!)
 backup_homepfe() {
     backupdir=$HOME_LFE/homepfe_$(date +%F_%H.%M)
@@ -28,7 +29,7 @@ backup_homepfe() {
 
 # Source the regular .bashrc on pfe
 source /home1/lmatilsk/.bashrc
-#
+
 # Backup the whole /nobackup/backitup directory (USE CAUTION!!!)
 backup_nobackup() {
     backupdir=$HOME_LFE/backitup_$(date +%F_%H.%M)
