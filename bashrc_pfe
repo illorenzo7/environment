@@ -67,9 +67,6 @@ alias ls="ls --color='auto'"
 # Make prompt show current working directory
 PS1='\w$ '
 
-# Enable auto-completion in git
-source /etc/bash_completion.d/git
-
 #Load desired modules here.
 module purge
 #module load pkgsrc  # dunno if this is necessary

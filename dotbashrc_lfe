@@ -10,6 +10,9 @@ export brclfe=/home1/lmatilsk/environment/bashrc_lfe
 alias sblfe="source $brclfe"
 alias vblfe="vim $brclfe"
 
+# Enable auto-completion in git
+source /etc/bash_completion.d/git.sh # (file is "git" (no suffix) on PFE)
+
 # only do anything (automatically) on LFE, PFE, or LDAN
 host=`hostname`
 if [[ "$host" == "lfe"* ]] || [[ "$host" == "pfe"* ]] || [[ "$host" == "ldan"* ]]; then

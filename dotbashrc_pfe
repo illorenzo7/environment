@@ -10,6 +10,9 @@ export brcpfe=/home1/lmatilsk/environment/bashrc_pfe
 alias sbpfe="source $brcpfe"
 alias vbpfe="vim $brcpfe"
 
+# Enable auto-completion in git
+source /etc/bash_completion.d/git
+
 # function to get into MPI environment 
 # (for compiling/running Rayleigh)
 loadmpi() {
