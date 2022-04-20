@@ -49,7 +49,7 @@ alias tlon="$ppc $raco/timetrace/timelon.py"
 alias tspec="$ppc $raco/timetrace/tspec.py"
 alias tmspec="$ppc $raco/timetrace/tmspec.py"
 alias mtrace="$ppc $raco/timetrace/mtrace.py"
-alias mtracemer="$ppc $raco/timetrace/mtrace_mer.py"
+alias merty="$ppc $raco/timetrace/mertimey.py"
 
 # PLOTTING routines (parallelized)
 alias dramommc="$ppc $rapl/azav/dr_amom_mc_times_sample.py"
@@ -106,6 +106,7 @@ alias bamp="python $rapl/shav/bamp.py"
 alias vavamp="python $rapl/shav/va_to_vamp.py"
 alias eft="python $rapl/eflux_latitudinal.py"
 alias eft2="python $rapl/eflux_latitudinal-2.py"
+alias mertimey="python $rapl/timetrace/mertimey.py"
 
 # slice plotting routines
 alias raslice="python $rapl/slice/generic.py"
