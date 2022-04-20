@@ -17,15 +17,10 @@ alias base='conda activate base'
 alias custom='conda activate custom'
 alias de='conda deactivate'
 
-# Commands to source or edit my big, sloppy .bashrc
-export brc=$HOME_DEFAULT/.bashrc
-alias sb="source $brc"
-alias vb="vim $brc"
-
 # Python startup file
-export PYTHONSTARTUP=$HOME_DEFAULT/environment/python_startup.py
+export PYTHONSTARTUP=$HOME_PFE/environment/python_startup.py
 # Note: on Pleaides, there is also /etc/pythonstart, should I worry about this?
-#
+
 # LCD ssh shortcuts
 export hyp=hyperion
 export fre=freyr
@@ -43,15 +38,15 @@ export sarg=/sargas/loma3853 # /usr/sbin/sargas is a program on Freyr
 export miz=/mizar/loma3853
 
 # Rayleigh environent
-export ra=$HOME_DEFAULT/rayleigh
+export ra=$HOME_PFE/rayleigh
 export racode=$ra/code
 export rapp=$racode/post_processing
 
-
-export raRyan=$HOME_DEFAULT/rayleigh_Ryan
+export raRyan=$HOME_PFE/rayleigh_Ryan
 export racodeRyan=$raRyan/code
 export rappRyan=$racodeRyan/post_processing
 
+# sym links
 alias linkra='ln -s $racode/bin/rayleigh.opt'
 alias linkdbg='ln -s $racode/bin/rayleigh.dbg'
 alias linkmaster='ln -s $racode/bin/master/rayleigh.* .'
@@ -59,6 +54,8 @@ alias linkcustom='ln -s $racode/bin/custom/rayleigh.* .'
 alias linkperfcond='ln -s $racode/bin/perfcond/rayleigh.* .'
 alias linkmulti='ln -s $racode/bin/multi/rayleigh.* .'
 alias linknobinrz='ln -s $racode/bin/noBinRZ/rayleigh.* .'
+
+# post processing
 export rau=$ra/utils
 export raco=$rau/compute # /usr/bin/co is a command
 export rapl=$rau/plot # /usr/bin/plot is a command
@@ -73,10 +70,10 @@ alias configmuck='EXT=".muck" ./configure'
 # Equatorial_Slices, Meridional_Slices, Shell_Slices, Shell_Spectra)
 # as well as main_input, reference, transport, and grid_info for
 # a given Rayleigh run directory
-#alias make_sample='tar -cvf sample.tar $(find AZ_Avgs/ | sort | tail -n 3) $(find Equatorial_Slices/ | sort | tail -n 3) $(find G_Avgs/ | sort | tail -n 3)  $(find Meridional_Slices/ | sort | tail -n 3) $(find Shell_Avgs/ | sort | tail -n 3) $(find Shell_Slices/ | sort | tail -n 3) $(find Shell_Spectra/ | sort | tail -n 3) data/ plots/ main_input reference transport grid_info'
 alias make_sample='tar -cvf sample.tar $(find AZ_Avgs/ | sort | tail -n 3) $(find Equatorial_Slices/ | sort | tail -n 3) $(find G_Avgs/ | sort | tail -n 3)  $(find Meridional_Slices/ | sort | tail -n 3) $(find Shell_Avgs/ | sort | tail -n 3) $(find Shell_Slices/ | sort | tail -n 3) $(find Shell_Spectra/ | sort | tail -n 3) data/ plots/ main_input equation_coefficients grid_info jobinfo.txt transport reference'
 
 # Rayleigh routines
+
 # parallel
 # set default nproc based on hostname
 host=`hostname`
@@ -90,13 +87,12 @@ else
 fi
 # ppc for "python parallel call"
 export ppc="mpiexec -n $nproc python -u"
-#export ppc="mpiexec.hydra -n $nproc python -u"
-source $HOME_DEFAULT/environment/bashrc_ra_routines
+source $HOME_PFE/environment/bashrc_ra_routines
 
 setnproc() {
     nproc=$1
     export ppc="mpiexec -n $nproc python -u"
-    source $HOME_DEFAULT/environment/bashrc_ra_routines
+    source $HOME_PFE/environment/bashrc_ra_routines
 }
 
 # count lines in a directory
@@ -110,20 +106,16 @@ alias ffm="ffmpeg3 -framerate 20 -i img%04d.png -qscale 5 movie.mp4"
 # BASH SHORTCUTS
 alias rmsslice="bash $rau/bash/rm_sslice.sh"
 
-# copy and paste the below to track all branches (dunno if it works as an alias)
-#for i in $(git branch -r | grep -vE "HEAD|master"); do
-#    git branch --track ${i#*/} $i; done
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home5/loma3853/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "$HOME_DEFAULT/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME_DEFAULT/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME_PFE/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME_PFE/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="$HOME_DEFAULT/miniconda3/bin:$PATH"
+        export PATH="$HOME_PFE/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup

@@ -115,6 +115,8 @@ alias sst='shiftc --status'         # check on status of shiftc transfers
 #alias shiftc="shiftc --no-mail"           # don't send annoying emails
 
 alias lscript='bash $rau/zz_runscripts/lscript.sh'
+
+# function to request nodes from devel queue
 devel () {
     modeltype=$1
     if [ $modeltype == 'bro' ]
@@ -144,6 +146,7 @@ devel () {
     qsub -I -q devel -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
 }
 
+# same as devel() function, but for debug queue
 debug () {
     modeltype=$1
     if [ $modeltype == 'bro' ]
@@ -172,6 +175,8 @@ debug () {
     echo "qsub -I -q debug -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00"
     qsub -I -q debug -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
 }
+
+# shift transfer shortcuts ... don't know if they still work
 shiftfrom () {
     shiftc --extract-tar --hosts=6 $1/*.tar $2
 }
@@ -188,13 +193,14 @@ shist() {
 get_du() {
     du -hsc * >> $(date +%F)_du
 }
+
 get_du_app() {
     du -hsc --apparent-size * >> $(date +%F)_du_app
 }
 
 # Record account usage for various groups in ~/acct_ytd
 acct_ytd_save() {
-    acct_ytd >> ~/acct_ytd/$(date +%F_%H.%M)
+    acct_ytd >> $HOME_PFE/acct_ytd/$(date +%F_%H.%M)
 }
 
 # the rest goes for everyone
