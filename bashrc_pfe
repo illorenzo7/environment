@@ -22,6 +22,16 @@
 # with sg if not submitted with your default group no.
 
 # To verify if a stopped job got evicted due to lustre eviction, run
+# ssh pbspl1
+# module load scicon/lumber
+# lumber -j job_id
+# and grep SEC_EVENT on the resulting logfile
+# Johnny Chang also suggets:
+# strip all lines containing dhclient and systemd,e.g.,
+# sed '/dhclient/d' 13245487.pbspl1.0.log.txt | sed '/systemd/d' > file2
+# and search file2 for SEC_EVENT
+
+# THE FOLLOWING IS DEPRECATED (04/20/22):
 # /u/scicon/tools/bin/get_logs job_id
 # and grep SEC_EVENT on the resulting logfile
 
