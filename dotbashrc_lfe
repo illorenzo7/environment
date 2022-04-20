@@ -4,12 +4,6 @@
 
 export bufferstring="============================================================"
 
-# Commands to source or edit my big, sloppy .bashrc and/or load MPI
-# (want these here no matter what)
-export brclfe=/home1/lmatilsk/environment/bashrc_lfe
-alias sblfe="source $brclfe"
-alias vblfe="vim $brclfe"
-
 # Enable auto-completion in git
 source /etc/bash_completion.d/git.sh # (file is "git" (no suffix) on PFE)
 
@@ -18,12 +12,6 @@ host=`hostname`
 if [[ "$host" == "lfe"* ]] || [[ "$host" == "pfe"* ]] || [[ "$host" == "ldan"* ]]; then
     sblfe
 fi
-
-# Commands to source or edit my big, sloppy .bashrc and/or load MPI
-# (want these here no matter what)
-export brc=$HOME/.bashrc
-alias sb="source $brc"
-alias vb="vim $brc"
 
 # function to get into MPI environment 
 # (for compiling/running Rayleigh)

@@ -10,8 +10,36 @@ export brcpfe=/home1/lmatilsk/environment/bashrc_pfe
 alias sbpfe="source $brcpfe"
 alias vbpfe="vim $brcpfe"
 
+# commands to edit this particular file
+alias sbpfe="source $brcpfe"
+alias vbpfe="vim $brcpfe"
+
+# HOME directory(s)
+export HOME_LFE=/lou/la2/lmatilsk
+export HOME_PFE=/home1/lmatilsk
+export HOME_DEFAULT=$HOME_PFE
+
+#
+# commands to edit this particular file
+alias sblfe="source $brclfe"
+alias vblfe="vim $brclfe"
+# Commands to source or edit my big, sloppy .bashrc 
+export brclfe=/home1/lmatilsk/environment/bashrc_lfe
+alias sblfe="source $brclfe"
+alias vblfe="vim $brclfe"
+# Commands to source or edit my big, sloppy .bashrc and/or load MPI
+# (want these here no matter what)
+export brc=$HOME/.bashrc
+alias sb="source $brc"
+alias vb="vim $brc"
+
+
+
 # Enable auto-completion in git
 source /etc/bash_completion.d/git
+
+# commands to load MPI and/or Firefox
+# (want these here no matter what)
 
 # function to get into MPI environment 
 # (for compiling/running Rayleigh)

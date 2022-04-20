@@ -52,15 +52,6 @@ fi
 # start by clearing all aliases
 unalias -a
 
-# commands to edit this particular file
-alias sbpfe="source $brcpfe"
-alias vbpfe="vim $brcpfe"
-
-# HOME directory(s)
-export HOME_LFE=/lou/la2/lmatilsk
-export HOME_PFE=/home1/lmatilsk
-export HOME_DEFAULT=$HOME_PFE
-
 # color code directory contents
 alias ls="ls --color='auto'"
 
