@@ -4,11 +4,16 @@
 #!/bin/bash
 #
 # state what's going on
-export brclfe=/home1/lmatilsk/environment/bashrc_lfe
 echo $bufferstring
 echo "Executing $brclfe"
 
-# Note: to unmigrate an entire directory from tape, do
+# Source bashrc_pfe
+sbpfe
+
+# "bashrc_lfe" (you are here) contains more commands specific to lou;
+# # i.e., unmigrating from tape, backing things up, etc.
+#
+# To unmigrate an entire directory from tape, do
 # unmigrate dir_name on an LFE
 unmigrate() {
     dmfind $1 -state MIG -o -state OFL -o -state PAR | dmget
@@ -26,9 +31,6 @@ backup_homepfe() {
     mkdir $backupdir
     shiftc --create-tar --index-tar --hosts=6 $HOME_PFE/ $backupdir/name.tar
 }
-
-# Source the regular .bashrc on pfe
-source /home1/lmatilsk/.bashrc
 
 # Backup the whole /nobackup/backitup directory (USE CAUTION!!!)
 backup_nobackup() {
