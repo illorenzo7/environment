@@ -2,44 +2,50 @@
 
 # .bashrc on PFE
 
+# Note (04/20/22):
+# This file sets the default environment on the PFEs
+# Very little of the environment is changed in this file
+# loading all the "standard" settings is accomplished by running
+# sbpfe (source the bashrc_pfe file in the ~/environment repo)
+# this ensures the environments on compute nodes / pbspl1 remain 
+# "uncorrupted" by default
+
+################################################
+# THE FOLLOWING IS THE SAME FOR BOTH LFE AND PFE
+# I want these here no matter what (basically, I want the option, 
+# in any environment, of getting into my bigger environments)
+################################################
+
 export bufferstring="============================================================"
 
-# Commands to source or edit my big, sloppy .bashrc and/or load MPI
+# Commands to source or edit my big, sloppy .bashrc
 # (want these here no matter what)
-export brcpfe=/home1/lmatilsk/environment/bashrc_pfe
-alias sbpfe="source $brcpfe"
-alias vbpfe="vim $brcpfe"
-
-# commands to edit this particular file
-alias sbpfe="source $brcpfe"
-alias vbpfe="vim $brcpfe"
 
 # HOME directory(s)
 export HOME_LFE=/lou/la2/lmatilsk
 export HOME_PFE=/home1/lmatilsk
-export HOME_DEFAULT=$HOME_PFE
 
-#
-# commands to edit this particular file
+# long bashrc files
+export brcpfe=$HOME_PFE/environment/bashrc_pfe
+export brclfe=$HOME_PFE/environment/bashrc_lfe
+
+# shorter "dot bashrc" files
+export dotbrcpfe=$HOME_PFE/environment/dotbashrc_pfe # i.e., this one!
+export dotbrclfe=$HOME_PFE/environment/dotbashrc_lfe
+
+# commands to source each file
+alias sbpfe="source $brcpfe"
 alias sblfe="source $brclfe"
+alias dotsbpfe="source $dotbrcpfe"
+alias dotsblfe="source $dotbrclfe"
+
+# commands to edit each file
+alias vbpfe="vim $brcpfe"
 alias vblfe="vim $brclfe"
-# Commands to source or edit my big, sloppy .bashrc 
-export brclfe=/home1/lmatilsk/environment/bashrc_lfe
-alias sblfe="source $brclfe"
-alias vblfe="vim $brclfe"
-# Commands to source or edit my big, sloppy .bashrc and/or load MPI
-# (want these here no matter what)
-export brc=$HOME/.bashrc
-alias sb="source $brc"
-alias vb="vim $brc"
-
-
-
-# Enable auto-completion in git
-source /etc/bash_completion.d/git
+alias dotvbpfe="vim $dotbrcpfe"
+alias dotvblfe="vim $dotbrclfe"
 
 # commands to load MPI and/or Firefox
-# (want these here no matter what)
 
 # function to get into MPI environment 
 # (for compiling/running Rayleigh)
@@ -49,11 +55,21 @@ loadmpi() {
     module load comp-intel
 }
 
-# only source bashrc_pfe automatically on LFE, PFE, or LDAN
-export host=`hostname`
-if [[ "$host" == "lfe"* ]] || [[ "$host" == "pfe"* ]] || [[ "$host" == "ldan"* ]]; then
-    sbpfe
-fi
-
 # load firefox
 alias loadff="module load firefox"
+
+################################################
+# THE FOLLOWING IS UNIQUE TO PFE
+################################################
+
+# Enable auto-completion in git
+source /etc/bash_completion.d/git # on LFE, it's "git.sh"
+
+# set the "default" HOME (is this actually necessary?)
+export HOME_DEFAULT=$HOME_PFE
+
+# only source the big bashrc_pfe automatically on PFE
+export host=`hostname`
+if [[ "$host" == "pfe"* ]]; then
+    sbpfe
+fi

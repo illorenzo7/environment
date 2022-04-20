@@ -40,7 +40,6 @@
 # This will ssh into pbspl1 and run tracejob going back 3 days (-n3) for jobid
 
 # state what's going on
-export brcpfe=/home1/lmatilsk/environment/bashrc_pfe
 echo $bufferstring
 echo "Executing $brcpfe"
 
@@ -60,7 +59,7 @@ PS1='\w$ '
 
 #Load desired modules here.
 module purge
-#module load pkgsrc  # dunno if this is necessary
+#module load pkgsrc  # dunno if this is necessary anymore
 
 # Pleiades directory shortcuts
 export nb=/nobackup/lmatilsk
