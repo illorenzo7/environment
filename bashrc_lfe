@@ -25,6 +25,22 @@ get_data() {
     shiftc --extract-tar --include='equation_coefficients|custom_reference_binary|grid_info|main_input|jobinfo.txt|.*\.o.*|.*script|logfile.*|data/.*|plots/.*' $1 $2
 }
 
+backup_dir() {
+    origdir=`pwd`
+    maindir=$1
+    fullpath=`readlink -f $maindir`
+    basedir=`basename $fullpath`
+    backupdir=$HOME_LFE/${basedir}_$(date +%F_%H.%M)
+    mkdir $backupdir
+    cd $fullpath
+    echo 'backing up'
+    echo $fullpath
+    echo 'to'
+    echo $backupdir/name.tar
+    shiftc --create-tar --index-tar --hosts=6 * $backupdir/name.tar
+    cd $origdir
+}
+
 # Backup the whole PFE home directory (USE CAUTION!!!)
 backup_homepfe() {
     backupdir=$HOME_LFE/homepfe_$(date +%F_%H.%M)
