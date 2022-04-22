@@ -49,7 +49,7 @@ if [ -z "$PS1" ]; then
 fi
 
 # start by clearing all aliases
-unalias -a
+#unalias -a
 
 # color code directory contents
 alias ls="ls --color='auto'"
