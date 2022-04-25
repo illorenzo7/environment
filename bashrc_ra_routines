@@ -107,6 +107,7 @@ alias vavamp="python $rapl/shav/va_to_vamp.py"
 alias eft="python $rapl/eflux_latitudinal.py"
 alias eft2="python $rapl/eflux_latitudinal-2.py"
 alias mertimey="python $rapl/timetrace/mertimey.py"
+alias mtracetimey="python $rapl/timetrace/mtracetimey.py"
 
 # slice plotting routines
 alias raslice="python $rapl/slice/generic.py"
