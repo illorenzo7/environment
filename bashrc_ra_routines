@@ -107,7 +107,7 @@ alias vavamp="python $rapl/shav/va_to_vamp.py"
 alias eft="python $rapl/eflux_latitudinal.py"
 alias eft2="python $rapl/eflux_latitudinal-2.py"
 alias mertimey="python $rapl/timetrace/mertimey.py"
-alias mtracetimey="python $rapl/timetrace/mtracetimey.py"
+alias mtracetimelat="python $rapl/timetrace/mtracetimelat.py"
 
 # slice plotting routines
 alias raslice="python $rapl/slice/generic.py"
@@ -123,7 +123,6 @@ alias timelon="python $rapl/timetrace/timelon.py"
 alias torsosc="python $rapl/timetrace/tors_osc.py"
 alias plottspec="python $rapl/timetrace/tspec.py"
 alias plottmspec="python $rapl/timetrace/tmspec.py"
-alias plotmtrace="python $rapl/timetrace/mtrace.py"
 alias powerrange="python $rapl/timetrace/tspec_power_in_range.py"
 alias powerrangetm="python $rapl/timetrace/tmspec_power_in_range.py"
 
