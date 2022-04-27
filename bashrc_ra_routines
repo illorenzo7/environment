@@ -38,6 +38,7 @@ alias tavjoin="python $raco/timeavg/timeavg_join.py"
 alias ttrjoin="python $raco/timetrace/timetrace_join.py"
 alias timeread="python $raco/timeread.py"
 alias getrvals="python $raco/get_rvals.py"
+alias qgroup="python $raco/print_qgroup.py"
 
 # TIMETRACE routines
 # parallelized ------------------------
