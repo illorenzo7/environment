@@ -50,6 +50,7 @@ alias tlon="$ppc $raco/timetrace/timelon.py"
 alias tspec="$ppc $raco/timetrace/tspec.py"
 alias tmspec="$ppc $raco/timetrace/tmspec.py"
 alias mtrace="$ppc $raco/timetrace/mtrace.py"
+alias mtracetotmspec="python $raco/timetrace/mtrace_to_tmspec.py"
 alias mtraceemf="$ppc $raco/timetrace/mtrace_emf.py"
 alias merty="$ppc $raco/timetrace/mertimey.py"
 
