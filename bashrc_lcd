@@ -3,17 +3,36 @@
 # .bashrc
 # Author: Loren Matilsky
 # Created: 07/07/2016
+# Updated: 05/05/2022
+
+# HOME directory
+export HOME_LCD=/home5/loma3853
+
+# long bashrc files
+export brc=$HOME_LCD/environment/bashrc_lcd
+alias sb="source $brc"
+alias vb="vim $brc"
+
+export bufferstring="============================================================"
+
+# state what's going on
+echo $bufferstring
+echo "Executing $brc"
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    echo $bufferstring
+    echo "Executing /etc/bashrc"
+    . /etc/bashrc 
+fi
+
+# always ssh with display privileges
+alias ssh='ssh -X'
 
 # don't break scp with echo in .bashrc
 if [ -z "$PS1" ]; then
     return
 fi
-
-echo "=============================="
-echo "Executing ~/.bashrc"
-echo "ls -l ~/.bashrc"
-echo `ls -l ~/.bashrc`
-echo "=============================="
 
 # color code directory contents
 alias ls="ls --color='auto'"
@@ -33,12 +52,11 @@ module purge
 # programs to be installed locally
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/usr/bin
-export HOME_DEFAULT="$HOME"
 
 # Main folders
-export doc=$HOME_DEFAULT/Documents
-export down=$HOME_DEFAULT/Downloads
-export desk=$HOME_DEFAULT/Desktop
+export doc=$HOME_LCD/Documents
+export down=$HOME_LCD/Downloads
+export desk=$HOME_LCD/Desktop
 
 # Desktop sub dirs
 export pubrev=$desk/Publication_Review
@@ -56,6 +74,7 @@ alias lo='libreoffice'
 alias jn='jupyter notebook'
 alias sst='sup shiftc --status'
 
+# stuff for remote (sup) shiftc transfers
 shiftfrom () {
     sup shiftc --extract-tar lfe:~/$1/*.tar $2
 }
@@ -67,72 +86,6 @@ shiftto () {
 shist() {
     sup shiftc --history --id=$1
 }
-
-export bufferstring="============================================================"
-
-# Commands to source or edit my big, sloppy .bashrc
-# (want these here no matter what)
-
-# HOME directory
-export HOME_LCD=/home5/loma3853
-
-# long bashrc files
-export brc=$HOME_LCD/environment/bashrc_lcd
-alias sb="source $brc"
-alias vb="vim $brc"
-alias vblfe="vim $brclfe"
-alias dotvbpfe="vim $dotbrcpfe"
-alias dotvblfe="vim $dotbrclfe"
-
-# commands to load MPI and/or Firefox
-
-# function to get into MPI environment 
-# (for compiling/running Rayleigh)
-loadmpi() {
-    module purge 
-    module load mpi-hpe
-    module load comp-intel
-}
-
-# load firefox
-alias loadff="module load firefox"
-
-################################################
-# THE FOLLOWING IS UNIQUE TO PFE
-################################################
-
-# Enable auto-completion in git
-source /etc/bash_completion.d/git # on LFE, it's "git.sh"
-
-# set the "default" HOME (is this actually necessary?)
-export HOME_DEFAULT=$HOME_PFE
-
-# only source the big bashrc_pfe automatically on PFE
-export host=`hostname`
-if [[ "$host" == "pfe"* ]]; then
-    sbpfe
-fi
-# state what's going on
-echo $bufferstring
-echo "Executing $brcpfe"
-
-# don't break scp with echo in .bashrc
-if [ -z "$PS1" ]; then
-    return
-fi
-
-# start by clearing all aliases
-#unalias -a
-
-# color code directory contents
-alias ls="ls --color='auto'"
-
-# Make prompt show current working directory
-PS1='\w$ '
-
-#Load desired modules here.
-module purge
-#module load pkgsrc  # dunno if this is necessary anymore
 
 # Pleiades directory shortcuts
 export nb=/nobackup/lmatilsk
@@ -148,119 +101,29 @@ export rasim11=$nb11
 export tahy11=$rasim11/tachocline
 export tady11=$tahy11/dynamo
 
-# Make terminals white on black
-#xrdb $HOME_PFE/.Xresources
-
 # Compiler environment variables
 export INTEL_DISABLE_ISIP=1 # Stop ifort from creating annoying ~/intel/ism/rm empty directory
 export OMP_NUM_THREADS=1
 export FC=mpif90
 export CC=mpicc
-export tachplots=$HOME_PFE/Science_Paper_Plots
+export tachplots=$HOME_LCD/Science_Paper_Plots
 
 # Extra appendages to PATH to allow 
 # programs to be installed locally
-export PATH=$PATH:$HOME_PFE/bin
-export PATH=$PATH:$HOME_PFE/usr/bin
+export PATH=$PATH:$HOME_LCD/bin
+export PATH=$PATH:$HOME_LCD/usr/bin
 
 # Start the vnc server
 alias vnc='vncserver -localhost -geometry 1280x800'
 alias vncg='vncserver -localhost -geometry 1900x1000' 
 # make vnc window to match the screen dimensions of freyr
 
-# request an ldan for 24 hours
-alias ldan='qsub -me -mb -q ldan -lselect=1:mem=750GB,walltime=24:00:00 $HOME_PFE/environment/ldan_script'
-alias which_ldan='qstat -nu lmatilsk | grep ldan'
-
 # other command aliases
-alias jn='jupyter notebook --ip=0.0.0.0 --port=8080'
+alias jn='jupyter notebook'
 alias fn='find `pwd` -name ' # fn for "full name"
 alias gt='gnome-terminal'
 alias qs="/u/scicon/tools/bin/qs"   # check what nodes are being used currently
 alias less='less -MN' # make less show line numbers and  filename in status bar
-alias quota_nb='lfs quota -h -u lmatilsk /nobackupp11'
-
-# Note: to extract particular files from a *.tar folder, run
-# shiftc --extract-tar --include=[fname] tarname.tar .
-
-alias qst='qstat -u lmatilsk'       # check on status of jobs
-alias sst='shiftc --status'         # check on status of shiftc transfers
-#alias shiftc="shiftc --no-mail"           # don't send annoying emails
-
-alias lscript='bash $rau/zz_runscripts/lscript.sh'
-
-# function to request nodes from devel queue
-devel () {
-    modeltype=$1
-    if [ $modeltype == 'bro' ]
-    then
-        ncpus=28
-    elif [ $modeltype == 'has' ]
-    then
-        ncpus=24
-    elif [ $modeltype == 'ivy' ] 
-    then
-        ncpus=20
-    elif [ $modeltype == 'san' ] 
-    then
-        ncpus=16
-    else
-        echo "unknown model type $modeltype"
-    fi
-
-    nprocs=$2
-    select=$(($nprocs/$ncpus + 1))
-    if [ $(($nprocs%$ncpus)) == 0 ]
-    then
-        select=$(($select - 1))
-    fi
-
-    echo "qsub -I -q devel -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00"
-    qsub -I -q devel -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
-}
-
-# same as devel() function, but for debug queue
-debug () {
-    modeltype=$1
-    if [ $modeltype == 'bro' ]
-    then
-        ncpus=28
-    elif [ $modeltype == 'has' ]
-    then
-        ncpus=24
-    elif [ $modeltype == 'ivy' ] 
-    then
-        ncpus=20
-    elif [ $modeltype == 'san' ] 
-    then
-        ncpus=16
-    else
-        echo "unknown model type $modeltype"
-    fi
-
-    nprocs=$2
-    select=$(($nprocs/$ncpus + 1))
-    if [ $(($nprocs%$ncpus)) == 0 ]
-    then
-        select=$(($select - 1))
-    fi
-
-    echo "qsub -I -q debug -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00"
-    qsub -I -q debug -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
-}
-
-# shift transfer shortcuts ... don't know if they still work
-shiftfrom () {
-    shiftc --extract-tar --hosts=6 $1/*.tar $2
-}
-
-shiftto () {
-    shiftc --create-tar --index-tar --hosts=6 $1 $2/name.tar
-}
-
-shist() {
-    shiftc --history --id=$1
-}
 
 # Get disk usage
 get_du() {
@@ -271,28 +134,13 @@ get_du_app() {
     du -hsc --apparent-size * >> $(date +%F)_du_app
 }
 
-# Record account usage for various groups in ~/acct_ytd
-acct_ytd_save() {
-    acct_ytd >> $HOME_PFE/acct_ytd/$(date +%F_%H.%M)
-}
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-    echo $bufferstring
-    echo "Executing /etc/bashrc"
-    . /etc/bashrc 
-fi
-
-# always ssh with display privileges
-alias ssh='ssh -X'
-
 # Commands to activate or deactivate various Conda environments,
 alias base='conda activate base'
 alias custom='conda activate custom'
 alias de='conda deactivate'
 
 # Python startup file
-export PYTHONSTARTUP=$HOME_PFE/environment/python_startup.py
+export PYTHONSTARTUP=$HOME_LCD/environment/python_startup.py
 # Note: on Pleaides, there is also /etc/pythonstart, should I worry about this?
 
 # LCD ssh shortcuts
@@ -312,11 +160,11 @@ export sarg=/sargas/loma3853 # /usr/sbin/sargas is a program on Freyr
 export miz=/mizar/loma3853
 
 # Rayleigh environent
-export ra=$HOME_PFE/rayleigh
+export ra=$HOME_LCD/rayleigh
 export racode=$ra/code
 export rapp=$racode/post_processing
 
-export raRyan=$HOME_PFE/rayleigh_Ryan
+export raRyan=$HOME_LCD/rayleigh_Ryan
 export racodeRyan=$raRyan/code
 export rappRyan=$racodeRyan/post_processing
 
@@ -349,24 +197,17 @@ alias make_sample='tar -cvf sample.tar $(find AZ_Avgs/ | sort | tail -n 3) $(fin
 # Rayleigh routines
 
 # parallel
-# set default nproc based on hostname
-host=`hostname`
-#if [[ "$host" == *"$ldanst"* ]] || [[ "$host" == *"$nodest"* ]]; then
-if [[ "$host" == "lfe"* ]] || [[ "$host" == "pfe"* ]]; then
-    nproc=1 # process in serial on the lfes and pfes
-elif [[ "$host" == "lorensMac"* ]] || [[ "$host" == "cu-genvpn"* ]]; then
-    nproc=2
-else
-    nproc=`nproc --all` # by default, use max number of processes
-fi
+# set default nproc (max allowed)
+nproc=`nproc --all` 
 # ppc for "python parallel call"
 export ppc="mpiexec -n $nproc python -u"
-source $HOME_PFE/environment/bashrc_ra_routines
+source $HOME_LCD/environment/bashrc_ra_routines
 
+# some other functions
 setnproc() {
     nproc=$1
     export ppc="mpiexec -n $nproc python -u"
-    source $HOME_PFE/environment/bashrc_ra_routines
+    source $HOME_LCD/environment/bashrc_ra_routines
 }
 
 # count lines in a directory
@@ -386,10 +227,10 @@ __conda_setup="$('/home5/loma3853/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "$HOME_PFE/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME_PFE/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME_LCD/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME_LCD/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="$HOME_PFE/miniconda3/bin:$PATH"
+        export PATH="$HOME_LCD/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
