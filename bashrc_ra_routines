@@ -1,10 +1,11 @@
 #!/bin/bash
 # RAYLEIGH COMPUTING SHORTCUTS
-# non-parallel routines
-echo $bufferstring
-echo "Executing /home1/lmatilsk/environment/bashrc_ra_routines"
-echo $bufferstring
 
+# state what's going on
+echo $bufferstring
+echo "Executing $envdir/bashrc_ra_routines"
+
+# non-parallel routines
 alias gi="python $raco/grid_info.py"
 alias qi="python $raco/quantity_index.py"
 alias tachrefquart="python $raco/reference_state/generate_CZ_RZ_reference-quart.py"

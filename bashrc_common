@@ -1,3 +1,11 @@
+#!/bin/bash
+# This set of commands gets called by all big environments
+# Structure reintroduced: 05/06/2022
+#
+# state what's going on
+echo $bufferstring
+echo "Executing $envdir/bashrc_common"
+
 # don't break scp with echo in .bashrc
 if [ -z "$PS1" ]; then
     return
