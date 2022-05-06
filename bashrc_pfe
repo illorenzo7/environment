@@ -76,19 +76,19 @@ export tahy11=$rasim11/tachocline
 export tady11=$tahy11/dynamo
 
 # Make terminals white on black
-#xrdb $HOME_PFE/.Xresources
+#xrdb $HOME/.Xresources
 
 # Compiler environment variables
 export INTEL_DISABLE_ISIP=1 # Stop ifort from creating annoying ~/intel/ism/rm empty directory
 export OMP_NUM_THREADS=1
 export FC=mpif90
 export CC=mpicc
-export tachplots=$HOME_PFE/Science_Paper_Plots
+export tachplots=$HOME/Science_Paper_Plots
 
 # Extra appendages to PATH to allow 
 # programs to be installed locally
-export PATH=$PATH:$HOME_PFE/bin
-export PATH=$PATH:$HOME_PFE/usr/bin
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/usr/bin
 
 # Start the vnc server
 alias vnc='vncserver -localhost -geometry 1280x800'
@@ -96,7 +96,7 @@ alias vncg='vncserver -localhost -geometry 1900x1000'
 # make vnc window to match the screen dimensions of freyr
 
 # request an ldan for 24 hours
-alias ldan='qsub -me -mb -q ldan -lselect=1:mem=750GB,walltime=24:00:00 $HOME_PFE/environment/ldan_script'
+alias ldan='qsub -me -mb -q ldan -lselect=1:mem=750GB,walltime=24:00:00 $HOME/environment/ldan_script'
 alias which_ldan='qstat -nu lmatilsk | grep ldan'
 
 # other command aliases
@@ -200,7 +200,7 @@ get_du_app() {
 
 # Record account usage for various groups in ~/acct_ytd
 acct_ytd_save() {
-    acct_ytd >> $HOME_PFE/acct_ytd/$(date +%F_%H.%M)
+    acct_ytd >> $HOME/acct_ytd/$(date +%F_%H.%M)
 }
 
 # Source global definitions
@@ -219,7 +219,7 @@ alias custom='conda activate custom'
 alias de='conda deactivate'
 
 # Python startup file
-export PYTHONSTARTUP=$HOME_PFE/environment/python_startup.py
+export PYTHONSTARTUP=$HOME/environment/python_startup.py
 # Note: on Pleaides, there is also /etc/pythonstart, should I worry about this?
 
 # LCD ssh shortcuts
@@ -239,11 +239,11 @@ export sarg=/sargas/loma3853 # /usr/sbin/sargas is a program on Freyr
 export miz=/mizar/loma3853
 
 # Rayleigh environent
-export ra=$HOME_PFE/rayleigh
+export ra=$HOME/rayleigh
 export racode=$ra/code
 export rapp=$racode/post_processing
 
-export raRyan=$HOME_PFE/rayleigh_Ryan
+export raRyan=$HOME/rayleigh_Ryan
 export racodeRyan=$raRyan/code
 export rappRyan=$racodeRyan/post_processing
 
@@ -288,12 +288,12 @@ else
 fi
 # ppc for "python parallel call"
 export ppc="mpiexec -n $nproc python -u"
-source $HOME_PFE/environment/bashrc_ra_routines
+source $HOME/environment/bashrc_ra_routines
 
 setnproc() {
     nproc=$1
     export ppc="mpiexec -n $nproc python -u"
-    source $HOME_PFE/environment/bashrc_ra_routines
+    source $HOME/environment/bashrc_ra_routines
 }
 
 # count lines in a directory
@@ -313,10 +313,10 @@ __conda_setup="$('/home5/loma3853/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "$HOME_PFE/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME_PFE/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="$HOME_PFE/miniconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
