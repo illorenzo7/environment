@@ -54,20 +54,21 @@ HostName lcd.colorado.edu
 User loma3853
 
 # for Pleiades; DO NOT INCLUDE ON PLEIADES ITSELF
-#Updated 20210308
+#Updated 20211018
 
 Host sfe
     HostName                sfe6.nas.nasa.gov
 
 Host sfe sfe?.nas.nasa.gov
     # Uncomment to allow multiplexing of single connections
-    #ControlMaster           auto
-    #ControlPath             ~/.ssh/master-%r@sfe:%p
+    #ControlMaster          auto
+    #ControlPath            ~/.ssh/master-%r@sfe:%p
+    #ControlPersist         1
     ForwardAgent            yes
     ForwardX11              yes
     ServerAliveInterval     5m
 
-Host sfe sfe?.nas.nasa.gov dmzfs?.nas.nasa.gov sup*.nas.nasa.gov
+Host sfe sfe?.nas.nasa.gov sup*.nas.nasa.gov
     LogLevel                info
     ProxyCommand            none
 
