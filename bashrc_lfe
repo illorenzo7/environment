@@ -9,6 +9,9 @@ echo "Executing $brclfe"
 
 # Source bashrc_pfe
 sbpfe
+# Enable auto-completion in git
+source /etc/bash_completion.d/git.sh # file is "git" (no suffix) on PFE
+
 
 
 # commands to load MPI and/or Firefox

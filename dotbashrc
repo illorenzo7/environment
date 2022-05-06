@@ -25,7 +25,8 @@ export HOME_LCD=/home5/loma3853
 export HOME_MAC=/home/loren
 
 # the environment git repo
-export envdir=$HOME/environment
+export envdir=$HOME/environment 
+# the $HOME variable should be good no matter the system
 
 # short "dot bashrc" file (i.e., this file)
 export dotbrc=$envdir/dotbashrc
@@ -40,23 +41,23 @@ export brcmac=$envdir/bashrc_mac
 export brccommon=$envdir/bashrc_common
 export brcra=$envdir/bashrc_ra_routines
 
-# commands to source each file
+# commands to source each env file
 alias sbpfe="source $brcpfe"
 alias sblfe="source $brclfe"
+alias sblcd="source $brclcd"
+alias sbmac="source $brcmac"
 alias sbcommon="source $brccommon"
-alias dotsbpfe="source $dotbrcpfe"
-alias dotsblfe="source $dotbrclfe"
+alias sbra="source $brcra"
+alias sbdot="source $dotbrc"
 
-# commands to edit each file
+# commands to edit each env file
 alias vbpfe="vim $brcpfe"
 alias vblfe="vim $brclfe"
+alias vblcd="vim $brclcd"
+alias vbmac="vim $brcmac"
 alias vbcommon="vim $brccommon"
-alias dotvbpfe="vim $dotbrcpfe"
-alias dotvblfe="vim $dotbrclfe"
-
-
-# Enable auto-completion in git
-source /etc/bash_completion.d/git.sh # file is "git" (no suffix) on PFE
+alias vbra="vim $brcra"
+alias vbdot="vim $dotbrc"
 
 # only do anything (automatically) on LFE or LDAN
 host=`hostname`
