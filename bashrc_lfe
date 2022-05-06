@@ -1,18 +1,13 @@
+#!/bin/bash
 # Created by: L. Matilsky
 # Date Created: 07/05/2016
-# Location of bash:
-#!/bin/bash
 #
 # state what's going on
 echo $bufferstring
 echo "Executing $brclfe"
 
-# Source bashrc_pfe
-sbpfe
 # Enable auto-completion in git
 source /etc/bash_completion.d/git.sh # file is "git" (no suffix) on PFE
-
-
 
 # commands to load MPI and/or Firefox
 
@@ -27,7 +22,6 @@ loadmpi() {
 # load firefox
 alias loadff="module load firefox"
 
-
 # "bashrc_lfe" (you are here) contains more commands specific to lou;
 # # i.e., unmigrating from tape, backing things up, etc.
 #
@@ -37,12 +31,29 @@ unmigrate() {
     dmfind $1 -state MIG -o -state OFL -o -state PAR | dmget
 }
 
+# SHIFT transfer stuff
+# Note: to extract particular files from a *.tar folder, run
+# shiftc --extract-tar --include=[fname] tarname.tar .
+
+shiftfrom () {
+    shiftc --extract-tar --hosts=6 $1/*.tar $2
+}
+
+shiftto () {
+    shiftc --create-tar --index-tar --hosts=6 $1 $2/name.tar
+}
+
+shist() {
+    shiftc --history --id=$1
+}
+
 # command to extract the post-processed data (but not whole binary folder)
 # from a tarball on LFE
 get_data() {
     shiftc --extract-tar --include='equation_coefficients|custom_reference_binary|grid_info|main_input|jobinfo.txt|.*\.o.*|.*script|logfile.*|data/.*|plots/.*' $1 $2
 }
 
+# command to backup a single directory
 backup_dir() {
     origdir=`pwd`
     maindir=$1
@@ -80,3 +91,6 @@ backup_nobackup_whole() {
     mkdir $backupdir
     bash $rau/bash/backup_subdirs.sh $nb/ $backupdir/
 }
+
+# Source bashrc_pfe
+sbpfe
