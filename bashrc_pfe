@@ -42,7 +42,7 @@
 # state what's going on
 echo $bufferstring
 echo "Executing $brccommon"
-sbrccommon
+sbcommon
 
 echo $bufferstring
 echo "Executing rest of $brcpfe"

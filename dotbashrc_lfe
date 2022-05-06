@@ -26,22 +26,25 @@ export HOME_LFE=/lou/la2/lmatilsk
 export HOME_PFE=/home1/lmatilsk
 
 # long bashrc files
-export brcpfe=$HOME_PFE/environment/bashrc_pfe
-export brclfe=$HOME_PFE/environment/bashrc_lfe
+export brcpfe=$HOME/environment/bashrc_pfe
+export brclfe=$HOME/environment/bashrc_lfe
+export brccommon=$HOME/environment/bashrc_common
 
 # shorter "dot bashrc" files
-export dotbrcpfe=$HOME_PFE/environment/dotbashrc_pfe
-export dotbrclfe=$HOME_PFE/environment/dotbashrc_lfe # i.e., this one!
+export dotbrcpfe=$HOME/environment/dotbashrc_pfe
+export dotbrclfe=$HOME/environment/dotbashrc_lfe # i.e., this one!
 
 # commands to source each file
 alias sbpfe="source $brcpfe"
 alias sblfe="source $brclfe"
+alias sbcommon="source $brccommon"
 alias dotsbpfe="source $dotbrcpfe"
 alias dotsblfe="source $dotbrclfe"
 
 # commands to edit each file
 alias vbpfe="vim $brcpfe"
 alias vblfe="vim $brclfe"
+alias vbcommon="vim $brccommon"
 alias dotvbpfe="vim $dotbrcpfe"
 alias dotvblfe="vim $dotbrclfe"
 
