@@ -1,10 +1,12 @@
-# .bash_profile
+#!/bin/bash
+#
+# the buffer string
 export bufferstring="============================================================"
-echo $bufferstring
 
-echo "Executing $homedir/.bash_profile"
+# state what's going on
+echo $bufferstring
+echo "Executing $HOME/environment/dotbash_profile"
+
 if [ -f ~/.bashrc ]; then
-    echo "$HOME/.bashrc not yet executed"
-    echo "Executing it."
     source $HOME/.bashrc
 fi

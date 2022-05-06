@@ -1,6 +1,11 @@
 #!/bin/bash
 
-# .bashrc on LFE
+# the buffer string
+export bufferstring="============================================================"
+
+# state what's going on
+echo $bufferstring
+echo "Executing $HOME/environment/dotbashrc"
 
 # Note (04/20/22):
 # This file sets the default environment on the PFEs / LFEs
@@ -16,7 +21,6 @@
 # the following are environmental aliases
 # in any environment, I have the option of getting into 
 # my bigger environments)
-export bufferstring="============================================================"
 
 # specific HOME directory(s) (what $HOME defaults to on a given system)
 export HOME_LFE=/lou/la2/lmatilsk
@@ -76,3 +80,5 @@ fi
 # LCD hosts
 
 # MAC hosts
+
+echo $bufferstring

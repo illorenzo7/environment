@@ -1,4 +1,7 @@
 #!/bin/bash
+# state what's going on
+echo $bufferstring
+echo "Executing $brcpfe"
 
 # .bashrc
 # Author: Loren Matilsky
@@ -38,10 +41,6 @@
 # To troubleshoot how a job failed, run
 # ssh pbspl1 tracejob -n3 job_id
 # This will ssh into pbspl1 and run tracejob going back 3 days (-n3) for jobid
-
-# state what's going on
-echo $bufferstring
-echo "Executing $brcpfe"
 
 # color code directory contents
 alias ls="ls --color='auto'"
