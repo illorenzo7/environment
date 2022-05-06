@@ -1,0 +1,43 @@
+# don't break scp with echo in .bashrc
+if [ -z "$PS1" ]; then
+    return
+fi
+
+# start by clearing all aliases
+#unalias -a
+
+# Make prompt show current working directory
+PS1='\w$ '
+
+# Pleiades directory shortcuts
+export nb=/nobackup/lmatilsk
+#export nb11=/nobackupp11/lmatilsk # no longer needed
+export nb17=/nobackupp17/lmatilsk
+
+# Rayleigh simulation root directories on Pleiades
+export rasim=$nb
+export tahy=$rasim/tachocline
+export tady=$tahy/dynamo
+
+export rasim11=$nb11
+export tahy11=$rasim11/tachocline
+export tady11=$tahy11/dynamo
+
+# Compiler environment variables
+export INTEL_DISABLE_ISIP=1 # Stop ifort from creating annoying ~/intel/ism/rm empty directory
+export OMP_NUM_THREADS=1
+export FC=mpif90
+export CC=mpicc
+export tachplots=$HOME/Science_Paper_Plots
+
+# Extra appendages to PATH to allow 
+# programs to be installed locally
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/usr/bin
+
+# Start the vnc server
+alias vnc='vncserver -localhost -geometry 1280x800'
+alias vncg='vncserver -localhost -geometry 1900x1000' 
+# make vnc window to match the screen dimensions of freyr
+
+
