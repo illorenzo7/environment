@@ -69,7 +69,4 @@ source /etc/bash_completion.d/git # on LFE, it's "git.sh"
 export HOME_DEFAULT=$HOME_PFE
 
 # only source the big bashrc_pfe automatically on PFE
-export host=`hostname`
-if [[ "$host" == "pfe"* ]]; then
-    sbpfe
-fi
+
