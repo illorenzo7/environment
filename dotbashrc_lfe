@@ -3,36 +3,42 @@
 # .bashrc on LFE
 
 # Note (04/20/22):
-# This file sets the default environment on the PFEs
-# Very little of the environment is changed in this file
+# This file sets the default environment on the PFEs / LFEs
+# Very little of the environment is changed in this file per se
 # loading all the "standard" settings is accomplished by running
 # sbpfe (source the bashrc_pfe file in the ~/environment repo)
+# ---or, analogously, sblfe
 # this ensures the environments on compute nodes / pbspl1 remain 
 # "uncorrupted" by default
+# depending on the hostname, more defaults will be loaded via
+# sbpfe, sblfe, sblcd, sbmac
 
-################################################
-# THE FOLLOWING IS THE SAME FOR BOTH LFE AND PFE
-# I want these here no matter what (basically, I want the option, 
-# in any environment, of getting into my bigger environments)
-################################################
-
+# the following are environmental aliases
+# in any environment, I have the option of getting into 
+# my bigger environments)
 export bufferstring="============================================================"
 
-# Commands to source or edit my big, sloppy .bashrc
-# (want these here no matter what)
-
-# HOME directory(s)
+# specific HOME directory(s) (what $HOME defaults to on a given system)
 export HOME_LFE=/lou/la2/lmatilsk
 export HOME_PFE=/home1/lmatilsk
+export HOME_LCD=/home5/loma3853
+export HOME_MAC=/home/loren
 
-# long bashrc files
-export brcpfe=$HOME/environment/bashrc_pfe
-export brclfe=$HOME/environment/bashrc_lfe
-export brccommon=$HOME/environment/bashrc_common
+# the environment git repo
+export envdir=$HOME/environment
 
-# shorter "dot bashrc" files
-export dotbrcpfe=$HOME/environment/dotbashrc_pfe
-export dotbrclfe=$HOME/environment/dotbashrc_lfe # i.e., this one!
+# short "dot bashrc" file (i.e., this file)
+export dotbrc=$envdir/dotbashrc
+
+# long bashrc files (the big environments)
+export brcpfe=$envdir/bashrc_pfe
+export brclfe=$envdir/bashrc_lfe
+export brclcd=$envdir/bashrc_lcd
+export brcmac=$envdir/bashrc_mac
+
+# supporting "common" files for the big environments
+export brccommon=$envdir/bashrc_common
+export brcra=$envdir/bashrc_ra_routines
 
 # commands to source each file
 alias sbpfe="source $brcpfe"
@@ -48,22 +54,6 @@ alias vbcommon="vim $brccommon"
 alias dotvbpfe="vim $dotbrcpfe"
 alias dotvblfe="vim $dotbrclfe"
 
-# commands to load MPI and/or Firefox
-
-# function to get into MPI environment 
-# (for compiling/running Rayleigh)
-loadmpi() {
-    module purge 
-    module load mpi-hpe
-    module load comp-intel
-}
-
-# load firefox
-alias loadff="module load firefox"
-
-################################################
-# THE FOLLOWING IS UNIQUE TO PFE
-################################################
 
 # Enable auto-completion in git
 source /etc/bash_completion.d/git.sh # file is "git" (no suffix) on PFE
