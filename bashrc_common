@@ -23,19 +23,18 @@ export nb=/nobackup/lmatilsk
 export nb17=/nobackupp17/lmatilsk
 
 # Rayleigh simulation root directories on Pleiades
-export rasim=$nb
-export tahy=$rasim/tachocline
-export tady=$tahy/dynamo
 
-export rasim11=$nb11
-export tahy11=$rasim11/tachocline
-export tady11=$tahy11/dynamo
+# these guys are deprecated I think
+#export rasim=$nb
+#export tahy=$rasim/tachocline
+#export tady=$tahy/dynamo
 
-# Compiler environment variables
-export INTEL_DISABLE_ISIP=1 # Stop ifort from creating annoying ~/intel/ism/rm empty directory
-export OMP_NUM_THREADS=1
-export FC=mpif90
-export CC=mpicc
+#export rasim11=$nb11
+#export tahy11=$rasim11/tachocline
+#export tady11=$tahy11/dynamo
+
+# the Science paper
+export tach=$pub/Science_Paper
 export tachplots=$HOME/Science_Paper_Plots
 
 # Extra appendages to PATH to allow 

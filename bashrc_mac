@@ -1,48 +1,29 @@
 #!/bin/bash
-
-# .bashrc
 # Author: Loren Matilsky
 # Created: 07/07/2016
 # Modified to work in new "environment" repo: 02/12/2021
 
-# don't break scp with echo in .bashrc
-if [ -z "$PS1" ]; then
-    return
-fi
-
-# HOME directory(s)
-export HOME_DEFAULT=/Users/loren
-
-echo "====================================="
-echo "Executing $HOME_DEFAULT/.bashrc --> "
-echo "$HOME_DEFAULT/environment/bashrc_mac"
+# state what's going on
+echo $bufferstring
+echo "Executing $envdir/bashrc_common"
 
 # color code directory contents
 alias ls="ls -G" # Works on Mac
 #alias ls="ls --color='auto'" # Works on general Unix, but not Mac :-( FUCK YOU TIM COOK!!!
 
-# Make prompt show current working directory
-PS1='\w$ '
-
-# Command to deactivate
-alias de='conda deactivate'
-
-# Print full file name
-alias fn='find `pwd` -name '
-
 ###############################
 # Mac shortcuts               #
 ###############################
 # Rayleigh simulation root directories on Mac (data previews)
-export rasim=$HOME_DEFAULT/rayleigh/sims
+export rasim=$HOME/rayleigh/sims
 export tahy=$rasim/tachocline
 export tady=$tahy/dynamo
 
 # Main folders
-export mu=$HOME_DEFAULT/Music/Music/Media
-export doc=$HOME_DEFAULT/Documents
-export down=$HOME_DEFAULT/Downloads
-export desk=$HOME_DEFAULT/Desktop
+export mu=$HOME/Music/Music/Media
+export doc=$HOME/Documents
+export down=$HOME/Downloads
+export desk=$HOME/Desktop
 
 # Desktop sub dirs
 export pubrev=$desk/Publication_Review
@@ -53,13 +34,10 @@ export cv=$desk/CV
 export papers=$desk/Paper_Library
 
 export pub=$desk/Publications
-export tach=$pub/Science_Paper
-export tachplots=$pub/Science_Paper_Plots
 
 export prop=$desk/Proposals
 export proprsr=$doc/Proposal_to_Recruit_Support_Retain_UrMs_APS
 
-export sob=$doc/sober
 export fin=$doc/Financial
 
 # Switch hidden folder on and off
@@ -67,10 +45,7 @@ alias showhidden='defaults write com.apple.Finder AppleShowAllFiles true && kill
 alias nohidden='defaults write com.apple.Finder AppleShowAllFiles false && killall Finder'
 
 # Path variables
-# Extra appendages to PATH to allow 
-# programs to be installed locally
-export PATH=$PATH:$HOME_DEFAULT/bin
-export PATH=$PATH:$HOME_DEFAULT/usr/bin
+# Extra appendages for Mac
 export PATH=$PATH:/opt/intel/bin
 export PATH=$PATH:/Applications/VAPOR/VAPOR.app/Contents/MacOS
 
@@ -114,11 +89,6 @@ alias website-dl='wget --mirror -nH -np -p -k -E -e robots=off'
 alias syncbooks='rsync -avP ~/Desktop/Books/ freyr:~/Desktop/Books && rsync -avP freyr:~/Desktop/Books/ ~/Desktop/Books'
 alias syncproposals='rsync -avP ~/Desktop/Proposals/ freyr:~/Desktop/Proposals && rsync -avP freyr:~/Desktop/Proposals/ ~/Desktop/Proposals'
 alias syncpresentations='rsync -avP ~/Desktop/Presentations/ freyr:~/Desktop/Presentations && rsync -avP freyr:~/Desktop/Presentations/ ~/Desktop/Presentations'
-alias sync_fin="rsync --update -avP ~/Desktop/Financial/ $fre:~/Desktop/Financial && rsync --update -avP $fre:~/Desktop/Financial/ ~/Desktop/Financial"
 
-# Backup gypsy_davy to/from Freyr
-alias gd_tofreyr='scp ~/gypsy_davy freyr:~/gypsy_davy'
-alias gd_fromfreyr='scp freyr:~/gypsy_davy ~/gypsy_davy'
-
-# the rest goes for everyone
-source $HOME_DEFAULT/environment/bashrc_common
+# source the common stuff
+sbcommon

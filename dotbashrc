@@ -78,7 +78,13 @@ if [[ "$host" == "pfe"* ]]; then
 fi
 
 # LCD hosts
+if [[ "$host" == "colorado.edu"* ]]; then
+    sblcd
+fi
 
 # MAC hosts
+if [[ "$host" == "lorensMac"* ]] || [[ "$host" == "cu-genvpn"* ]]; then
+    sbmac
+fi
 
 echo $bufferstring

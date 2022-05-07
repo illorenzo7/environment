@@ -52,6 +52,12 @@ module purge
 # Make terminals white on black
 #xrdb $HOME/.Xresources
 
+# Compiler environment variables
+export INTEL_DISABLE_ISIP=1 # Stop ifort from creating annoying ~/intel/ism/rm empty directory
+export OMP_NUM_THREADS=1
+export FC=mpif90
+export CC=mpicc
+
 # request an ldan for 24 hours
 alias ldan='qsub -me -mb -q ldan -lselect=1:mem=750GB,walltime=24:00:00 $HOME/environment/ldan_script'
 alias which_ldan='qstat -nu lmatilsk | grep ldan'
