@@ -78,7 +78,7 @@ if [[ "$host" == "pfe"* ]]; then
 fi
 
 # LCD hosts
-if [[ "$host" == "colorado.edu"* ]]; then
+if [[ "$host" == *"colorado.edu" ]]; then
     sblcd
 fi
 

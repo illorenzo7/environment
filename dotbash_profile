@@ -7,6 +7,6 @@ export bufferstring="===========================================================
 echo $bufferstring
 echo "Executing $HOME/environment/dotbash_profile"
 
-if [ -f ~/.bashrc ]; then
+if [ -f $HOME/.bashrc ]; then
     source $HOME/.bashrc
 fi

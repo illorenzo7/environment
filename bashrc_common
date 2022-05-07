@@ -45,6 +45,7 @@ export PATH=$PATH:$HOME/usr/bin
 # Start the vnc server
 alias vnc='vncserver -localhost -geometry 1280x800'
 alias vncg='vncserver -localhost -geometry 1900x1000' 
+alias vncv='vncviewer'
 # make vnc window to match the screen dimensions of freyr
 
 # other command aliases
@@ -69,6 +70,7 @@ fi
 
 # always ssh with display privileges
 alias ssh='ssh -X'
+alias less='less -MN' # make less show line numbers and  filename in status bar
 
 # Commands to activate or deactivate various Conda environments,
 alias base='conda activate base'
