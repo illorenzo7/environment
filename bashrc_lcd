@@ -1,43 +1,14 @@
 #!/bin/bash
-
-# .bashrc
 # Author: Loren Matilsky
 # Created: 07/07/2016
 # Updated: 05/05/2022
 
-# HOME directory
-export HOME_LCD=/home5/loma3853
-
-# long bashrc files
-export brc=$HOME_LCD/environment/bashrc_lcd
-alias sb="source $brc"
-alias vb="vim $brc"
-
-export bufferstring="============================================================"
-
 # state what's going on
 echo $bufferstring
-echo "Executing $brc"
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-    echo $bufferstring
-    echo "Executing /etc/bashrc"
-    . /etc/bashrc 
-fi
-
-# always ssh with display privileges
-alias ssh='ssh -X'
-
-# don't break scp with echo in .bashrc
-if [ -z "$PS1" ]; then
-    return
-fi
+echo "Executing $envdir/bashrc_common"
 
 # color code directory contents
 alias ls="ls --color='auto'"
-
-PS1="\$(pwd) "
 
 # Enable auto-completion in bash
 source ~/git-bash-completion
@@ -48,15 +19,10 @@ module purge
 #module load openmpi
 #module load ffmpeg
 
-# Extra appendages to PATH to allow 
-# programs to be installed locally
-export PATH=$PATH:~/bin
-export PATH=$PATH:~/usr/bin
-
-# Main folders
-export doc=$HOME_LCD/Documents
-export down=$HOME_LCD/Downloads
-export desk=$HOME_LCD/Desktop
+# Main folders on LCD
+export doc=$HOME/Documents
+export down=$HOME/Downloads
+export desk=$HOME/Desktop
 
 # Desktop sub dirs
 export pubrev=$desk/Publication_Review
@@ -106,12 +72,12 @@ export INTEL_DISABLE_ISIP=1 # Stop ifort from creating annoying ~/intel/ism/rm e
 export OMP_NUM_THREADS=1
 export FC=mpif90
 export CC=mpicc
-export tachplots=$HOME_LCD/Science_Paper_Plots
+export tachplots=$HOME/Science_Paper_Plots
 
 # Extra appendages to PATH to allow 
 # programs to be installed locally
-export PATH=$PATH:$HOME_LCD/bin
-export PATH=$PATH:$HOME_LCD/usr/bin
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/usr/bin
 
 # Start the vnc server
 alias vnc='vncserver -localhost -geometry 1280x800'
@@ -140,7 +106,7 @@ alias custom='conda activate custom'
 alias de='conda deactivate'
 
 # Python startup file
-export PYTHONSTARTUP=$HOME_LCD/environment/python_startup.py
+export PYTHONSTARTUP=$HOME/environment/python_startup.py
 # Note: on Pleaides, there is also /etc/pythonstart, should I worry about this?
 
 # LCD ssh shortcuts
@@ -160,11 +126,11 @@ export sarg=/sargas/loma3853 # /usr/sbin/sargas is a program on Freyr
 export miz=/mizar/loma3853
 
 # Rayleigh environent
-export ra=$HOME_LCD/rayleigh
+export ra=$HOME/rayleigh
 export racode=$ra/code
 export rapp=$racode/post_processing
 
-export raRyan=$HOME_LCD/rayleigh_Ryan
+export raRyan=$HOME/rayleigh_Ryan
 export racodeRyan=$raRyan/code
 export rappRyan=$racodeRyan/post_processing
 
@@ -201,13 +167,13 @@ alias make_sample='tar -cvf sample.tar $(find AZ_Avgs/ | sort | tail -n 3) $(fin
 nproc=`nproc --all` 
 # ppc for "python parallel call"
 export ppc="mpiexec -n $nproc python -u"
-source $HOME_LCD/environment/bashrc_ra_routines
+source $HOME/environment/bashrc_ra_routines
 
 # some other functions
 setnproc() {
     nproc=$1
     export ppc="mpiexec -n $nproc python -u"
-    source $HOME_LCD/environment/bashrc_ra_routines
+    source $HOME/environment/bashrc_ra_routines
 }
 
 # count lines in a directory
@@ -227,10 +193,10 @@ __conda_setup="$('/home5/loma3853/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "$HOME_LCD/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME_LCD/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="$HOME_LCD/miniconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
