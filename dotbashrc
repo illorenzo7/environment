@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# don't break scp with echo in .bashrc
+if [ -z "$PS1" ]; then
+    return
+fi
+
 # the buffer string
 export bufferstring="============================================================"
 

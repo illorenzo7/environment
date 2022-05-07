@@ -6,11 +6,6 @@
 echo $bufferstring
 echo "Executing $envdir/bashrc_common"
 
-# don't break scp with echo in .bashrc
-if [ -z "$PS1" ]; then
-    return
-fi
-
 # start by clearing all aliases
 #unalias -a
 

@@ -5,7 +5,7 @@
 
 # state what's going on
 echo $bufferstring
-echo "Executing $envdir/bashrc_common"
+echo "Executing $envdir/bashrc_mac"
 
 # color code directory contents
 alias ls="ls -G" # Works on Mac
