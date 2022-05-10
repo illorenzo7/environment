@@ -56,5 +56,11 @@ export OMP_NUM_THREADS=1
 export FC=mpif90
 export CC=mpicc
 
+# Start the vnc server
+# make vnc window to match the screen dimensions of freyr
+# MUST deactivate from conda environment (both) first
+alias vnc='de; de; vncserver -localhost -geometry 1900x1000' 
+alias vncv='vncviewer'
+
 # source the common stuff
 sbcommon
