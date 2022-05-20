@@ -8,6 +8,17 @@ fi
 # the buffer string
 export bufferstring="============================================================"
 
+# function to get into MPI environment 
+# (for compiling/running Rayleigh)
+loadmpi() {
+    module purge 
+    module load mpi-hpe
+    module load comp-intel
+}
+
+# load firefox
+alias loadff="module load firefox"
+
 # state what's going on
 echo $bufferstring
 echo "Executing $HOME/environment/dotbashrc"
