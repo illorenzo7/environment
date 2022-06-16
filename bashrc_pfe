@@ -42,6 +42,9 @@ echo "Executing $brcpfe"
 # ssh pbspl1 tracejob -n3 job_id
 # This will ssh into pbspl1 and run tracejob going back 3 days (-n3) for jobid
 
+# Enable auto-completion in git
+source /etc/bash_completion.d/git # on LFE, it's "git.sh"
+
 # color code directory contents
 alias ls="ls --color='auto'"
 
