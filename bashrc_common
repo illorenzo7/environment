@@ -29,8 +29,8 @@ export nb17=/nobackupp17/lmatilsk
 #export tady11=$tahy11/dynamo
 
 # the Science paper
-export tach=$pub/Science_Paper
-export tachplots=$HOME/Science_Paper_Plots
+export tach=$pub/Tacho_Letter_Part2
+export tachplots=$HOME/Tacho_Letter_Plots_Part2
 
 # Extra appendages to PATH to allow 
 # programs to be installed locally
