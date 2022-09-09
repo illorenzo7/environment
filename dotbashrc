@@ -84,16 +84,22 @@ alias vbdot="vim $dotbrc"
 # LFE hosts
 host=`hostname`
 if [[ "$host" == "lfe"* ]] || [[ "$host" == "ldan"* ]]; then
+    # Enable auto-completion in git
+    source /etc/bash_completion.d/git.sh 
     sblfe
 fi
 
 # PFE hosts
 if [[ "$host" == "pfe"* ]]; then
+    # Enable auto-completion in git
+    source /etc/bash_completion.d/git
     sbpfe
 fi
 
 # LCD hosts
 if [[ "$host" == *"colorado.edu" ]]; then
+    # Enable auto-completion in bash
+    source ~/git-bash-completion
     sblcd
 fi
 

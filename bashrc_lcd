@@ -10,9 +10,6 @@ echo "Executing $envdir/bashrc_lcd"
 # color code directory contents
 alias ls="ls --color='auto'"
 
-# Enable auto-completion in bash
-source ~/git-bash-completion
-
 # unload all module files, then load desired ones
 module purge
 #module load intel
