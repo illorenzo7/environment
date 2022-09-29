@@ -145,8 +145,12 @@ setnproc() {
 }
 
 # count lines in a directory
+# usage: countlines directory/ *.[extension]
+# must be "outside" directory (i.e. "." doesn't work)
+# e.g., in rayleigh/utils/:
+# countlines compute/ *py [note final slash is irrelevant; could use "compute"]
 countlines() {
-    find $1 -name $2 | xargs wc -l
+    find $1 -name $2 -type f | xargs wc -l
 }
 
 # ffmpeg shortcut for making movies form img????.png files
