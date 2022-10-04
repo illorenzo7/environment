@@ -104,7 +104,7 @@ if [[ "$host" == *"colorado.edu" ]]; then
 fi
 
 # MAC hosts
-if [[ "$host" == "lorensMac"* ]] || [[ "$host" == "cu-genvpn"* ]]; then
+if [[ "$host" == "lorensMac"* ]] || [[ "$host" == "cu-genvpn"* ]] || [[ "$host" == "eduroam"* ]]; then
     sbmac
 fi
 
