@@ -7,6 +7,7 @@ sys.path.append(os.environ['rapl'])
 sys.path.append(os.environ['rapl'] + '/azav')
 from rayleigh_diagnostics import *
 from common import *
+from nond_numbers import *
 from plotcommon import *
 from azav_util import plot_azav
 from reference_tools import equation_coefficients
