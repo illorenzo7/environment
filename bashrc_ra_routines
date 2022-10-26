@@ -40,6 +40,8 @@ alias ttrjoin="python $raco/timetrace/timetrace_join.py"
 alias timeread="python $raco/timeread.py"
 alias getrvals="python $raco/get_rvals.py"
 alias qgroup="python $raco/print_qgroup.py"
+alias numbersinput="python $raco/print_numbers_input.py"
+alias numbersoutput="python $raco/print_numbers_output.py"
 
 # TIMETRACE routines
 # parallelized ------------------------
