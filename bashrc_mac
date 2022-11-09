@@ -28,6 +28,7 @@ export desk=$HOME/Desktop
 # Desktop sub dirs
 export pubrev=$desk/Publication_Review
 export thesis=$desk/Thesis
+export notes=$desk/Research_Notes
 export pres=$desk/Presentations
 export cv=$desk/CV
 
