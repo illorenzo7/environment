@@ -58,7 +58,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # always ssh with display privileges
-alias ssh='ssh -X -oHostKeyAlgorithms=+ssh-dss -oPubkeyAcceptedAlgorithms=+ssh-rsa'
+alias ssh='ssh -X'
 alias less='less -MN' # make less show line numbers and  filename in status bar
 
 # Commands to activate or deactivate various Conda environments,
