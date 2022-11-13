@@ -120,11 +120,9 @@ alias mtracetimelat="python $rapl/timetrace/mtracetimelat.py"
 alias mtracetimelatemf="python $rapl/timetrace/mtracetimelat_emf.py"
 
 # slice plotting routines
-alias raslice="python $rapl/slice/generic.py"
-#alias ortho="python $rapl/slice/ortho.py"
-#alias mer="python $rapl/mer_show.py"
-#alias eq="python $rapl/slice/eqslice.py"
-#talias speclm="python $rapl/slice/spec_lm.py"
+alias raslice="python $rapl/slice/raslice.py"
+alias spec="python $rapl/slice/spec.py"
+#alias speclm="python $rapl/slice/spec_lm.py"
 alias specl="python $rapl/slice/spec_l.py"
 
 # time-(something), i.e., timey
