@@ -10,12 +10,6 @@ echo "Executing $envdir/bashrc_lcd"
 # color code directory contents
 alias ls="ls --color='auto'"
 
-# unload all module files, then load desired ones
-module purge
-#module load intel
-#module load openmpi
-#module load ffmpeg
-
 # Main folders on LCD
 export doc=$HOME/Documents
 export down=$HOME/Downloads

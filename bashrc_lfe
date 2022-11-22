@@ -6,19 +6,6 @@
 echo $bufferstring
 echo "Executing $brclfe"
 
-# commands to load MPI and/or Firefox
-
-# function to get into MPI environment 
-# (for compiling/running Rayleigh)
-loadmpi() {
-    module purge 
-    module load mpi-hpe
-    module load comp-intel
-}
-
-# load firefox
-alias loadff="module load firefox"
-
 # "bashrc_lfe" (you are here) contains more commands specific to lou;
 # # i.e., unmigrating from tape, backing things up, etc.
 #
