@@ -46,7 +46,7 @@ alias printnumbersoutput="python $raco/print_numbers_output.py"
 
 # TIMETRACE routines
 # parallelized ------------------------
-alias gtrq="$ppc $raco/timetrace/G_Avgs_quad.py"
+alias gtr="$ppc $raco/timetrace/G_Avgs_quad.py"
 alias poynt="$ppc $raco/timetrace/poynt.py"
 alias ty="$ppc $raco/timetrace/timey.py"
 alias tlon="$ppc $raco/timetrace/timelon.py" 
@@ -102,7 +102,7 @@ alias toten="python $rapl/azav/toten.py"
 alias totenvst="python $rapl/azav/toten_vs_time.py"
 
 # line plots
-alias etrq="python $rapl/timetrace/etrace_quad.py"
+alias etr="python $rapl/timetrace/etrace_quad.py"
 alias timetrq="python $rapl/timetrace/timetrace_quad.py"
 alias plotpoynt="python $rapl/timetrace/poynt.py"
 alias amomtr="python $rapl/timetrace/Ltrace.py"
