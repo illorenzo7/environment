@@ -142,5 +142,8 @@ acct_ytd_save() {
 # Start the vnc server
 alias vnc='vncserver -localhost -geometry 1280x800'
 
+# suppress annoying XDG_RUNTIME_DIR warning
+export XDG_RUNTIME_DIR='$HOME_PFE/tmp'
+
 # source the common stuff
 sbcommon
