@@ -154,6 +154,8 @@ countlines() {
     find $1 -name "$2" -type f | xargs wc -l
 }
 
+# sequentialize images in directory
+alias sequence="python $raco/sequentialize_images.py"
 # ffmpeg shortcut for making movies form img????.png files
 alias ffm="ffmpeg3 -framerate 20 -i img%04d.png -qscale 5 movie.mp4"
 
