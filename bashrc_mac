@@ -94,3 +94,4 @@ alias syncpresentations='rsync -avP ~/Desktop/Presentations/ freyr:~/Desktop/Pre
 # source the common stuff
 sbcommon
 alias ssh='ssh -X -oHostKeyAlgorithms=+ssh-dss -oPubkeyAcceptedAlgorithms=+ssh-rsa'
+alias scp='scp -oHostKeyAlgorithms=+ssh-dss -oPubkeyAcceptedAlgorithms=+ssh-rsa'
