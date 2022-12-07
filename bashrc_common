@@ -157,7 +157,7 @@ countlines() {
 # sequentialize images in directory
 alias sequence="python $raco/sequentialize_images.py"
 # ffmpeg shortcut for making movies form img????.png files
-alias ffm="ffmpeg3 -framerate 20 -i img%04d.png -qscale 5 movie.mp4"
+alias ffm="ffmpeg3 -framerate 30 -i img%04d.png -qscale 5 movie.mp4"
 
 # BASH SHORTCUTS
 alias rmsslice="bash $rau/bash/rm_sslice.sh"
