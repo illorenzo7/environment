@@ -9,6 +9,7 @@ echo "Executing $envdir/bashrc_ra_routines"
 # compute routines, non-parallel
 
 # print routines
+alias findcorrupt="$ppc $raco/print_corrupt_files.py"
 alias qi="python $raco/print_quantity_or_index.py"
 alias ttrans="python $raco/print_translated_time.py"
 alias simt="python $raco/print_simtime.py"
@@ -19,7 +20,11 @@ alias sliceinfo="python $raco/print_sliceinfo.py"
 alias qgroup="python $raco/print_qgroup.py"
 alias numbersinput="python $raco/print_numbers_input.py"
 alias numbersoutput="python $raco/print_numbers_output.py"
-alias findcorrupt="$ppc $raco/print_corrupt_files.py"
+alias eqconst="python $raco/print_eq_constants.py"
+alias freq="python $raco/print_output_freq.py"
+
+# remove spaces (not really a Rayleigh routine but need a spot for it)
+alias rmspace="python $raco/remove_spaces.py"
 
 # data analysis routines (mostly parallelized)
 alias tav="$ppc $raco/timeavg/radata.py"
@@ -45,8 +50,6 @@ alias molltimes="$ppc $rapl/sslice/moll_times_sample.py"
 alias res="python $rapl/resolution.py"
 alias ref="python $rapl/reference.py"
 alias trans="python $rapl/transport.py"
-alias eqconst="python $raco/eq_constants.py"
-alias freq="python $raco/output_freq.py"
 
 # AZ_Avgs routines
 alias azav="python $rapl/azav/azav.py"
@@ -110,5 +113,4 @@ alias plottmspecemf="python $rapl/timetrace/tmspec_emf.py"
 alias powerrange="python $rapl/timetrace/tspec_power_in_range.py"
 alias powerrangetm="python $rapl/timetrace/tmspec_power_in_range.py"
 
-# Remove spaces (not really a Rayleigh routine but need a spot for it)
-alias rmspace="python $raco/remove_spaces.py"
+
