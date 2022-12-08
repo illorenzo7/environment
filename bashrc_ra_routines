@@ -14,17 +14,12 @@ alias ttrans="python $raco/print_translated_time.py"
 alias simt="python $raco/print_simtime.py"
 alias irate="python $raco/print_iter_rate.py"
 alias nodestats="python $raco/print_nodestats.py"
-alias timeread="python $raco/print_timeread.py"
+alias readtime="python $raco/print_readtime.py"
 alias sliceinfo="python $raco/print_sliceinfo.py"
 alias qgroup="python $raco/print_qgroup.py"
 alias numbersinput="python $raco/print_numbers_input.py"
 alias numbersoutput="python $raco/print_numbers_output.py"
 alias findcorrupt="$ppc $raco/print_corrupt_files.py"
-
-# custom reference routines
-alias tachrefquart="python $raco/reference_state/generate_CZ_RZ_reference-quart.py"
-alias tachreftanh="python $raco/reference_state/generate_CZ_RZ_reference-tanh.py"
-alias heatingczrztanh="python $raco/reference_state/heating_CZ_RZ-tanh.py"
 
 # data analysis routines (mostly parallelized)
 alias tav="$ppc $raco/timeavg/radata.py"
@@ -32,6 +27,12 @@ alias gtr="$ppc $raco/timetrace/G_Avgs_quad.py"
 alias ty="$ppc $raco/timetrace/timey.py"
 alias tavjoin="python $raco/timeavg/timeavg_join.py"
 alias ttrjoin="python $raco/timetrace/timetrace_join.py"
+
+# custom reference routines
+alias tachrefquart="python $raco/reference_state/generate_CZ_RZ_reference-quart.py"
+alias tachreftanh="python $raco/reference_state/generate_CZ_RZ_reference-tanh.py"
+alias heatingczrztanh="python $raco/reference_state/heating_CZ_RZ-tanh.py"
+
 
 # PLOTTING routines (parallelized)
 alias dramommc="$ppc $rapl/azav/dr_amom_mc_times_sample.py"
@@ -82,7 +83,7 @@ alias plotpoynt="python $rapl/timetrace/poynt.py"
 alias amomtr="python $rapl/timetrace/Ltrace.py"
 alias amomtrq="python $rapl/timetrace/Ltrace_quad.py"
 alias efr="python $rapl/shav/eflux_radial.py"
-alias numbersoutput="python $rapl/shav/numbers_output.py"
+#alias numbersoutput="python $rapl/shav/numbers_output.py"
 alias efrvst="python $rapl/shav/eflux_radial_vs_time.py"
 alias vamp="python $rapl/shav/vamp.py"
 alias bamp="python $rapl/shav/bamp.py"
