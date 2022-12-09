@@ -6,7 +6,9 @@
 echo $bufferstring
 echo "Executing $envdir/bashrc_ra_routines"
 
-# compute routines, non-parallel
+#####################################################
+# compute routines
+#####################################################
 
 # print routines
 alias findcorrupt="$ppc $raco/print_corrupt_files.py"
@@ -18,8 +20,8 @@ alias nodestats="python $raco/print_nodestats.py"
 alias readtime="python $raco/print_readtime.py"
 alias sliceinfo="python $raco/print_sliceinfo.py"
 alias qgroup="python $raco/print_qgroup.py"
-alias numbersinput="python $raco/print_numbers_input.py"
-alias numbersoutput="python $raco/print_numbers_output.py"
+alias printnumbersinput="python $raco/print_numbers_input.py"
+alias printnumbersoutput="python $raco/print_numbers_output.py"
 alias eqconst="python $raco/print_eq_constants.py"
 alias freq="python $raco/print_output_freq.py"
 
@@ -38,79 +40,41 @@ alias tachrefquart="python $raco/reference_state/generate_CZ_RZ_reference-quart.
 alias tachreftanh="python $raco/reference_state/generate_CZ_RZ_reference-tanh.py"
 alias heatingczrztanh="python $raco/reference_state/heating_CZ_RZ-tanh.py"
 
+#####################################################
+# plot routines
+#####################################################
 
-# PLOTTING routines (parallelized)
-alias dramommc="$ppc $rapl/azav/dr_amom_mc_times_sample.py"
-alias torquetimes="$ppc $rapl/azav/torque_times_sample.py"
-alias molltimes="$ppc $rapl/sslice/moll_times_sample.py"
-
-# RAYLEIGH PLOTTING SHORTCUTS (non-parallel)
-
-# sim parameters
-alias res="python $rapl/resolution.py"
+# basic routines (main plot/ directory)
+alias gridres="python $rapl/grid_resolution.py"
+alias lengthscales="python $rapl/length_scales.py"
 alias ref="python $rapl/reference.py"
 alias trans="python $rapl/transport.py"
 
 # AZ_Avgs routines
 alias azav="python $rapl/azav/azav.py"
-
-# mean flows
 alias dr="python $rapl/azav/diffrot.py"
 alias drr="python $rapl/azav/diffrot_rslice.py"
 alias drder="python $rapl/azav/diffrot_derivs.py"
-alias drdershav="python $rapl/azav/diffrot_derivs_shav.py"
-alias amom="python $rapl/azav/amom.py"
 alias mc="python $rapl/azav/mercirc.py"
-
-# mean fields
-alias Bmaz="python $rapl/azav/Bm_azav.py"
-
-# torque
-alias torque="python $rapl/azav/torque.py"
-alias torquert="python $rapl/azav/torque_rt.py"
-
-# thermal state
-alias thermo="python $rapl/azav/thermo_merplane.py"
-alias thermonond="python $rapl/azav/thermo_merplane_nond.py"
-alias tw="python $rapl/azav/simple_thermal_wind.py"
-
-# energy stuff
-alias kem="python $rapl/azav/ke_merplane.py"
+alias thermoazav="python $rapl/azav/thermo.py"
+alias thermalwind="python $rapl/azav/simple_thermal_wind.py"
 alias toten="python $rapl/azav/toten.py"
-alias totenvst="python $rapl/azav/toten_vs_time.py"
+alias eft="python $rapl/azav/eflux_latitudinal.py"
 
-# line plots
-alias etr="python $rapl/timetrace/etrace_quad.py"
-alias timetrq="python $rapl/timetrace/timetrace_quad.py"
-alias plotpoynt="python $rapl/timetrace/poynt.py"
-alias amomtr="python $rapl/timetrace/Ltrace.py"
-alias amomtrq="python $rapl/timetrace/Ltrace_quad.py"
-alias efr="python $rapl/shav/eflux_radial.py"
-#alias numbersoutput="python $rapl/shav/numbers_output.py"
-alias efrvst="python $rapl/shav/eflux_radial_vs_time.py"
-alias vamp="python $rapl/shav/vamp.py"
+# Shell_Avgs routines
 alias bamp="python $rapl/shav/bamp.py"
-alias vavamp="python $rapl/shav/va_to_vamp.py"
-alias eft="python $rapl/eflux_latitudinal.py"
-alias eft2="python $rapl/eflux_latitudinal-2.py"
-alias mertimey="python $rapl/timetrace/mertimey.py"
-alias mtracetimelat="python $rapl/timetrace/mtracetimelat.py"
-alias mtracetimelatemf="python $rapl/timetrace/mtracetimelat_emf.py"
+alias vamp="python $rapl/shav/vamp.py"
+alias efr="python $rapl/shav/eflux_radial.py"
+alias plotnumbersoutput="python $rapl/shav/numbers_output.py"
+alias thermoshav="python $rapl/shav/thermo.py"
+
+# timetrace routines
+alias amomtr="python $rapl/timetrace/amomtrace_quad.py"
+alias etr="python $rapl/timetrace/etrace_quad.py"
+alias timetr="python $rapl/timetrace/timetrace_quad.py"
+alias timey="python $rapl/timetrace/timey.py"
+alias torsosc="python $rapl/timetrace/tors_osc.py"
 
 # slice plotting routines
 alias raslice="$ppc $rapl/slice/raslice.py"
 alias spec="python $rapl/slice/spec.py"
-#alias speclm="python $rapl/slice/spec_lm.py"
-alias specl="python $rapl/slice/spec_l.py"
-
-# time-(something), i.e., timey
-alias timey="python $rapl/timetrace/timey.py"
-alias timelon="python $rapl/timetrace/timelon.py"
-alias torsosc="python $rapl/timetrace/tors_osc.py"
-alias plottspec="python $rapl/timetrace/tspec.py"
-alias plottmspec="python $rapl/timetrace/tmspec.py"
-alias plottmspecemf="python $rapl/timetrace/tmspec_emf.py"
-alias powerrange="python $rapl/timetrace/tspec_power_in_range.py"
-alias powerrangetm="python $rapl/timetrace/tmspec_power_in_range.py"
-
-
