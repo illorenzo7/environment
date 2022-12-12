@@ -2,6 +2,9 @@
 # Author: Loren Matilsky
 # Created: 07/07/2016
 # Modified to work in new "environment" repo: 02/12/2021
+# git autocomplete instructions (12/12/2022):
+# https://apple.stackexchange.com/questions/55875/git-auto-complete-for-branches-at-the-command-line
+# curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 
 # state what's going on
 echo $bufferstring
