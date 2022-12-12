@@ -101,6 +101,7 @@ fi
 
 # MAC hosts
 if [[ "$host" == "lorensMac"* ]] || [[ "$host" == "cu-genvpn"* ]] || [[ "$host" == *"eduroam"* ]]; then
+    source ~/.git-completion.bash
     sbmac
 fi
 
