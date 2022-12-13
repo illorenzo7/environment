@@ -64,6 +64,7 @@ alias less='less -MN' # make less show line numbers and  filename in status bar
 # Commands to activate or deactivate various Conda environments,
 alias base='conda activate base'
 alias custom='conda activate custom'
+alias radev='conda activate radev'
 alias de='conda deactivate'
 
 # Python startup file
