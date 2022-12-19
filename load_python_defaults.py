@@ -7,7 +7,7 @@ sys.path.append(os.environ['rapl'])
 sys.path.append(os.environ['rapl'] + '/azav')
 from rayleigh_diagnostics import *
 from common import *
-from fluid_numbers import *
+from numbers_util import *
 from plotcommon import *
 from azav_util import plot_azav
 from reference_tools import equation_coefficients
