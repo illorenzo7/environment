@@ -48,6 +48,7 @@ alias heatingczrztanh="python $raco/reference_state/heating_CZ_RZ-tanh.py"
 alias gridres="python $rapl/grid_resolution.py"
 alias lengthscales="python $rapl/length_scales.py"
 alias ref="python $rapl/reference.py"
+alias eqfunc="python $rapl/eq_functions.py"
 alias trans="python $rapl/transport.py"
 
 # AZ_Avgs routines

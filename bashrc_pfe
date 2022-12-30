@@ -72,7 +72,7 @@ alias qst='qstat -u lmatilsk'       # check on status of jobs
 alias sst='shiftc --status'         # check on status of shiftc transfers
 #alias shiftc="shiftc --no-mail"           # don't send annoying emails
 
-alias lscript='bash $rau/zz_runscripts/lscript.sh'
+alias lscript='bash $rau/bash/lscript.sh'
 
 # function to request nodes from devel queue
 devel () {
