@@ -12,7 +12,7 @@ echo "Executing $envdir/bashrc_mac"
 
 # color code directory contents
 alias ls="ls -G" # Works on Mac
-#alias ls="ls --color='auto'" # Works on general Unix, but not Mac :-( FUCK YOU TIM COOK!!!
+#alias ls="ls --color='auto'" # Works on general Unix, but not Mac :-( 
 
 ###############################
 # Mac shortcuts               #
@@ -21,6 +21,10 @@ alias ls="ls -G" # Works on Mac
 export rasim=$HOME/rayleigh/sims
 export tahy=$rasim/tachocline
 export tady=$tahy/dynamo
+
+# NSF folder
+export nsf=$HOME/AAPF
+export nsfrec=$nsf/00_NSF_Allowance_Receipts
 
 # Main folders
 export mu=$HOME/Music/Music/Media
