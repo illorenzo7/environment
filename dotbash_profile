@@ -7,6 +7,9 @@ export bufferstring="===========================================================
 echo $bufferstring
 echo "Executing $HOME/environment/dotbash_profile"
 
+# umask to make everything visible to others in my [group(s)?]
+umask u=rwx,g=rx,o=
+
 if [ -f $HOME/.bashrc ]; then
     source $HOME/.bashrc
 fi
