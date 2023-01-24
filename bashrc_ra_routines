@@ -32,6 +32,7 @@ alias rmspace="python $raco/remove_spaces.py"
 alias tav="$ppc $raco/timeavg/radata.py"
 alias gtr="$ppc $raco/timetrace/G_Avgs_quad.py"
 alias ty="$ppc $raco/timetrace/timey.py"
+alias mtrace="$ppc $raco/timetrace/mtrace.py"
 alias tavjoin="python $raco/timeavg/timeavg_join.py"
 alias ttrjoin="python $raco/timetrace/timetrace_join.py"
 
@@ -75,6 +76,7 @@ alias etr="python $rapl/timetrace/etrace_quad.py"
 alias timetr="python $rapl/timetrace/timetrace_quad.py"
 alias timey="python $rapl/timetrace/timey.py"
 alias torsosc="python $rapl/timetrace/tors_osc.py"
+alias mtimelat="python $rapl/timetrace/mtracetimelat.py"
 
 # slice plotting routines
 alias raslice="$ppc $rapl/slice/raslice.py"
