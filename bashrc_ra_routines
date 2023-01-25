@@ -32,7 +32,7 @@ alias rmspace="python $raco/remove_spaces.py"
 alias tav="$ppc $raco/timeavg/radata.py"
 alias gtr="$ppc $raco/timetrace/G_Avgs_quad.py"
 alias ty="$ppc $raco/timetrace/timey.py"
-alias mtrace="$ppc $raco/timetrace/mtrace.py"
+alias mty="$ppc $raco/timetrace/mtrace_timey.py"
 alias tavjoin="python $raco/timeavg/timeavg_join.py"
 alias ttrjoin="python $raco/timetrace/timetrace_join.py"
 
