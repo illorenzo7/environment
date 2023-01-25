@@ -76,7 +76,7 @@ alias etr="python $rapl/timetrace/etrace_quad.py"
 alias timetr="python $rapl/timetrace/timetrace_quad.py"
 alias timey="python $rapl/timetrace/timey.py"
 alias torsosc="python $rapl/timetrace/tors_osc.py"
-alias mtimelat="python $rapl/timetrace/mtracetimelat.py"
+alias mtimey="python $rapl/timetrace/mtrace_timey.py"
 
 # slice plotting routines
 alias raslice="$ppc $rapl/slice/raslice.py"
