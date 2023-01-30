@@ -14,6 +14,8 @@ PS1='\w$ '
 
 # Pleiades directory shortcuts
 export nb=/nobackup/lmatilsk
+export casem=/nobackup/lmatilsk/00_Tacho_Letter/case_M
+export caseh=/nobackup/lmatilsk/00_Tacho_Letter/case_H
 #export nb11=/nobackupp11/lmatilsk # no longer needed
 export nb17=/nobackupp17/lmatilsk
 
