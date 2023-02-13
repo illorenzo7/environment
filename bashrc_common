@@ -12,32 +12,21 @@ echo "Executing $envdir/bashrc_common"
 # Make prompt show current working directory
 PS1='\w$ '
 
-# Pleiades directory shortcuts
-export nb=/nobackup/lmatilsk
-export casem=/nobackup/lmatilsk/00_Tacho_Letter/case_M
-export caseh=/nobackup/lmatilsk/00_Tacho_Letter/case_H
-#export nb11=/nobackupp11/lmatilsk # no longer needed
-export nb17=/nobackupp17/lmatilsk
-
-# Rayleigh simulation root directories on Pleiades
-
-# these guys are deprecated I think
-#export rasim=$nb
-#export tahy=$rasim/tachocline
-#export tady=$tahy/dynamo
-
-#export rasim11=$nb11
-#export tahy11=$rasim11/tachocline
-#export tady11=$tahy11/dynamo
-
-# the Science paper
-export tach=$pub/Tacho_Letter_Part2
-export tachplots=$HOME/Tacho_Letter_Plots_Part2
-
 # Extra appendages to PATH to allow 
 # programs to be installed locally
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/usr/bin
+
+# Pleiades directory shortcuts
+
+# Rayleigh simulation root directories on Pleiades
+export nb=/nobackup/lmatilsk
+export tach=$nb/00_Tacho_Letter
+export boulder=$nb/00_Boulder_Survey
+export postdoc=$nb/00_Summer_Postdoc
+export casem=$tach/case_M
+export caseh=$tach/case_H
+export tachplots=$HOME/Tacho_Letter_Plots_Part2
 
 # other command aliases
 alias fn='find `pwd` -name ' # fn for "full name"
