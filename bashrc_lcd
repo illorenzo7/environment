@@ -10,19 +10,6 @@ echo "Executing $envdir/bashrc_lcd"
 # color code directory contents
 alias ls="ls --color='auto'"
 
-# Main folders on LCD
-export doc=$HOME/Documents
-export down=$HOME/Downloads
-export desk=$HOME/Desktop
-
-# Desktop sub dirs
-export pubrev=$desk/Publication_Review
-export pres=$desk/Presentations
-export papers=$desk/Paper_Library
-export pub=$desk/Publications
-export prop=$desk/Proposals
-export fin=$desk/Financial
-
 # some aliases 
 alias lo='libreoffice'
 alias jn='jupyter notebook'

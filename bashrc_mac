@@ -26,27 +26,8 @@ export tady=$tahy/dynamo
 export nsf=$HOME/AAPF
 export nsfrec=$nsf/00_NSF_Allowance_Receipts
 
-# Main folders
+# Main folders (additional for Mac)
 export mu=$HOME/Music/Music/Media
-export doc=$HOME/Documents
-export down=$HOME/Downloads
-export desk=$HOME/Desktop
-
-# Desktop sub dirs
-export pubrev=$desk/Publication_Review
-export thesis=$desk/Thesis
-export notes=$desk/Research_Notes
-export pres=$desk/Presentations
-export cv=$desk/CV
-
-export papers=$desk/Paper_Library
-
-export pub=$desk/Publications
-
-export prop=$desk/Proposals
-export proprsr=$doc/Proposal_to_Recruit_Support_Retain_UrMs_APS
-
-export fin=$doc/Financial
 
 # Switch hidden folder on and off
 alias showhidden='defaults write com.apple.Finder AppleShowAllFiles true && killall Finder'
@@ -94,11 +75,13 @@ alias website-dl='wget --mirror -nH -np -p -k -E -e robots=off'
 #alias g++='g++ -Wall'
 
 # Sync folders with papers between Mac and LCD
+# DEPRECATED (probably) 02/21/23:
 alias syncbooks='rsync -avP ~/Desktop/Books/ freyr:~/Desktop/Books && rsync -avP freyr:~/Desktop/Books/ ~/Desktop/Books'
 alias syncproposals='rsync -avP ~/Desktop/Proposals/ freyr:~/Desktop/Proposals && rsync -avP freyr:~/Desktop/Proposals/ ~/Desktop/Proposals'
 alias syncpresentations='rsync -avP ~/Desktop/Presentations/ freyr:~/Desktop/Presentations && rsync -avP freyr:~/Desktop/Presentations/ ~/Desktop/Presentations'
 
 # source the common stuff
 sbcommon
+# avoid weird ssh key errors
 alias ssh='ssh -X -oHostKeyAlgorithms=+ssh-dss -oPubkeyAcceptedAlgorithms=+ssh-rsa'
 alias scp='scp -oHostKeyAlgorithms=+ssh-dss -oPubkeyAcceptedAlgorithms=+ssh-rsa'
