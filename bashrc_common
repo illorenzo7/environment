@@ -31,6 +31,8 @@ export cv=$desk/CV
 export papers=$desk/Paper_Library
 export pub=$desk/Publications
 export prop=$desk/Proposals
+export solartw=$desk/Solar_Thermal_Wind
+
 export proprsr=$doc/Proposal_to_Recruit_Support_Retain_UrMs_APS
 export fin=$doc/Financial
 
