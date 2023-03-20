@@ -24,7 +24,8 @@ export tady=$tahy/dynamo
 
 # NSF folder
 export nsf=$HOME/AAPF
-export nsfrec=$nsf/00_NSF_Allowance_Receipts
+export nsfal=$nsf/00_NSF_Allowance
+export nsfrec=$nsf/00_NSF_Allowance/Receipts
 
 # Main folders (additional for Mac)
 export mu=$HOME/Music/Music/Media
