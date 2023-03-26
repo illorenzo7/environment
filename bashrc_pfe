@@ -45,6 +45,12 @@ echo "Executing $brcpfe"
 # color code directory contents
 alias ls="ls --color='auto'"
 
+#Load desired modules here.
+module purge
+#module use -a /swbuild/analytix/tools/modulefiles
+#module load miniconda3/v4
+#module load pkgsrc  # dunno if this is necessary anymore
+
 # Make terminals white on black
 #xrdb $HOME/.Xresources
 
@@ -143,28 +149,3 @@ export XDG_RUNTIME_DIR="$HOME_PFE/tmp"
 
 # source the common stuff
 sbcommon
-
-#NAS conda stuff
-module purge
-module -a use /swbuild/analytix/tools/modulefiles
-module load miniconda3/v4
-
-export CONDA_ENVS_PATH=/nobackup/lmatilsk/.conda/envs
-export CONDA_PKGS_DIRS=/nobackup/lmatilsk/target_directory
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/swbuild/analytix/tools/miniconda3_220407/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/swbuild/analytix/tools/miniconda3_220407/etc/profile.d/conda.sh" ]; then
-        . "/swbuild/analytix/tools/miniconda3_220407/etc/profile.d/conda.sh"
-    else
-        export PATH="/swbuild/analytix/tools/miniconda3_220407/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-custom
