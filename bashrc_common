@@ -30,6 +30,8 @@ export pres=$desk/Presentations
 export cv=$desk/CV
 export papers=$desk/Paper_Library
 export pub=$desk/Publications
+export tachletter=$pub/Tacho_Letter
+export tachpaper=$pub/Tacho_ApJ
 export prop=$desk/Proposals
 export solartw=$desk/Solar_Thermal_Wind
 
