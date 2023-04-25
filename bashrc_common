@@ -31,7 +31,7 @@ export cv=$desk/CV
 export papers=$desk/Paper_Library
 export pub=$desk/Publications
 export tachletter=$pub/Tacho_Letter
-export tachpaper=$pub/Tacho_ApJ
+export tachapj=$pub/Tacho_ApJ
 export prop=$desk/Proposals
 export solartw=$desk/Solar_Thermal_Wind
 
@@ -49,7 +49,8 @@ export check=$nb/00_Rayleigh_Checkpoints
 export postdoc=$nb/00_Summer_Postdoc
 export casem=$tach/case_M
 export caseh=$tach/case_H
-export tachplots=$HOME/Tacho_Letter_Plots_Part2
+export tachletterplots=$HOME/Tacho_Letter_Plots_Part2
+export tachapjplots=$HOME/Tacho_ApJ_Plots
 
 # other command aliases
 alias fn='find `pwd` -name ' # fn for "full name"
