@@ -17,6 +17,14 @@ PS1='\w$ '
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/usr/bin
 
+#####################
+#DIRECTORY STRUCTURES
+#####################
+
+# Python startup file
+export PYTHONSTARTUP=$HOME/environment/python_startup.py
+# Note: on Pleaides, there is also /etc/pythonstart, should I worry about this?
+
 # Main folders
 export doc=$HOME/Documents
 export down=$HOME/Downloads
@@ -41,6 +49,21 @@ export solartw=$desk/Solar_Thermal_Wind
 export proprsr=$doc/Proposal_to_Recruit_Support_Retain_UrMs_APS
 export fin=$doc/Financial
 
+# Rayleigh environent
+export ra=$HOME/rayleigh
+export racode=$ra/code
+export rapp=$racode/post_processing
+
+export raRyan=$HOME/rayleigh_Ryan
+export racodeRyan=$raRyan/code
+export rappRyan=$racodeRyan/post_processing
+
+export rau=$ra/utils
+export raco=$rau/compute # /usr/bin/co is a command
+export rapl=$rau/plot # /usr/bin/plot is a command
+export raleg=$rau/zz_legacy # /usr/bin/plot is a command
+export idref=$raco/hydro_ideal_reference_state
+
 # Pleiades directory shortcuts
 
 # Rayleigh simulation root directories on Pleiades
@@ -52,6 +75,24 @@ export check=$nb/00_Rayleigh_Checkpoints
 export postdoc=$nb/00_Summer_Postdoc
 export casem=$tach/case_M
 export caseh=$tach/case_H
+
+# LCD  hard-disk shortcuts
+export alt=/altair/loma3853
+export pol=/pollux/loma3853
+export cast=/castor/loma3853 #/usr/bin/cas is a program on Freyr
+export sarg=/sargas/loma3853 # /usr/sbin/sargas is a program on Freyr
+export miz=/mizar/loma3853
+
+export postdoclcd=$alt/00_Summer_Postdoc-fresh
+
+# LCD ssh shortcuts
+export hyp=hyperion
+export fre=freyr
+export bac=bacchus
+export tel=tellus
+export hyd=hydra
+export hyd2=hydra2
+export scy=scylla
 
 # other command aliases
 alias fn='find `pwd` -name ' # fn for "full name"
@@ -83,35 +124,6 @@ alias custom='conda activate custom'
 alias radev='conda activate radev'
 alias de='conda deactivate'
 
-# Python startup file
-export PYTHONSTARTUP=$HOME/environment/python_startup.py
-# Note: on Pleaides, there is also /etc/pythonstart, should I worry about this?
-
-# LCD ssh shortcuts
-export hyp=hyperion
-export fre=freyr
-export bac=bacchus
-export tel=tellus
-export hyd=hydra
-export hyd2=hydra2
-export scy=scylla
-
-# LCD  hard-disk shortcuts
-export alt=/altair/loma3853
-export pol=/pollux/loma3853
-export cast=/castor/loma3853 #/usr/bin/cas is a program on Freyr
-export sarg=/sargas/loma3853 # /usr/sbin/sargas is a program on Freyr
-export miz=/mizar/loma3853
-
-# Rayleigh environent
-export ra=$HOME/rayleigh
-export racode=$ra/code
-export rapp=$racode/post_processing
-
-export raRyan=$HOME/rayleigh_Ryan
-export racodeRyan=$raRyan/code
-export rappRyan=$racodeRyan/post_processing
-
 # sym links
 alias linkra='ln -s $racode/bin/rayleigh.opt'
 alias linkdbg='ln -s $racode/bin/rayleigh.dbg'
@@ -122,11 +134,6 @@ alias linkmulti='ln -s $racode/bin/multi/rayleigh.* .'
 alias linknobinrz='ln -s $racode/bin/noBinRZ/rayleigh.* .'
 
 # post processing
-export rau=$ra/utils
-export raco=$rau/compute # /usr/bin/co is a command
-export rapl=$rau/plot # /usr/bin/plot is a command
-export raleg=$rau/zz_legacy # /usr/bin/plot is a command
-export idref=$raco/hydro_ideal_reference_state
 alias runra='mpiexec -np 16 ./rayleigh.opt -nprow 4 -npcol 4'
 alias runra1="./rayleigh.opt -nprow 1 -npcol 1"
 
