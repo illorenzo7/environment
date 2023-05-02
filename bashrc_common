@@ -137,7 +137,11 @@ alias configmuck='EXT=".muck" ./configure'
 # Equatorial_Slices, Meridional_Slices, Shell_Slices, Shell_Spectra)
 # as well as main_input, reference, transport, and grid_info for
 # a given Rayleigh run directory
-alias make_sample='tar -cvf datasample.tar $(find AZ_Avgs/ | sort | tail -n 3) $(find Equatorial_Slices/ | sort | tail -n 3) $(find G_Avgs/ | sort | tail -n 3)  $(find Meridional_Slices/ | sort | tail -n 3) $(find Shell_Avgs/ | sort | tail -n 3) $(find Shell_Slices/ | sort | tail -n 3) $(find Shell_Spectra/ | sort | tail -n 3) main_input equation_coefficients grid_info jobinfo.txt'
+alias make_sample='tar -cvfh datasample.tar $(find AZ_Avgs/ | sort | tail -n 3) $(find Equatorial_Slices/ | sort | tail -n 3) $(find G_Avgs/ | sort | tail -n 3)  $(find Meridional_Slices/ | sort | tail -n 3) $(find Shell_Avgs/ | sort | tail -n 3) $(find Shell_Slices/ | sort | tail -n 3) $(find Shell_Spectra/ | sort | tail -n 3) main_input equation_coefficients grid_info jobinfo.txt'
+
+alias make_sample_data='tar -cvf datasample.tar $(find AZ_Avgs/ | sort | tail -n 3) $(find Equatorial_Slices/ | sort | tail -n 3) $(find G_Avgs/ | sort | tail -n 3)  $(find Meridional_Slices/ | sort | tail -n 3) $(find Shell_Avgs/ | sort | tail -n 3) $(find Shell_Slices/ | sort | tail -n 3) $(find Shell_Spectra/ | sort | tail -n 3) main_input equation_coefficients grid_info jobinfo.txt data/'
+
+alias make_sample_data_and_plots='tar -cvfh datasample.tar $(find AZ_Avgs/ | sort | tail -n 3) $(find Equatorial_Slices/ | sort | tail -n 3) $(find G_Avgs/ | sort | tail -n 3)  $(find Meridional_Slices/ | sort | tail -n 3) $(find Shell_Avgs/ | sort | tail -n 3) $(find Shell_Slices/ | sort | tail -n 3) $(find Shell_Spectra/ | sort | tail -n 3) main_input equation_coefficients grid_info jobinfo.txt data/ plots/'
 
 # Rayleigh routines
 
