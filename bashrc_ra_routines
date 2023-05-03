@@ -33,6 +33,8 @@ alias tav="$ppc $raco/timeavg/radata.py"
 alias gtr="$ppc $raco/timetrace/G_Avgs_quad.py"
 alias ty="$ppc $raco/timetrace/timey.py"
 alias mty="$ppc $raco/timetrace/mtrace_timey.py"
+#alias mtytotmspec="$ppc $raco/timetrace/mtrace_to_tmspec.py"
+alias mtytotmspec="python $raco/timetrace/mtrace_to_tmspec.py"
 alias tavjoin="python $raco/timeavg/timeavg_join.py"
 alias ttrjoin="python $raco/timetrace/timetrace_join.py"
 
