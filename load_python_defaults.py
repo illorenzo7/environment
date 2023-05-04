@@ -6,12 +6,14 @@ sys.path.append(os.environ['raco'])
 sys.path.append(os.environ['rapl'])
 sys.path.append(os.environ['rapl'] + '/azav')
 sys.path.append(os.environ['rapl'] + '/slice')
+sys.path.append(os.environ['rapl'] + '/timetrace')
 from rayleigh_diagnostics import *
 from common import *
 from numbers_util import *
 from plotcommon import *
 from azav_util import plot_azav
 from slice_util import plot_moll_or_ortho
+from timey_util import plot_timey
 from reference_tools import equation_coefficients
 
 def imshow(arr):
