@@ -47,6 +47,7 @@ alias ls="ls --color='auto'"
 
 #Load desired modules here.
 module purge
+module load scicon/cli_tools # for node_stats.sh
 #module use -a /swbuild/analytix/tools/modulefiles
 #module load miniconda3/v4
 #module load pkgsrc  # dunno if this is necessary anymore
