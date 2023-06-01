@@ -52,6 +52,8 @@ module load scicon/cli_tools # for node_stats.sh
 #module load miniconda3/v4
 #module load pkgsrc  # dunno if this is necessary anymore
 
+shopt -s direxpand # make bash expand environment variables
+
 # Make terminals white on black
 #xrdb $HOME/.Xresources
 
