@@ -68,7 +68,8 @@ alias ldan='qsub -me -mb -q ldan -lselect=1:mem=750GB,walltime=24:00:00 $HOME/en
 alias which_ldan='qstat -nu lmatilsk | grep ldan'
 
 # other command aliases
-alias jn='jupyter notebook --ip=0.0.0.0 --port=8080'
+#alias jn='jupyter notebook --ip=0.0.0.0 --port=8080'
+alias jn='jupyter-notebook --ip=127.0.0.1 --port=8080'
 alias qs="/u/scicon/tools/bin/qs"   # check what nodes are being used currently
 alias less='less -MN' # make less show line numbers and  filename in status bar
 alias quota_nb='lfs quota -h -u lmatilsk /nobackupp11'
