@@ -57,6 +57,7 @@ loadmpi() {
 
 # load firefox
 alias loadff="module load firefox"
+alias resetff="rm -f ~/.mozilla/firefox/*/.parentlock"
 
 ################################################
 # THE FOLLOWING IS UNIQUE TO PFE

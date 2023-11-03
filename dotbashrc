@@ -14,6 +14,7 @@ alias loadmpi="module purge; module load mpi-hpe; module load comp-intel"
 
 # load firefox
 alias loadff="module load firefox"
+alias resetff="rm -f ~/.mozilla/firefox/*/.parentlock"
 
 # state what's going on
 echo $bufferstring
@@ -81,14 +82,15 @@ alias vbdot="vim $dotbrc"
 host=`hostname`
 if [[ "$host" == "lfe"* ]] || [[ "$host" == "ldan"* ]]; then
     # Enable auto-completion in git
-    source /etc/bash_completion.d/git.sh 
+    #source /etc/bash_completion.d/git.sh 
+    source /usr/share/bash-completion/completions/git
     sblfe
 fi
 
 # PFE hosts
 if [[ "$host" == "pfe"* ]]; then
     # Enable auto-completion in git
-    source /etc/bash_completion.d/git
+    source /usr/share/bash-completion/completions/git
     sbpfe
 fi
 

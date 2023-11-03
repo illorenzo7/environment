@@ -68,6 +68,7 @@ export idref=$raco/hydro_ideal_reference_state
 
 # Rayleigh simulation root directories on Pleiades
 export nb=/nobackup/lmatilsk
+export nbnick=/nobackup/nfeather
 export tach=$nb/00_Tacho_Letter
 export boulder=$nb/00_Boulder_Survey
 export check=$nb/00_Rayleigh_Checkpoints

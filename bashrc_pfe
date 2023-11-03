@@ -47,9 +47,12 @@ alias ls="ls --color='auto'"
 
 #Load desired modules here.
 module purge
+module load scicon/cli_tools # for node_stats.sh
 #module use -a /swbuild/analytix/tools/modulefiles
 #module load miniconda3/v4
 #module load pkgsrc  # dunno if this is necessary anymore
+
+shopt -s direxpand # make bash expand environment variables
 
 # Make terminals white on black
 #xrdb $HOME/.Xresources
@@ -65,7 +68,8 @@ alias ldan='qsub -me -mb -q ldan -lselect=1:mem=750GB,walltime=24:00:00 $HOME/en
 alias which_ldan='qstat -nu lmatilsk | grep ldan'
 
 # other command aliases
-alias jn='jupyter notebook --ip=0.0.0.0 --port=8080'
+#alias jn='jupyter notebook --ip=0.0.0.0 --port=8080'
+alias jn='jupyter-notebook --ip=127.0.0.1 --port=8080'
 alias qs="/u/scicon/tools/bin/qs"   # check what nodes are being used currently
 alias less='less -MN' # make less show line numbers and  filename in status bar
 alias quota_nb='lfs quota -h -u lmatilsk /nobackupp11'
@@ -103,7 +107,7 @@ devel () {
     fi
 
     echo "qsub -I -q devel -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00"
-    qsub -I -q devel -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
+    qsub -I -q devel -W group_list=s1848 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
 }
 
 # same as devel() function, but for debug queue
