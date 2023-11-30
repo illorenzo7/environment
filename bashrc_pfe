@@ -107,7 +107,7 @@ devel () {
     fi
 
     echo "qsub -I -q devel -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00"
-    qsub -I -q devel -W group_list=s1848 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
+    qsub -I -q devel -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
 }
 
 # same as devel() function, but for debug queue
