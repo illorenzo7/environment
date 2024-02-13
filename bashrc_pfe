@@ -160,3 +160,5 @@ module load miniconda3/v4
 alias pyt20='source activate pyt2_0'
 alias de='conda deactivate'
 pyt20
+de
+pyt20
