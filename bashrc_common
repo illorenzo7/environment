@@ -119,12 +119,6 @@ fi
 alias ssh='ssh -X'
 alias less='less -MN' # make less show line numbers and  filename in status bar
 
-# Commands to activate or deactivate various Conda environments,
-alias base='conda activate base'
-alias custom='conda activate custom'
-alias radev='conda activate radev'
-alias de='conda deactivate'
-
 # sym links
 alias linkra='ln -s $racode/bin/rayleigh.opt'
 alias linkdbg='ln -s $racode/bin/rayleigh.dbg'
@@ -195,6 +189,12 @@ alias ffm="ffmpeg3 -framerate 30 -i img%04d.png -qscale 5 movie.mp4"
 
 # BASH SHORTCUTS
 alias rmsslice="bash $rau/bash/rm_sslice.sh"
+
+# Commands to activate or deactivate various Conda environments,
+alias base='conda activate base'
+alias custom='conda activate custom'
+alias radev='conda activate radev'
+alias de='conda deactivate'
 
 # moved from dotbashrc
 # >>> conda initialize >>>
