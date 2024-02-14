@@ -76,6 +76,12 @@ alias vbcommon="vim $brccommon"
 alias vbra="vim $brcra"
 alias vbdot="vim $dotbrc"
 
+# command to source bashrc_pfe and then launch jupyter notebook server
+jserve() {
+    sbpfe
+    jupyter notebook --sock /tmp/user.sock --no-browser
+}
+
 # only do anything (automatically) on specific hosts
 
 # LFE hosts
