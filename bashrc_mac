@@ -93,6 +93,12 @@ alias custom='conda activate custom'
 alias radev='conda activate radev'
 alias de='conda deactivate'
 
+# command to link to a jupyter notebook on a Pleiades node
+jlink() {
+    ssh -l username -o "StrictHostKeyChecking ask" \
+-L 8080:/tmp/user.sock -o ProxyJump=sfe,pfe $1
+}
+
 # moved from dotbashrc
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

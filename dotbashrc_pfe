@@ -59,6 +59,12 @@ loadmpi() {
 alias loadff="module load firefox"
 alias resetff="rm -f ~/.mozilla/firefox/*/.parentlock"
 
+# source bashrc_pfe and then launch jupyter notebook server
+jserve() {
+    sbpfe
+    jupyter lab --sock /tmp/user.sock --no-browser
+}
+
 ################################################
 # THE FOLLOWING IS UNIQUE TO PFE
 ################################################
