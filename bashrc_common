@@ -189,3 +189,4 @@ alias ffm="ffmpeg3 -framerate 30 -i img%04d.png -qscale 5 movie.mp4"
 
 # BASH SHORTCUTS
 alias rmsslice="bash $rau/bash/rm_sslice.sh"
+alias rmtexaux="rm *aux *bbl *blg *log *out *synctex.gz"
