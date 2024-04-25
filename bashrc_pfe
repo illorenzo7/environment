@@ -95,10 +95,7 @@ devel () {
     elif [ $modeltype == 'san' ] 
     then
         ncpus=16
-    elif [ $modeltype == 'sky_ele' ] 
-    then
-        ncpus=40
-    elif [ $modeltype == 'cas_ait' ] 
+    elif [ $modeltype == 'sky_ele' ] || [ $modeltype == 'cas_ait' ] 
     then
         ncpus=40
     else
