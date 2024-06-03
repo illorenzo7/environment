@@ -79,6 +79,8 @@ alias sst='shiftc --status'         # check on status of shiftc transfers
 #alias shiftc="shiftc --no-mail"           # don't send annoying emails
 
 alias lscript='bash $rau/bash/lscript.sh'
+alias lscriptall='bash $rau/bash/lscript_all.sh'
+alias interactivenode='bash $rau/bash/submit_interactive_job.sh'
 
 # function to request nodes from devel queue
 devel () {

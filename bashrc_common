@@ -120,13 +120,15 @@ alias ssh='ssh -X'
 alias less='less -MN' # make less show line numbers and  filename in status bar
 
 # sym links
-alias linkra='ln -s $racode/bin/rayleigh.opt'
-alias linkdbg='ln -s $racode/bin/rayleigh.dbg'
-alias linkmain='ln -s $racode/bin/main/rayleigh.* .'
-alias linkcustom='ln -s $racode/bin/custom/rayleigh.* .'
-alias linkperfcond='ln -s $racode/bin/perfcond/rayleigh.* .'
-alias linkmulti='ln -s $racode/bin/multi/rayleigh.* .'
-alias linknobinrz='ln -s $racode/bin/noBinRZ/rayleigh.* .'
+alias linkra='rm rayleigh.*; ln -s $racode/bin/rayleigh.opt'
+alias linkdbg='rm rayleigh.*; ln -s $racode/bin/rayleigh.dbg'
+alias linkmain='rm rayleigh.*; ln -s $racode/bin/main/rayleigh.* .'
+alias linkmods='rm rayleigh.*; ln -s $racode/bin/allmods/rayleigh.* .'
+alias linkcustom='rm rayleigh.*; ln -s $racode/bin/custom/rayleigh.* .'
+alias linkperfcond='rm rayleigh.*; ln -s $racode/bin/perfcond/rayleigh.* .'
+alias linkmulti='rm rayleigh.*; ln -s $racode/bin/multi/rayleigh.* .'
+alias linknobinrz='rm rayleigh.*; ln -s $racode/bin/noBinRZ/rayleigh.* .'
+alias linktraceback='rm rayleigh.*; ln -s $racode/bin/traceback/rayleigh.* .'
 
 # post processing
 alias runra='mpiexec -np 16 ./rayleigh.opt -nprow 4 -npcol 4'

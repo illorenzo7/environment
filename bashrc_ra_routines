@@ -41,6 +41,11 @@ alias gtrjoin="python $raco/timetrace/G_Avgs_quad_join.py"
 
 # custom reference routines
 alias refczrznd="python $raco/reference_state/generate_CZ_RZ_reference-nd.py"
+alias heatczrznd="python $raco/reference_state/generate_CZ_RZ_heating-nd.py"
+alias heatczrzsharpnd="python $raco/reference_state/generate_CZ_RZ_heating_sharp-nd.py"
+alias computeouterdsdr="python $raco/reference_state/compute_outer_dsdr.py"
+alias interpconst="python $raco/reference_state/interpret_constants.py"
+alias diffrhopower="python $raco/reference_state/set_diffusions_rhopower.py"
 alias tachrefquart="python $raco/reference_state/generate_CZ_RZ_reference-quart.py"
 alias tachreftanh="python $raco/reference_state/generate_CZ_RZ_reference-tanh.py"
 alias heatingczrztanh="python $raco/reference_state/heating_CZ_RZ-tanh.py"
