@@ -127,6 +127,8 @@ alias linkmods='rm rayleigh.*; ln -s $racode/bin/allmods/rayleigh.* .'
 alias linkcustom='rm rayleigh.*; ln -s $racode/bin/custom/rayleigh.* .'
 alias linkperfcond='rm rayleigh.*; ln -s $racode/bin/perfcond/rayleigh.* .'
 alias linkmulti='rm rayleigh.*; ln -s $racode/bin/multi/rayleigh.* .'
+alias linkrome='rm rayleigh.*; ln -s /home4/nfeather/software/Rayleigh-Rome-2.28/bin/* .'
+
 alias linknobinrz='rm rayleigh.*; ln -s $racode/bin/noBinRZ/rayleigh.* .'
 alias linktraceback='rm rayleigh.*; ln -s $racode/bin/traceback/rayleigh.* .'
 
