@@ -11,6 +11,7 @@ export bufferstring="===========================================================
 # function to get into MPI environment 
 # (for compiling/running Rayleigh)
 alias loadmpi="module purge; module load mpi-hpe; module load comp-intel"
+alias loadmpirome="module purge; module load gcc/13.2 mpi-hpe/mpt; fftwlib=/home4/nfeather/software/fftw-3.3.10-Rome/; blaslib=/home4/nfeather/software/OpenBLAS-0.3.27-Rome/; export LD_LIBRARY_PATH=$blaslib\lib:$fftwlib\lib:$LD_LIBRARY_PATH; export OMP_NUM_THREADS=1"
 
 # load firefox
 alias loadff="module load firefox"
