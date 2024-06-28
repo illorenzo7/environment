@@ -120,8 +120,8 @@ alias ssh='ssh -X'
 alias less='less -MN' # make less show line numbers and  filename in status bar
 
 # sym links
-alias linkra='rm rayleigh.*; ln -s $racode/bin/rayleigh.opt'
-alias linkdbg='rm rayleigh.*; ln -s $racode/bin/rayleigh.dbg'
+alias linkra='ln -s $racode/bin/rayleigh.opt'
+alias linkdbg='ln -s $racode/bin/rayleigh.dbg'
 alias linkmain='rm rayleigh.*; ln -s $racode/bin/main/rayleigh.* .'
 alias linkmods='rm rayleigh.*; ln -s $racode/bin/allmods/rayleigh.* .'
 alias linkcustom='rm rayleigh.*; ln -s $racode/bin/custom/rayleigh.* .'
