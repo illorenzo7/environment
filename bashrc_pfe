@@ -101,7 +101,7 @@ devel () {
     elif [ $modeltype == 'sky_ele' ] || [ $modeltype == 'cas_ait' ] 
     then
         ncpus=40
-    elif [ $modeltype == 'rom_ait' ]
+    elif [ $modeltype == 'mil_ait' ] || [ $modeltype == 'rom_ait' ]
     then
         ncpus=128
     else
@@ -134,6 +134,12 @@ debug () {
     elif [ $modeltype == 'san' ] 
     then
         ncpus=16
+    elif [ $modeltype == 'sky_ele' ] || [ $modeltype == 'cas_ait' ] 
+    then
+        ncpus=40
+    elif [ $modeltype == 'mil_ait' ] || [ $modeltype == 'rom_ait' ]
+    then
+        ncpus=128
     else
         echo "unknown model type $modeltype"
     fi
