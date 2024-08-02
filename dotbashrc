@@ -60,6 +60,7 @@ export dotbrc=$envdir/dotbashrc
 
 # long bashrc files (the big environments)
 export brcpfe=$envdir/bashrc_pfe
+export brcconda=$envdir/bashrc_loadconda
 export brclfe=$envdir/bashrc_lfe
 export brclcd=$envdir/bashrc_lcd
 export brcmac=$envdir/bashrc_mac
@@ -70,6 +71,7 @@ export brcra=$envdir/bashrc_ra_routines
 
 # commands to source each env file
 alias sbpfe="source $brcpfe"
+alias sbconda="source $brcconda"
 alias sblfe="source $brclfe"
 alias sblcd="source $brclcd"
 alias sbmac="source $brcmac"
@@ -103,11 +105,15 @@ if [[ "$host" == "lfe"* ]] || [[ "$host" == "ldan"* ]]; then
     sblfe
 fi
 
-# PFE hosts
-if [[ "$host" == "pfe"* ]]; then
+# PFE or AFE hosts (almost the same except for conda)
+if [[ "$host" == "pfe"* ]] || [[ "$host" == "afe"* ]]; then
     # Enable auto-completion in git
     source /usr/share/bash-completion/completions/git
     sbpfe
+    if [[ "$host" == "pfe"* ]]; then
+        # also get into conda environment
+        sbconda
+    fi
 fi
 
 # LCD hosts

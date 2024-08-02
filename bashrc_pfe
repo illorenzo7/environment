@@ -169,11 +169,3 @@ export XDG_RUNTIME_DIR="$HOME_PFE/tmp"
 # source the common stuff
 sbcommon
 
-# conda shortcuts, and get into pyt2_0 environment by default
-module use -a /swbuild/analytix/tools/modulefiles
-module load miniconda3/v4
-alias pyt22='source activate pyt2_2'
-alias de='conda deactivate'
-pyt22
-de
-pyt22
