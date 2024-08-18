@@ -103,6 +103,7 @@ if [[ "$host" == "lfe"* ]] || [[ "$host" == "ldan"* ]]; then
     #source /etc/bash_completion.d/git.sh 
     source /usr/share/bash-completion/completions/git
     sblfe
+    sbconda
 fi
 
 # PFE or AFE hosts (almost the same except for conda)
