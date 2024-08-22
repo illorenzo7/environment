@@ -9,6 +9,7 @@ sys.path.append(os.environ['rapl'] + '/azav')
 sys.path.append(os.environ['rapl'] + '/slice')
 sys.path.append(os.environ['rapl'] + '/timetrace')
 from rayleigh_diagnostics import *
+import rayleigh_diagnostics_alt as rdalt
 from common import *
 from numbers_util import *
 from plotcommon import *
