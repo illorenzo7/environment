@@ -81,9 +81,11 @@ alias sbdot="source $dotbrc"
 
 # commands to edit each env file
 alias vbpfe="vim $brcpfe"
+alias vbconda="vim $brcconda"
 alias vblfe="vim $brclfe"
 alias vblcd="vim $brclcd"
 alias vbmac="vim $brcmac"
+alias vbcommon="vim $brccommon"
 alias vbcommon="vim $brccommon"
 alias vbra="vim $brcra"
 alias vbdot="vim $dotbrc"
@@ -91,6 +93,7 @@ alias vbdot="vim $dotbrc"
 # command to source bashrc_pfe and then launch jupyter notebook server
 jserve() {
     sbpfe
+    sbconda
     jupyter notebook --sock /tmp/user.sock --no-browser
 }
 
