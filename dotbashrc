@@ -94,7 +94,8 @@ alias vbdot="vim $dotbrc"
 jserve() {
     sbpfe
     sbconda
-    jupyter notebook --sock /tmp/user.sock --no-browser
+    jupyter lab --sock /tmp/user.sock --no-browser --certfile=~/.jupyter/jupyter.pem --keyfile ~/.jupyter/jupyter.key
+    #jupyter notebook --sock /tmp/user.sock --no-browser
 }
 
 # only do anything (automatically) on specific hosts
