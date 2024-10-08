@@ -163,8 +163,8 @@ else
     nproc=`nproc --all` # by default, use max number of processes
 fi
 # ppc for "python parallel call"
-#export ppc="mpiexec -n $nproc --oversubscribe python -u"
-export ppc="mpiexec -n $nproc python -u"
+export ppc="mpiexec -n $nproc --oversubscribe python -u"
+#export ppc="mpiexec -n $nproc python -u"
 source $HOME/environment/bashrc_ra_routines
 
 setnproc() {

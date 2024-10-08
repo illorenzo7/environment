@@ -66,6 +66,7 @@ export CC=mpicc
 # request an ldan for 24 hours
 alias ldan='qsub -me -mb -q ldan -lselect=1:mem=750GB,walltime=24:00:00 $HOME/environment/ldan_script'
 alias which_ldan='qstat -nu lmatilsk | grep ldan'
+alias which_interactive='python $raco/which_interactive_node.py'
 
 # other command aliases
 #alias jn='jupyter notebook --ip=0.0.0.0 --port=8080'
