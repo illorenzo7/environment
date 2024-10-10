@@ -135,3 +135,7 @@ if [[ "$host" == "lorensMac"* ]] || [[ "$host" == "cu-genvpn"* ]] || [[ "$host" 
 fi
 
 echo $bufferstring
+
+# define current path and then way to reset path
+export PATH0=$PATH
+alias resetpath="export PATH=$PATH0"

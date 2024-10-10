@@ -6,8 +6,8 @@ echo "Executing $brcconda"
 # conda shortcuts, and get into pyt2_4 environment by default
 module use -a /swbuild/analytix/tools/modulefiles
 module load miniconda3/v4
-alias pyt23='source activate pyt2_3'
+alias pyt22='source activate pyt2_2'
 alias de='conda deactivate'
-pyt23
+pyt22
 #de
 #pyt24

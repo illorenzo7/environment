@@ -170,6 +170,7 @@ source $HOME/environment/bashrc_ra_routines
 setnproc() {
     nproc=$1
     export ppc="mpiexec -n $nproc --oversubscribe python -u"
+    #export ppc="mpiexec -n $nproc python -u"
     source $HOME/environment/bashrc_ra_routines
 }
 
