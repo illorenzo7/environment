@@ -9,5 +9,5 @@ module load miniconda3/v4
 alias pyt22='source activate pyt2_2'
 alias de='conda deactivate'
 pyt22
-#de
-#pyt24
+de # need to reload this to get the PATH right in a VNC
+pyt22
