@@ -3,6 +3,9 @@
 # Created: 07/07/2016
 # Updated: 05/05/2022
 
+# say we haven't yet sourced common
+export sourced_common_already=0
+
 # state what's going on
 echo $bufferstring
 echo "Executing $envdir/bashrc_lcd"

@@ -6,6 +6,9 @@
 # https://apple.stackexchange.com/questions/55875/git-auto-complete-for-branches-at-the-command-line
 # curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 
+# say we haven't yet sourced common
+export sourced_common_already=0
+
 # state what's going on
 echo $bufferstring
 echo "Executing $envdir/bashrc_mac"

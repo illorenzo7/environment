@@ -10,7 +10,10 @@ echo "Executing $envdir/bashrc_common"
 #unalias -a
 
 # Make prompt show current working directory
-PS1='\w$ '
+# But only if bashrc_common hasn't been sourced already
+if ! [ sourced_common_already ]; then
+    PS1='\w$ '
+fi
 
 # Extra appendages to PATH to allow 
 # programs to be installed locally
@@ -196,3 +199,9 @@ alias ffm="ffmpeg3 -framerate 30 -i img%04d.png -qscale 5 movie.mp4"
 # BASH SHORTCUTS
 alias rmsslice="bash $rau/bash/rm_sslice.sh"
 alias rmtexaux="rm *aux *bbl *blg *log *out *synctex.gz"
+
+alias mvbashrc="mv ~/.bashrc ~/.bashrc-bak; mv ~/.bash_profile ~/.bash_profile-bak"
+alias mvbashrcbak="mv ~/.bashrc-bak ~/.bashrc; mv ~/.bash_profile-bak ~/.bash_profile"
+
+# say now we've sourced common
+sourced_common_already=1
