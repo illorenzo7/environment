@@ -84,6 +84,7 @@ alias sst='shiftc --status'         # check on status of shiftc transfers
 
 alias lscript='bash $rau/bash/lscript.sh'
 alias lscriptall='bash $rau/bash/lscript_all.sh'
+alias vlscriptall='bash $rau/bash/vlscript_all.sh'
 alias dscriptall='bash $rau/bash/dscript_all.sh'
 alias interactivenode='bash $rau/bash/submit_interactive_job.sh'
 
