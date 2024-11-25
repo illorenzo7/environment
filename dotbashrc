@@ -128,8 +128,8 @@ if [[ "$host" == *"colorado.edu" ]]; then
     sblcd
 fi
 
-# MAC hosts
-if [[ "$host" == "lorensMac"* ]] || [[ "$host" == "cu-genvpn"* ]] || [[ "$host" == *"eduroam"* ]]; then
+# MAC host (I forced the hostname to be this)
+if [[ "$host" == "LorensMac" ]]; then
     source ~/.git-completion.bash
     sbmac
 fi
