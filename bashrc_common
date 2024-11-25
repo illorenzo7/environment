@@ -31,23 +31,23 @@ export PYTHONSTARTUP=$HOME/environment/python_startup.py
 # Main folders
 export doc=$HOME/Documents
 export down=$HOME/Downloads
-export desk=$HOME/Desktop
+export desk=$HOME/HOMEtop
 
-# universal Desktop subdirs (mostly on Mac)
-export notes=$desk/Research_Notes
-export pubrev=$desk/Publication_Review
-export thesis=$desk/Thesis
-export pres=$desk/Presentations
-export cv=$desk/CV
-export papers=$desk/Paper_Library
-export pub=$desk/Publications
+# universal HOMEtop subdirs (mostly on Mac)
+export notes=$HOME/Research_Notes
+export pubrev=$HOME/Publication_Review
+export thesis=$HOME/Thesis
+export pres=$HOME/Presentations
+export cv=$HOME/CV
+export papers=$HOME/Paper_Library
+export pub=$HOME/Publications
 export tachletter=$pub/Tacho_Letter
 export tachletterplots=$pub/Tacho_Letter_Plots_Part2
 export tachapj=$pub/Tacho_ApJ
 export tachapjplots=$pub/Tacho_ApJ_Plots
 
-export prop=$desk/Proposals
-export solartw=$desk/Solar_Thermal_Wind
+export prop=$HOME/Proposals
+export solartw=$HOME/Solar_Thermal_Wind
 
 export proprsr=$doc/Proposal_to_Recruit_Support_Retain_UrMs_APS
 export fin=$doc/Financial
