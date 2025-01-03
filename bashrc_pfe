@@ -165,6 +165,10 @@ acct_ytd_save() {
     acct_ytd >> $HOME/acct_ytd/$(date +%F_%H.%M)
 }
 
+gitdl() {
+    git clone git@github.com:illorenzo7/$1.git
+}
+
 # Start the vnc server
 alias vnc='vncserver -localhost -geometry 1280x800'
 
