@@ -178,3 +178,26 @@ export XDG_RUNTIME_DIR="$HOME_PFE/tmp"
 # source the common stuff
 sbcommon
 
+# Add some Pleiades-specific directory shortcuts
+export tach=$nb/00_Tacho_Letter
+export boulder=$nb/00_Boulder_Survey
+export check=$nb/00_Rayleigh_Checkpoints
+
+export postdoc=$nb/00_Summer_Postdoc
+export casem=$tach/case_M
+export caseh=$tach/case_H
+
+# Tachocline sims
+export tachsims=$nb/Tacho_ApJ_Low_Sigma_Sims
+export tachnotebooks=$nb/Tacho_ApJ_Low_Sigma_Notebooks
+export m0=$tachsims/case_M0
+export m1=$tachsims/case_M1
+export m2=$tachsims/case_M2
+export m3=$tachsims/case_M3
+export m4=$tachsims/case_M4
+
+export h0=$tachsims/case_H0
+#export h1=$tachsims/case_H1
+export h1=/nobackup/lmatilsk/case_H_sig0.3
+export h2=$tachsims/case_H2
+export h4=$tachsims/case_H4
