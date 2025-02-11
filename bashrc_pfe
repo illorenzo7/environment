@@ -195,9 +195,11 @@ export m1=$tachsims/case_M1
 export m2=$tachsims/case_M2
 export m3=$tachsims/case_M3
 export m4=$tachsims/case_M4
+export m5=$tachsims/case_M5
 
 export h0=$tachsims/case_H0
 export h1=$tachsims/case_H1
 #export h1=/nobackup/lmatilsk/case_H_sig0.3
 export h2=$tachsims/case_H2
 export h4=$tachsims/case_H4
+export h5=$tachsims/case_H5
