@@ -63,6 +63,7 @@ alias trans="python $rapl/transport.py"
 # AZ_Avgs routines
 alias azav="python $rapl/azav/azav.py"
 alias dr="python $rapl/azav/diffrot.py"
+alias drmcthermo="python $rapl/azav/diffrot_mercirc_thermo.py"
 alias vplat="python $rapl/azav/vp_with_latprofiles.py"
 alias pvhlat="python $rapl/azav/PVH_with_latprofiles.py"
 alias pvslat="python $rapl/azav/PVS_with_latprofiles.py"
@@ -75,6 +76,7 @@ alias thermoazav="python $rapl/azav/thermo.py"
 alias thermalwind="python $rapl/azav/thermal_wind.py"
 alias toten="python $rapl/azav/toten.py"
 alias eft="python $rapl/azav/eflux_latitudinal.py"
+alias tauv="python $rapl/azav/viscous_torque.py"
 
 # Shell_Avgs routines
 alias bamp="python $rapl/shav/bamp.py"
