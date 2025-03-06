@@ -189,17 +189,24 @@ export caseh=$tach/case_H
 
 # Tachocline sims
 export tachsims=$nb/Tacho_ApJ_Low_Sigma_Sims
-export tachnotebooks=$nb/Tacho_ApJ_Low_Sigma_Notebooks
+export tachnotebooks=$nb/Tacho_ApJ_Low_Sigma/notebooks
 export m0=$tachsims/case_M0
 export m1=$tachsims/case_M1
 export m2=$tachsims/case_M2
 export m3=$tachsims/case_M3
 export m4=$tachsims/case_M4
-export m5=$tachsims/case_M5
+export m4=$tachsims/case_M5
+export m4=$tachsims/case_M6
+export m4=$tachsims/case_M7
+export m4=$tachsims/case_M8
+export m4=$tachsims/case_M9
+export m10=$tachsims/case_M10
 
 export h0=$tachsims/case_H0
 export h1=$tachsims/case_H1
-#export h1=/nobackup/lmatilsk/case_H_sig0.3
 export h2=$tachsims/case_H2
 export h4=$tachsims/case_H4
-export h5=$tachsims/case_H5
+export h5=$tachsims/case_H5-actual
+export h6=$tachsims/case_H6
+export h9=$tachsims/case_H9
+export h10=$tachsims/case_H10
