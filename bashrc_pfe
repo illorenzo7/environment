@@ -195,11 +195,11 @@ export m1=$tachsims/case_M1
 export m2=$tachsims/case_M2
 export m3=$tachsims/case_M3
 export m4=$tachsims/case_M4
-export m4=$tachsims/case_M5
-export m4=$tachsims/case_M6
-export m4=$tachsims/case_M7
-export m4=$tachsims/case_M8
-export m4=$tachsims/case_M9
+export m5=$tachsims/case_M5
+export m6=$tachsims/case_M6
+export m7=$tachsims/case_M7
+export m8=$tachsims/case_M8
+export m9=$tachsims/case_M9
 export m10=$tachsims/case_M10
 
 export h0=$tachsims/case_H0
@@ -210,3 +210,14 @@ export h5=$tachsims/case_H5-actual
 export h6=$tachsims/case_H6
 export h9=$tachsims/case_H9
 export h10=$tachsims/case_H10
+
+export h5lyd=/nobackupp19/lkorre/solar_rot_conic/n2_A1_Ra1e6_Ek0.001
+export h6lyd=/nobackupp19/lkorre/solar_rot_conic/n2_A1_Ra5e6_Ek0.00045
+export h9lyd=/nobackupp19/lkorre/CZ-RZ_anelastic_ND/Rotating/Nrho\=3/A10_d3e9_Ra1e6_Ek0.001
+
+export m5lyd=/nobackupp19/lkorre/Magnetism/Pm2n2A1Ra1e6Ek0.001
+export m6lyd=/nobackupp19/lkorre/Magnetism/Pm2n2A1Ra5e6Ek0.00045
+export m7lyd=/nobackupp19/lkorre/Magnetism/Pm4n2A1Ra1e6Ek0.001
+export m8lyd=/nobackupp19/lkorre/Magnetism/Pm4n2A1Ra5e6Ek0.00045
+export m9lyd=/nobackupp19/lkorre/Magnetism/Pm4n3A10Ra1e6Ek0.001
+
