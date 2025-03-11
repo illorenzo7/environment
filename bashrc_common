@@ -69,6 +69,7 @@ export rappRyan=$racodeRyan/post_processing
 export rau=$ra/utils
 export raco=$rau/compute # /usr/bin/co is a command
 export rapl=$rau/plot # /usr/bin/plot is a command
+export ratx=$rau/text 
 export raleg=$rau/zz_legacy # /usr/bin/plot is a command
 export idref=$raco/hydro_ideal_reference_state
 

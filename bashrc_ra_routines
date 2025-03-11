@@ -99,3 +99,6 @@ alias mtimey="python $rapl/timetrace/mtrace_timey.py"
 alias raslice="$ppc $rapl/slice/raslice.py"
 alias raslicend="$ppc $rau/zz_legacy/raslice_nondim_specificsuite.py"
 alias spec="python $rapl/slice/spec.py"
+
+# test manipulation routines
+alias frep="python $ratx/freplace.py"

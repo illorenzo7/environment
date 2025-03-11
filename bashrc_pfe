@@ -24,23 +24,23 @@ echo "Executing $brcpfe"
 # .... gets stacktrace (lots of output to give you a seizure!) must run 
 # with sg if not submitted with your default group no.
 
-# To verify if a stopped job got evicted due to lustre eviction, run
+# To verify if a STOPPED job got evicted due to lustre eviction, run
 # ssh pbspl1
 # module load scicon/lumber
-# lumber -j job_id
+# lumber -j [job_id]
 # and grep SEC_EVENT on the resulting logfile
 # Johnny Chang also suggets:
 # strip all lines containing dhclient and systemd,e.g.,
-# sed '/dhclient/d' 13245487.pbspl1.0.log.txt | sed '/systemd/d' > file2
-# and search file2 for SEC_EVENT
+# sed '/dhclient/d' [job_id].pbspl1.0.log.txt | sed '/systemd/d' > [job_id].pbspl1-stripped
+# and search the latter file for SEC_EVENT
 
 # THE FOLLOWING IS DEPRECATED (04/20/22):
-# /u/scicon/tools/bin/get_logs job_id
+# /u/scicon/tools/bin/get_logs [job_id]
 # and grep SEC_EVENT on the resulting logfile
 
 # To troubleshoot how a job failed, run
 # ssh pbspl1 tracejob -n3 job_id
-# This will ssh into pbspl1 and run tracejob going back 3 days (-n3) for jobid
+# This will ssh into pbspl1 and run tracejob going back 3 days (-n3) for job [jobid]
 
 # say we haven't yet sourced common
 export sourced_common_already=0
@@ -206,7 +206,7 @@ export h0=$tachsims/case_H0
 export h1=$tachsims/case_H1
 export h2=$tachsims/case_H2
 export h4=$tachsims/case_H4
-export h5=$tachsims/case_H5-actual
+export h5=$tachsims/case_H5
 export h6=$tachsims/case_H6
 export h9=$tachsims/case_H9
 export h10=$tachsims/case_H10
