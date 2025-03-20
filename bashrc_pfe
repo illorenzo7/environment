@@ -189,7 +189,9 @@ export caseh=$tach/case_H
 
 # Tachocline sims
 export tachsims=$nb/Tacho_ApJ_Low_Sigma_Sims
+export tachsimsextra=$nb/Tacho_ApJ_Low_Sigma_Sims_Extra
 export tachnotebooks=$nb/Tacho_ApJ_Low_Sigma/notebooks
+
 export m0=$tachsims/case_M0
 export m1=$tachsims/case_M1
 export m2=$tachsims/case_M2
@@ -197,19 +199,19 @@ export m3=$tachsims/case_M3
 export m4=$tachsims/case_M4
 export m5=$tachsims/case_M5
 export m6=$tachsims/case_M6
-export m7=$tachsims/case_M7
-export m8=$tachsims/case_M8
-export m9=$tachsims/case_M9
-export m10=$tachsims/case_M10
+export m7=$tachsimsextra/case_M7_deep
+export m8=$tachsimsextra/case_M8_sig0.3_pr0.5_prm8
+export m9=$tachsimsextra/case_M9_nrho2_ra1e6_prm2
+export m10=$tachsimsextra/case_M10_nrho2_ra5e6_prm2
 
 export h0=$tachsims/case_H0
 export h1=$tachsims/case_H1
 export h2=$tachsims/case_H2
+export h3=$tachsims/case_H3
 export h4=$tachsims/case_H4
 export h5=$tachsims/case_H5
 export h6=$tachsims/case_H6
-export h9=$tachsims/case_H9
-export h10=$tachsims/case_H10
+export h7=$tachsimsextra/case_H7_deep
 
 export h5lyd=/nobackupp19/lkorre/solar_rot_conic/n2_A1_Ra1e6_Ek0.001
 export h6lyd=/nobackupp19/lkorre/solar_rot_conic/n2_A1_Ra5e6_Ek0.00045
