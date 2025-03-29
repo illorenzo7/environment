@@ -157,7 +157,7 @@ host=`hostname`
 #if [[ "$host" == *"$ldanst"* ]] || [[ "$host" == *"$nodest"* ]]; then
 if [[ "$host" == "lfe"* ]] || [[ "$host" == "pfe"* ]]; then
     nproc=1 # process in serial on the lfes and pfes
-elif [[ "$host" == "LorensMac" ]]; then
+elif [[ "$host" == "LorensMac" ]] || [[ "$host" == "lorensOldMac.local" ]]; then
     nproc=2
 else
     nproc=`nproc --all` # by default, use max number of processes
