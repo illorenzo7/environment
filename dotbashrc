@@ -129,7 +129,7 @@ if [[ "$host" == *"colorado.edu" ]]; then
 fi
 
 # MAC host (I forced the hostname to be this)
-if [[ "$host" == "LorensMac" ]] || [[ "$host" == "lorensOldMac.local" ]]; then
+if [[ "$host" == "LorensMac" ]] || [[ "$host" == "LorensOldMac" ]]; then
     source ~/.git-completion.bash
     sbmac
 fi
