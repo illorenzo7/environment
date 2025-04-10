@@ -191,8 +191,8 @@ countfiles() {
 # sequentialize images in directory
 alias sequence="python $raco/sequentialize_images.py"
 # ffmpeg shortcut for making movies form img????.png files
-alias ffm="ffmpeg3 -framerate 30 -i img%04d.png -qscale 5 movie.mp4"
-
+#alias ffm="ffmpeg -framerate 30 -i img%04d.png -qscale 5 movie.mp4"
+alias ffm="ffmpeg -framerate 30 -i img%04d.png -vf \"scale=ceil(iw/2)*2:ceil(ih/2)*2\" -c:v libx264 -pix_fmt yuv420p -preset medium -crf 23 -movflags +faststart movie.mp4"
 # BASH SHORTCUTS
 alias rmsslice="bash $rau/bash/rm_sslice.sh"
 alias rmtexaux="rm *aux *bbl *blg *log *out *synctex.gz"
