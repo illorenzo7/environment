@@ -1,6 +1,6 @@
 XAuthLocation /opt/X11/bin/xauth
 ForwardX11 yes
-#EnableEscapeCommandline=yes
+EnableEscapeCommandline yes
 
 Host rcomp
 HostName login.rc.colorado.edu
