@@ -99,6 +99,7 @@ alias mtimey="python $rapl/timetrace/mtrace_timey.py"
 
 # slice plotting routines
 alias raslice="$ppc $rapl/slice/raslice.py"
+alias cutout3d="$ppc $rapl/slice/cutout_3d.py"
 alias raslicend="$ppc $rau/zz_legacy/raslice_nondim_specificsuite.py"
 alias spec="python $rapl/slice/spec.py"
 
