@@ -153,22 +153,19 @@ alias make_sample_data_and_plots='tar -cvfh datasample.tar $(find AZ_Avgs/ | sor
 # parallel
 # set default nproc based on hostname
 host=`hostname`
-#if [[ "$host" == *"$ldanst"* ]] || [[ "$host" == *"$nodest"* ]]; then
-if [[ "$host" == "lfe"* ]] || [[ "$host" == "pfe"* ]]; then
-    nproc=1 # process in serial on the lfes and pfes
-elif [[ "$host" == "LorensMac" ]] || [[ "$host" == "LorensOldMac" ]]; then
-    nproc=2
+if [[ "$host" == "lfe"* ]] || [[ "$host" == "pfe"* ]] || [[ "$host" == "LorensMac" ]] || [[ "$host" == "LorensOldMac" ]]; then
+    nproc=1 # process in serial on the lfes, pfes and mac
+    export ppc="python"
 else
     nproc=`nproc --all` # by default, use max number of processes
+    export ppc="mpiexec -n $nproc python -u"
 fi
 # ppc for "python parallel call"
 #export ppc="mpiexec -n $nproc --oversubscribe python -u"
-export ppc="mpiexec -n $nproc python -u"
 source $HOME/environment/bashrc_ra_routines
 
 setnproc() {
     nproc=$1
-    #export ppc="mpiexec -n $nproc --oversubscribe python -u"
     export ppc="mpiexec -n $nproc python -u"
     source $HOME/environment/bashrc_ra_routines
 }
