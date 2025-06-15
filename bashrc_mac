@@ -92,7 +92,11 @@ sbcommon
 #
 # Tachocline sims
 export tachsims=$ra/Tacho_ApJ_Low_Sigma_Sims
-export tachnotebooks=$pub/Tacho_ApJ_Low_Sigma_Notebooks
+export tachapjnotebooks=$pub/Tacho_ApJ_Low_Sigma_Notebooks
+export tachlettnotebooks=$pub/Matilsky_Korre_Brummell_Tacho_ApJL_2025/notebooks
+export tachapj=$pub/Tacho_ApJ_Low_Sigma
+export tachlett=$pub/Matilsky_Korre_Brummell_Tacho_ApJL_2025
+
 export m0=$tachsims/case_M0
 export m1=$tachsims/case_M1
 export m2=$tachsims/case_M2
