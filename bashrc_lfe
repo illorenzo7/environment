@@ -76,5 +76,11 @@ backup_nobackup_whole() {
     bash $rau/bash/backup_subdirs.sh $nb/ $backupdir/
 }
 
+backupsubdirs() {
+    backupdir=$HOME_LFE/${1%/}_$(date +%F_%H.%M)
+    mkdir $backupdir # use -p to not throw a mkdir error if directory already exists
+    bash $rau/bash/backup_subdirs.sh $1 $backupdir/
+}
+
 # Source bashrc_pfe
 sbpfe
