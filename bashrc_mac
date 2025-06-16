@@ -100,6 +100,8 @@ export tachapjnotebooks=$tachapj/notebooks
 export tachlettnotebooks=$tachlett/notebooks
 export superrot=$pub/Superrotation_and_Jet_Migration
 export superrotnotebooks=$superrot/notebooks
+export jupczonly=$pub/Jupiter_Wulff_CZonly
+export jupwl=$pub/Jupiter_Wulff_WL
 
 export m0=$tachsims/case_M0
 export m1=$tachsims/case_M1
