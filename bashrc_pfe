@@ -187,13 +187,17 @@ export postdoc=$nb/00_Summer_Postdoc
 export casem=$tach/case_M
 export caseh=$tach/case_H
 
-# Tachocline sims
+# Tachocline sims and notebooks
 export tachsims=$nb/Tacho_ApJ_Low_Sigma_Sims
 export tachsimsextra=$nb/Tacho_ApJ_Low_Sigma_Sims_Extra
 #export tachapj=$nb/Tacho_ApJ_Low_Sigma
 export tachapjnotebooks=$nb/Tacho_ApJ_Low_Sigma/notebooks
 #export tachlett=$nb/Matilsky_Korre_Brummell_Tacho_ApJL_2025
 export tachlettnotebooks=$nb/Matilsky_Korre_Brummell_Tacho_ApJL_2025/notebooks
+
+# Jupiter sims and notebooks
+export superrot=$nb/Superrotation_and_Jet_Migration
+export superrotnotebooks=$superrot/notebooks
 
 export m0=$tachsims/case_M0
 export m1=$tachsims/case_M1
