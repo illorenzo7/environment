@@ -198,8 +198,8 @@ export tachlettnotebooks=$nb/Matilsky_Korre_Brummell_Tacho_ApJL_2025/notebooks
 # Jupiter sims and notebooks
 export superrot=$nb/Superrotation_and_Jet_Migration
 export superrotnotebooks=$superrot/notebooks
-export jupczonly=$nb/Jupiter_Wulff_WL/WL_Roc0.20_Ra1.0e7
-export jupwl=$nb/Jupiter_Wulff_CZonly/CZonly_Roc0.20_Ra1.0e7
+export jupcz=$nb/Jupiter_Wulff_CZonly/CZonly_Roc0.20_Ra1.0e7
+export jupwl=$nb/Jupiter_Wulff_WL/WL_Roc0.20_Ra1.0e7
 
 export m0=$tachsims/case_M0
 export m1=$tachsims/case_M1
@@ -215,7 +215,7 @@ export m10=$tachsimsextra/case_M10_nrho2_ra5e6_prm2
 
 export h0=$tachsims/case_H0
 export h1=$tachsims/case_H1
-export h2=$tachsims/case_H2
+export h2=$tachsims/case_H2-actual
 export h3=$tachsims/case_H3
 export h4=$tachsims/case_H4
 export h5=$tachsims/case_H5
