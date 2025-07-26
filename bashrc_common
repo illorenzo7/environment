@@ -97,10 +97,13 @@ export hyd2=hydra2
 export scy=scylla
 
 # Rayleigh simulation data
-export tachsims=$rasims/Tacho_ApJ_Low_Sigma_Sims
-export jupcz=$nb/Jupiter_Wulff_CZonly/CZonly_Roc0.20_Ra1.0e7
-export jupwl=$nb/Jupiter_Wulff_WL/WL_Roc0.20_Ra1.0e7
+#
+# Jupiter
+export jupcz=$rasims/Jupiter_Wulff_CZonly/CZonly_Roc0.20_Ra1.0e7
+export jupwl=$rasims/Jupiter_Wulff_WL/WL_Roc0.20_Ra1.0e7
 
+# Low-Sigma tachocline
+export tachsims=$rasims/Tacho_ApJ_Low_Sigma_Sims
 export m0=$tachsims/case_M0
 export m1=$tachsims/case_M1
 export m2=$tachsims/case_M2
@@ -133,7 +136,7 @@ export m8lyd=/nobackupp19/lkorre/Magnetism/Pm4n2A1Ra5e6Ek0.00045
 export m9lyd=/nobackupp19/lkorre/Magnetism/Pm4n3A10Ra1e6Ek0.001
 
 # NSF sims
-export nsfsims=$nb/NSF_Dynamo_SpinDown_Sims
+export nsfsims=$tachsims/NSF_Dynamo_SpinDown_Sims
 
 # other command aliases
 alias fn='find `pwd` -name ' # fn for "full name"
