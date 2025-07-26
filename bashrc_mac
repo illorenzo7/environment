@@ -20,10 +20,9 @@ alias ls="ls -G" # Works on Mac
 ###############################
 # Mac shortcuts               #
 ###############################
-# Rayleigh simulation root directories on Mac (data previews)
-export rasim=$HOME/rayleigh/sims
-export tahy=$rasim/tachocline
-export tady=$tahy/dynamo
+
+# Mac-specific prefixes
+export rasims=$HOME/rayleigh/simulation_data
 
 # NSF folder
 export nsf=$HOME/AAPF
@@ -90,9 +89,6 @@ sbcommon
 #
 # Add some Mac-specific directory shortcuts
 #
-# Tachocline sims
-export tachsims=$ra/Tacho_ApJ_Low_Sigma_Sims
-
 # publication repositories
 export tachapj=$pub/Tacho_ApJ_Low_Sigma
 export tachlett=$pub/Matilsky_Korre_Brummell_Tacho_ApJL_2025
@@ -103,17 +99,6 @@ export superrotnotebooks=$superrot/notebooks
 export jupczonly=$pub/Jupiter_Wulff_CZonly
 export jupwl=$pub/Jupiter_Wulff_WL
 
-export m0=$tachsims/case_M0
-export m1=$tachsims/case_M1
-export m2=$tachsims/case_M2
-export m3=$tachsims/case_M3
-export m4=$tachsims/case_M4
-
-export h0=$tachsims/case_H0
-#export h1=$tachsims/case_H1
-export h1=/nobackup/lmatilsk/case_H_sig0.3
-export h2=$tachsims/case_H2
-export h4=$tachsims/case_H4
 # avoid weird ssh key errors
 alias ssh='ssh -X -oHostKeyAlgorithms=+ssh-dss -oPubkeyAcceptedAlgorithms=+ssh-rsa'
 alias scp='scp -oHostKeyAlgorithms=+ssh-dss -oPubkeyAcceptedAlgorithms=+ssh-rsa'
