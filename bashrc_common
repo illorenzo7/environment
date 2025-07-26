@@ -41,6 +41,7 @@ export pres=$HOME/Presentations
 export cv=$HOME/CV
 export papers=$HOME/Paper_Library
 export pub=$HOME/Publications
+export shared=$pub/Shared_Files
 #export tachapj=$pub/Tacho_ApJ_Low_Sigma
 #export tachnat=$pub/Tacho_Nat_Low_Sigma
 export tachtorsosc=$pub/Tacho_ApJL_Torsosc
