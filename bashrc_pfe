@@ -179,6 +179,9 @@ export XDG_RUNTIME_DIR="$HOME_PFE/tmp"
 sbcommon
 
 # Add some Pleiades-specific directory shortcuts
+# Pleiades-specific prefixes
+export rasims=$nb
+
 export tach=$nb/00_Tacho_Letter
 export boulder=$nb/00_Boulder_Survey
 export check=$nb/00_Rayleigh_Checkpoints
