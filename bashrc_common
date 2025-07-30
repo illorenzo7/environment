@@ -118,7 +118,7 @@ export m10=$tachsims/case_M10
 
 export h0=$tachsims/case_H0
 export h1=$tachsims/case_H1
-export h2=$tachsims/case_H2-actual
+export h2=$tachsims/case_H2
 export h3=$tachsims/case_H3
 export h4=$tachsims/case_H4
 export h5=$tachsims/case_H5
