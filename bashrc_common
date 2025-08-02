@@ -141,6 +141,7 @@ export nsfsims=$tachsims/NSF_Dynamo_SpinDown_Sims
 # other command aliases
 alias fn='find `pwd` -name ' # fn for "full name"
 alias gt='gnome-terminal'
+alias rmbigdata='rm -rf Checkpoints *_Slices Shell_Spectra'
 
 # Get disk usage
 get_du() {
@@ -187,8 +188,6 @@ alias configmuck='EXT=".muck" ./configure'
 # as well as main_input, reference, transport, and grid_info for
 # a given Rayleigh run directory
 
-alias make_sample_data_and_plots='tar -cvfh datasample.tar $(find AZ_Avgs/ | sort | tail -n 1) $(find Equatorial_Slices/ | sort | tail -n 1) $(find G_Avgs/ | sort | tail -n 1)  $(find Meridional_Slices/ | sort | tail -n 1) $(find Shell_Avgs/ | sort | tail -n 1) $(find Shell_Slices/ | sort | tail -n 1) $(find Shell_Spectra/ | sort | tail -n 1) main_input equation_coefficients grid_info jobinfo.txt data/ plots/'
-
 # Rayleigh routines
 
 # parallel
@@ -218,6 +217,10 @@ make_sample() {
 make_sampledata() {
     lastfile=`comm -12 <(ls -1 Shell_Slices/ | sort) <(ls -1 Meridional_Slices/ | sort) | tail -n 1`
     tar -cvf datasample.tar AZ_Avgs/$lastfile Equatorial_Slices/$lastfile G_Avgs/$lastfile Meridional_Slices/$lastfile  Shell_Avgs/$lastfile  Shell_Slices/$lastfile  Shell_Spectra/$lastfile main_input equation_coefficients grid_info jobinfo.txt data/
+}
+make_sampledataplots() {
+    lastfile=`comm -12 <(ls -1 Shell_Slices/ | sort) <(ls -1 Meridional_Slices/ | sort) | tail -n 1`
+    tar -cvf datasample.tar AZ_Avgs/$lastfile Equatorial_Slices/$lastfile G_Avgs/$lastfile Meridional_Slices/$lastfile  Shell_Avgs/$lastfile  Shell_Slices/$lastfile  Shell_Spectra/$lastfile main_input equation_coefficients grid_info jobinfo.txt data/ plots/
 }
 
 # count lines in a directory
