@@ -136,7 +136,7 @@ export m8lyd=/nobackupp19/lkorre/Magnetism/Pm4n2A1Ra5e6Ek0.00045
 export m9lyd=/nobackupp19/lkorre/Magnetism/Pm4n3A10Ra1e6Ek0.001
 
 # NSF sims
-export nsfsims=$tachsims/NSF_Dynamo_SpinDown_Sims
+export nsfsims=$nb/NSF_Dynamo_SpinDown_Sims
 
 # other command aliases
 alias fn='find `pwd` -name ' # fn for "full name"
