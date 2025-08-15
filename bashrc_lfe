@@ -20,11 +20,11 @@ unmigrate() {
 # shiftc --extract-tar --include=[fname] tarname.tar .
 
 shiftfrom () {
-    shiftc --extract-tar --hosts=6 $1/*.tar $2
+    shiftc --extract-tar --hosts=2 $1/*.tar $2
 }
 
 shiftto () {
-    shiftc --create-tar --index-tar --hosts=6 $1 $2/name.tar
+    shiftc --create-tar --index-tar --hosts=2 $1 $2/name.tar
 }
 
 shist() {
@@ -50,7 +50,7 @@ backup_dir() {
     echo $fullpath
     echo 'to'
     echo $backupdir/name.tar
-    shiftc --create-tar --index-tar --hosts=6 * $backupdir/name.tar
+    shiftc --create-tar --index-tar --hosts=2 * $backupdir/name.tar
     cd $origdir
 }
 
@@ -58,7 +58,7 @@ backup_dir() {
 backup_homepfe() {
     backupdir=$HOME_LFE/homepfe_$(date +%F_%H.%M)
     mkdir $backupdir
-    shiftc --create-tar --index-tar --hosts=6 $HOME_PFE/ $backupdir/name.tar
+    shiftc --create-tar --index-tar --hosts=2 $HOME_PFE/ $backupdir/name.tar
 }
 
 # Backup the whole /nobackup/backitup directory (USE CAUTION!!!)
