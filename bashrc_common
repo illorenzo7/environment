@@ -146,6 +146,14 @@ export hroc5=$nsfsims/H_Roc0.516
 export hroc6=$nsfsims/H_Roc0.667
 export hroc10=$nsfsims/H_Roc1.000
 
+export mroc1=$nsfsims/M_Roc0.100
+export mroc2=$nsfsims/M_Roc0.200
+export mroc3=$nsfsims/M_Roc0.300
+export mroc4=$nsfsims/M_Roc0.400
+export mroc5=$nsfsims/M_Roc0.516
+export mroc6=$nsfsims/M_Roc0.667
+export mroc10=$nsfsims/M_Roc1.000
+
 # other command aliases
 alias fn='find `pwd` -name ' # fn for "full name"
 alias gt='gnome-terminal'
