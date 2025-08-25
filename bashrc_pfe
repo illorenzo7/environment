@@ -197,5 +197,3 @@ export tachapjnotebooks=$nb/Tacho_ApJ_Low_Sigma/notebooks
 export tachlettnotebooks=$nb/Matilsky_Korre_Brummell_Tacho_ApJL_2025/notebooks
 export superrot=$nb/Superrotation_and_Jet_Migration
 export superrotnotebooks=$superrot/notebooks
-
-

@@ -137,6 +137,14 @@ export m9lyd=/nobackupp19/lkorre/Magnetism/Pm4n3A10Ra1e6Ek0.001
 
 # NSF sims
 export nsfsims=$nb/NSF_Dynamo_SpinDown_Sims
+export nsfsimshc=$nb/NSF_Dynamo_SpinDown_Sims/heatcool
+export hroc1=$nsfsims/H_Roc0.100
+export hroc2=$nsfsims/H_Roc0.200
+export hroc3=$nsfsims/H_Roc0.300
+export hroc4=$nsfsims/H_Roc0.400
+export hroc5=$nsfsims/H_Roc0.516
+export hroc6=$nsfsims/H_Roc0.667
+export hroc10=$nsfsims/H_Roc1.000
 
 # other command aliases
 alias fn='find `pwd` -name ' # fn for "full name"
