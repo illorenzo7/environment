@@ -121,8 +121,8 @@ devel () {
         select=$(($select - 1))
     fi
 
-    echo "qsub -I -q devel -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00"
-    qsub -I -q devel -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
+    echo "qsub -I -q devel -W group_list=s7614 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00"
+    qsub -I -q devel -W group_list=s7614 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
 }
 
 # same as devel() function, but for debug queue
@@ -157,8 +157,8 @@ debug () {
         select=$(($select - 1))
     fi
 
-    echo "qsub -I -q debug -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00"
-    qsub -I -q debug -W group_list=s2051 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
+    echo "qsub -I -q debug -W group_list=s7614 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00"
+    qsub -I -q debug -W group_list=s7614 -l select=$select:ncpus=$ncpus:mpiprocs=$ncpus:model=$1 -l walltime=02:00:00
 }
 
 # Record account usage for various groups in ~/acct_ytd
