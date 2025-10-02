@@ -95,6 +95,7 @@ export tachlett=$pub/Matilsky_Korre_Brummell_Tacho_ApJL_2025
 export tachapjnotebooks=$tachapj/notebooks
 export tachlettnotebooks=$tachlett/notebooks
 export superrot=$pub/Superrotation_and_Jet_Migration
+export anelastic=$pub/An_Energy_Conserving_Anelastic_Approximation_for_Convective_Overshoot
 export superrotnotebooks=$superrot/notebooks
 export jupczonly=$pub/Jupiter_Wulff_CZonly
 export jupwl=$pub/Jupiter_Wulff_WL
