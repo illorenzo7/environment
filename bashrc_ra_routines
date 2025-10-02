@@ -32,6 +32,7 @@ alias rmspace="python $raco/remove_spaces.py"
 # data analysis routines (mostly parallelized)
 alias tav="$ppc $raco/timeavg/radata.py"
 alias gtr="$ppc $raco/timetrace/G_Avgs_quad.py"
+alias sheartr="$ppc $raco/timetrace/shear_trace_quad.py"
 alias ty="$ppc $raco/timetrace/timey.py"
 alias mty="$ppc $raco/timetrace/mtrace_timey.py"
 #alias mtytotmspec="$ppc $raco/timetrace/mtrace_to_tmspec.py"
