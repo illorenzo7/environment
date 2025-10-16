@@ -99,8 +99,17 @@ export scy=scylla
 # Rayleigh simulation data
 #
 # Jupiter
-export jupcz=$rasims/Jupiter_Wulff_CZonly/CZonly_Roc0.20_Ra1.0e7
-export jupwl=$rasims/Jupiter_Wulff_WL/WL_Roc0.20_Ra1.0e7
+export jupcz=$rasims/Jupiter_Wulff_CZonly
+export jupwl=$rasims/Jupiter_Wulff_WL
+export jupczroc2=$jupcz/CZonly_Roc0.20_Ra1.0e7
+export jupwlroc2=$jupwl/WL_Roc0.20_Ra1.0e7
+export jupcz2=$jupcz/CZonly_Roc0.20_Ra1.0e7-2
+export jupwl2=$jupwl/WL_Roc0.20_Ra1.0e7-2
+export jupcznoslip=$jupcz/CZonly_Roc0.20_Ra1.0e7-noslip
+export jupwlnoslip=$jupwl/WL_Roc0.20_Ra1.0e7-noslip
+
+export jupczroc14=$jupcz/CZonly_Roc0.14_Ra4.9e6
+export jupwlroc14=$jupwl/WL_Roc0.14_Ra4.9e6
 
 # Low-Sigma tachocline
 export tachsims=$rasims/Tacho_ApJ_Low_Sigma_Sims
