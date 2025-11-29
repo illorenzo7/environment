@@ -116,34 +116,37 @@ export jupwlroc14=$jupwl/WL_Roc0.14_Ra4.9e6
 
 # Low-Sigma tachocline
 export tachsims=$rasims/Tacho_ApJ_Low_Sigma_Sims
-export m0=$tachsims/case_M0
-export m1=$tachsims/case_M1
-export m2=$tachsims/case_M2
-export m3=$tachsims/case_M3
-export m4=$tachsims/case_M4
-export m5=$tachsims/case_M5
-export m6=$tachsims/case_M6
-export m7=$tachsims/case_M7
-export m8=$tachsims/case_M8
-export m9=$tachsims/case_M9
-export m10=$tachsims/case_M10
+export m0=$tachsims/Loren_M_Bu5800
+export m1=$tachsims/Lydia_M_Bu0.22_Ra5e6_Prm4
+export m2=$tachsims/Lydia_M_Bu0.22_Ra1e6_Prm4
+export m3=$tachsims/Loren_M_Bu0.17_Pr0.5_Prm4
+export m4=$tachsims/Loren_M_Bu0.83_Pr0.1
+export m5=$tachsims/Lydia_M_Bu2.2
+export m6=$tachsims/Loren_M_Bu33
 
-export h0=$tachsims/case_H0
-export h1=$tachsims/case_H1
-export h2=$tachsims/case_H2
-export h3=$tachsims/case_H3
-export h4=$tachsims/case_H4
-export h5=$tachsims/case_H5
-export h6=$tachsims/case_H6
-export h10=$tachsims/case_H10
+export h0=$tachsims/Loren_H_Bu5800
+export h1=$tachsims/Lydia_H_Bu0.22_Ra5e6
+export h2=$tachsims/Lydia_H_Bu0.22_Ra1e6
+export h3=$tachsims/Loren_H_Bu0.17_Pr0.5
+export h4=$tachsims/Loren_H_Bu0.83_Pr0.1
+export h5=$tachsims/Lydia_H_Bu2.2
+export h6=$tachsims/Loren_H_Bu33
 
-export h5lyd=/nobackupp19/lkorre/solar_rot_conic/n2_A1_Ra1e6_Ek0.001
-export h6lyd=/nobackupp19/lkorre/solar_rot_conic/n2_A1_Ra5e6_Ek0.00045
-export h9lyd=/nobackupp19/lkorre/CZ-RZ_anelastic_ND/Rotating/Nrho\=3/A10_d3e9_Ra1e6_Ek0.001
+export m1restart=$m1/00_restart
+export m2restart=$m2/00_restart
+export m5restart=$m5/00_restart
 
-export m5lyd=/nobackupp19/lkorre/Magnetism/Pm2n2A1Ra1e6Ek0.001
-export m6lyd=/nobackupp19/lkorre/Magnetism/Pm2n2A1Ra5e6Ek0.00045
-export m7lyd=/nobackupp19/lkorre/Magnetism/Pm4n2A1Ra1e6Ek0.001
+export h1restart=$h1/00_restart
+export h2restart=$h2/00_restart
+export h5restart=$h5/00_restart
+
+export h1lyd=/nobackupp19/lkorre/solar_rot_conic/n2_A1_Ra5e6_Ek0.00045
+export h2lyd=/nobackupp19/lkorre/solar_rot_conic/n2_A1_Ra1e6_Ek0.001
+export h5lyd=/nobackupp19/lkorre/CZ-RZ_anelastic_ND/Rotating/Nrho=3/A10_d3e9_Ra1e6_Ek0.001
+
+export m1lyd=/nobackupp19/lkorre/Magnetism/Pm4n2A1Ra5e6Ek0.00045
+export m2lyd=/nobackupp19/lkorre/Magnetism/Pm4n2A1Ra1e6Ek0.001
+export m5lyd=/nobackupp19/lkorre/Magnetism/Pm4n3A10Ra1e6Ek0.001
 export m8lyd=/nobackupp19/lkorre/Magnetism/Pm4n2A1Ra5e6Ek0.00045
 export m9lyd=/nobackupp19/lkorre/Magnetism/Pm4n3A10Ra1e6Ek0.001
 
