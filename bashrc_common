@@ -300,5 +300,80 @@ alias rmtexaux="rm *aux *bbl *blg *log *out *synctex.gz"
 alias mvbashrc="mv ~/.bashrc ~/.bashrc-bak; mv ~/.bash_profile ~/.bash_profile-bak"
 alias mvbashrcbak="mv ~/.bashrc-bak ~/.bashrc; mv ~/.bash_profile-bak ~/.bash_profile"
 
+ffmovie () {
+    # Check for the required input directory argument
+    if [ -z "$1" ]; then
+        echo "Error: Missing input directory argument." >&2
+        echo "Usage: ffmovie_dir /path/to/images/ [--framerate N] [--name output.mp4]" >&2
+        return 1
+    fi
+
+    # Set the input directory and validate it
+    local input_dir="$(realpath "$1")"
+    if [ ! -d "$input_dir" ]; then
+        echo "Error: Input directory '$1' not found." >&2
+        return 1
+    fi
+
+    # Set default values
+    local framerate=30
+    local output_name="movie.mp4"
+
+    # --- Parse Keyword Arguments (starting from the second argument) ---
+    shift # Shift to start processing options after the input directory
+    while [[ "$#" -gt 0 ]]; do
+        case "$1" in
+            -f|--framerate)
+                if [[ "$2" =~ ^[0-9]+$ ]]; then
+                    framerate="$2"
+                    shift 2
+                else
+                    echo "Error: --framerate requires a numeric value." >&2
+                    return 1
+                fi
+                ;;
+            -n|--name)
+                output_name="$2"
+                shift 2
+                ;;
+            *)
+                echo "Warning: Unknown argument '$1' ignored." >&2
+                shift
+                ;;
+        esac
+    done
+
+    # --- Construct Paths ---
+    # The input sequence assumes files are named like img0001.png, img0002.png, etc.
+    local input_sequence="${input_dir}/img%04d.png"
+    # The full path for the output file
+    local output_path="${input_dir}/${output_name}"
+
+    # --- Execute the ffmpeg command ---
+    echo "🎬 Directory: ${input_dir}"
+    echo "   Framerate: ${framerate} fps"
+    echo "   Output: ${output_path}"
+    echo "   Processing files: img%04d.png (only .png files considered)"
+
+    # The command relies on the directory containing correctly numbered PNG files.
+    ffmpeg -framerate "$framerate" \
+           -i "$input_sequence" \
+           -vf "scale=ceil(iw/2)*2:ceil(ih/2)*2" \
+           -c:v libx264 \
+           -pix_fmt yuv420p \
+           -preset medium \
+           -crf 23 \
+           -movflags +faststart \
+           "$output_path"
+
+    # Check the exit status of ffmpeg
+    if [ $? -eq 0 ]; then
+        echo "✅ Video creation complete: ${output_path}"
+    else
+        echo "❌ Video creation failed." >&2
+        return 1
+    fi
+}
+
 # say now we've sourced common
 sourced_common_already=1
