@@ -99,60 +99,95 @@ export scy=scylla
 # Rayleigh simulation data
 #
 # Jupiter
-export jupcz=$rasims/Jupiter_Wulff_CZonly/CZonly_Roc0.20_Ra1.0e7
-export jupwl=$rasims/Jupiter_Wulff_WL/WL_Roc0.20_Ra1.0e7
+export jupcz=$rasims/Jupiter_Wulff_CZonly
+export jupwl=$rasims/Jupiter_Wulff_WL
+export jupczroc2=$jupcz/CZonly_Roc0.20_Ra1.0e7
+export jupwlroc2=$jupwl/WL_Roc0.20_Ra1.0e7
+export jupcz2=$jupcz/CZonly_Roc0.20_Ra1.0e7-2
+export jupczmhd=$jupcz/CZonly_Roc0.20_Ra1.0e7-mhd
+export jupczhighra=$jupcz/CZonly_Roc0.20_Ra3.0e8
+export jupwl2=$jupwl/WL_Roc0.20_Ra1.0e7-2
+export jupcznoslip=$jupcz/CZonly_Roc0.20_Ra1.0e7-noslip
+export jupwlnoslip=$jupwl/WL_Roc0.20_Ra1.0e7-noslip
+export jupwlmhd=$jupcz/WL_Roc0.20_Ra1.0e7-mhd
+
+export jupczroc14=$jupcz/CZonly_Roc0.14_Ra4.9e6
+export jupwlroc14=$jupwl/WL_Roc0.14_Ra4.9e6
 
 # Low-Sigma tachocline
 export tachsims=$rasims/Tacho_ApJ_Low_Sigma_Sims
-export m0=$tachsims/case_M0
-export m1=$tachsims/case_M1
-export m2=$tachsims/case_M2
-export m3=$tachsims/case_M3
-export m4=$tachsims/case_M4
-export m5=$tachsims/case_M5
-export m6=$tachsims/case_M6
-export m7=$tachsims/case_M7
-export m8=$tachsims/case_M8
-export m9=$tachsims/case_M9
-export m10=$tachsims/case_M10
+export m0=$tachsims/Loren_M_Bu5800
+export m1=$tachsims/Lydia_M_Bu0.22_Ra5e6_Prm4
+export m2=$tachsims/Lydia_M_Bu0.22_Ra1e6_Prm4
+export m3=$tachsims/Loren_M_Bu0.17_Pr0.5_Prm4
+export m4=$tachsims/Loren_M_Bu0.83_Pr0.1
+export m5=$tachsims/Lydia_M_Bu2.2
+export m6=$tachsims/Loren_M_Bu33
 
-export h0=$tachsims/case_H0
-export h1=$tachsims/case_H1
-export h2=$tachsims/case_H2
-export h3=$tachsims/case_H3
-export h4=$tachsims/case_H4
-export h5=$tachsims/case_H5
-export h6=$tachsims/case_H6
-export h10=$tachsims/case_H10
+export h0=$tachsims/Loren_H_Bu5800
+export h1=$tachsims/Lydia_H_Bu0.22_Ra5e6
+export h2=$tachsims/Lydia_H_Bu0.22_Ra1e6
+export h3=$tachsims/Loren_H_Bu0.17_Pr0.5
+export h4=$tachsims/Loren_H_Bu0.83_Pr0.1
+export h5=$tachsims/Lydia_H_Bu2.2
+export h6=$tachsims/Loren_H_Bu33
 
-export h5lyd=/nobackupp19/lkorre/solar_rot_conic/n2_A1_Ra1e6_Ek0.001
-export h6lyd=/nobackupp19/lkorre/solar_rot_conic/n2_A1_Ra5e6_Ek0.00045
-export h9lyd=/nobackupp19/lkorre/CZ-RZ_anelastic_ND/Rotating/Nrho\=3/A10_d3e9_Ra1e6_Ek0.001
+export m1restart=$m1/00_restart
+export m2restart=$m2/00_restart
+export m5restart=$m5/00_restart
 
-export m5lyd=/nobackupp19/lkorre/Magnetism/Pm2n2A1Ra1e6Ek0.001
-export m6lyd=/nobackupp19/lkorre/Magnetism/Pm2n2A1Ra5e6Ek0.00045
-export m7lyd=/nobackupp19/lkorre/Magnetism/Pm4n2A1Ra1e6Ek0.001
+export h1restart=$h1/00_restart
+export h2restart=$h2/00_restart
+export h5restart=$h5/00_restart
+
+export h1lyd=/nobackupp19/lkorre/solar_rot_conic/n2_A1_Ra5e6_Ek0.00045
+export h2lyd=/nobackupp19/lkorre/solar_rot_conic/n2_A1_Ra1e6_Ek0.001
+export h5lyd=/nobackupp19/lkorre/CZ-RZ_anelastic_ND/Rotating/Nrho=3/A10_d3e9_Ra1e6_Ek0.001
+
+export m1lyd=/nobackupp19/lkorre/Magnetism/Pm4n2A1Ra5e6Ek0.00045
+export m2lyd=/nobackupp19/lkorre/Magnetism/Pm4n2A1Ra1e6Ek0.001
+export m5lyd=/nobackupp19/lkorre/Magnetism/Pm4n3A10Ra1e6Ek0.001
 export m8lyd=/nobackupp19/lkorre/Magnetism/Pm4n2A1Ra5e6Ek0.00045
 export m9lyd=/nobackupp19/lkorre/Magnetism/Pm4n3A10Ra1e6Ek0.001
 
 # NSF sims
 export nsfsims=$nb/NSF_Dynamo_SpinDown_Sims
 export nsfsimshc=$nb/NSF_Dynamo_SpinDown_Sims/heatcool
-export hroc1=$nsfsims/H_Roc0.100
-export hroc2=$nsfsims/H_Roc0.200
-export hroc3=$nsfsims/H_Roc0.300
-export hroc4=$nsfsims/H_Roc0.400
-export hroc5=$nsfsims/H_Roc0.516
-export hroc6=$nsfsims/H_Roc0.667
-export hroc10=$nsfsims/H_Roc1.000
+export hroc10=$nsfsims/H_Roc0.100
+export hroc15=$nsfsims/H_Roc0.150
+export hroc20=$nsfsims/H_Roc0.200
+export hroc25=$nsfsims/H_Roc0.250
+export hroc30=$nsfsims/H_Roc0.300
+export hroc35=$nsfsims/H_Roc0.350
+export hroc40=$nsfsims/H_Roc0.400
+export hroc45=$nsfsims/H_Roc0.450
+export hroc52=$nsfsims/H_Roc0.516
+export hroc59=$nsfsims/H_Roc0.590
+export hroc67=$nsfsims/H_Roc0.667
+export hroc73=$nsfsims/H_Roc0.730
+export hroc80=$nsfsims/H_Roc0.800
+export hroc90=$nsfsims/H_Roc0.900
+export hroc100=$nsfsims/H_Roc1.000
+export hroc200=$nsfsims/H_Roc2.000
+export hroc500=$nsfsims/H_Roc5.000
 
-export mroc1=$nsfsims/M_Roc0.100
-export mroc2=$nsfsims/M_Roc0.200
-export mroc3=$nsfsims/M_Roc0.300
-export mroc4=$nsfsims/M_Roc0.400
-export mroc5=$nsfsims/M_Roc0.516
-export mroc6=$nsfsims/M_Roc0.667
-export mroc10=$nsfsims/M_Roc1.000
+export mroc10=$nsfsims/M_Roc0.100
+export mroc15=$nsfsims/M_Roc0.150
+export mroc20=$nsfsims/M_Roc0.200
+export mroc25=$nsfsims/M_Roc0.250
+export mroc30=$nsfsims/M_Roc0.300
+export mroc35=$nsfsims/M_Roc0.350
+export mroc40=$nsfsims/M_Roc0.400
+export mroc45=$nsfsims/M_Roc0.450
+export mroc52=$nsfsims/M_Roc0.516
+export mroc59=$nsfsims/M_Roc0.590
+export mroc67=$nsfsims/M_Roc0.667
+export mroc73=$nsfsims/M_Roc0.730
+export mroc80=$nsfsims/M_Roc0.800
+export mroc90=$nsfsims/M_Roc0.900
+export mroc100=$nsfsims/M_Roc1.000
+export mroc200=$nsfsims/M_Roc2.000
+export mroc500=$nsfsims/M_Roc5.000
 
 # other command aliases
 alias fn='find `pwd` -name ' # fn for "full name"
@@ -264,6 +299,81 @@ alias rmtexaux="rm *aux *bbl *blg *log *out *synctex.gz"
 
 alias mvbashrc="mv ~/.bashrc ~/.bashrc-bak; mv ~/.bash_profile ~/.bash_profile-bak"
 alias mvbashrcbak="mv ~/.bashrc-bak ~/.bashrc; mv ~/.bash_profile-bak ~/.bash_profile"
+
+ffmovie () {
+    # Check for the required input directory argument
+    if [ -z "$1" ]; then
+        echo "Error: Missing input directory argument." >&2
+        echo "Usage: ffmovie_dir /path/to/images/ [--framerate N] [--name output.mp4]" >&2
+        return 1
+    fi
+
+    # Set the input directory and validate it
+    local input_dir="$(realpath "$1")"
+    if [ ! -d "$input_dir" ]; then
+        echo "Error: Input directory '$1' not found." >&2
+        return 1
+    fi
+
+    # Set default values
+    local framerate=30
+    local output_name="movie.mp4"
+
+    # --- Parse Keyword Arguments (starting from the second argument) ---
+    shift # Shift to start processing options after the input directory
+    while [[ "$#" -gt 0 ]]; do
+        case "$1" in
+            -f|--framerate)
+                if [[ "$2" =~ ^[0-9]+$ ]]; then
+                    framerate="$2"
+                    shift 2
+                else
+                    echo "Error: --framerate requires a numeric value." >&2
+                    return 1
+                fi
+                ;;
+            -n|--name)
+                output_name="$2"
+                shift 2
+                ;;
+            *)
+                echo "Warning: Unknown argument '$1' ignored." >&2
+                shift
+                ;;
+        esac
+    done
+
+    # --- Construct Paths ---
+    # The input sequence assumes files are named like img0001.png, img0002.png, etc.
+    local input_sequence="${input_dir}/img%04d.png"
+    # The full path for the output file
+    local output_path="${input_dir}/${output_name}"
+
+    # --- Execute the ffmpeg command ---
+    echo "🎬 Directory: ${input_dir}"
+    echo "   Framerate: ${framerate} fps"
+    echo "   Output: ${output_path}"
+    echo "   Processing files: img%04d.png (only .png files considered)"
+
+    # The command relies on the directory containing correctly numbered PNG files.
+    ffmpeg -framerate "$framerate" \
+           -i "$input_sequence" \
+           -vf "scale=ceil(iw/2)*2:ceil(ih/2)*2" \
+           -c:v libx264 \
+           -pix_fmt yuv420p \
+           -preset medium \
+           -crf 23 \
+           -movflags +faststart \
+           "$output_path"
+
+    # Check the exit status of ffmpeg
+    if [ $? -eq 0 ]; then
+        echo "✅ Video creation complete: ${output_path}"
+    else
+        echo "❌ Video creation failed." >&2
+        return 1
+    fi
+}
 
 # say now we've sourced common
 sourced_common_already=1
