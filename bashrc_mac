@@ -101,8 +101,9 @@ export superrotnotebooks=$superrot/notebooks
 #export jupwl=$pub/Jupiter_Wulff_WL
 
 # avoid weird ssh key errors
-alias ssh='ssh -X -oHostKeyAlgorithms=+ssh-dss -oPubkeyAcceptedAlgorithms=+ssh-rsa'
-alias scp='scp -oHostKeyAlgorithms=+ssh-dss -oPubkeyAcceptedAlgorithms=+ssh-rsa'
+#alias ssh='ssh -X -oHostKeyAlgorithms=+ssh-dss -oPubkeyAcceptedAlgorithms=+ssh-rsa'
+#alias scp='scp -oHostKeyAlgorithms=+ssh-dss -oPubkeyAcceptedAlgorithms=+ssh-rsa'
+alias ssh='ssh -X'
 
 # Commands to activate or deactivate various Conda environments,
 alias base='conda activate base'
