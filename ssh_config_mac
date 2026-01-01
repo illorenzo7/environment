@@ -82,7 +82,7 @@ Host lou lou-last lou.nas.nasa.gov lou-last.nas.nasa.gov
     ProxyCommand            ssh -ax -oCompression=no sfe ssh-balance %h
 
 # Add additional hosts to the list below as needed
-Host *.nas.nasa.gov lou lou? ?fe ?fe? ?fe?? *-last pbspl?
+Host *.nas.nasa.gov lou lou? ?fe *fe* *-last pbspl?
     HostbasedAuthentication no
     ProxyCommand            ssh -ax -oCompression=no sfe ssh-proxy %h
     ServerAliveInterval     5m
