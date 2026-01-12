@@ -49,7 +49,7 @@ export sourced_common_already=0
 alias ls="ls --color='auto'"
 
 #Load desired modules here.
-module purge
+#module purge
 module load scicon/cli_tools # for node_stats.sh
 #module use -a /swbuild/analytix/tools/modulefiles
 #module load miniconda3/v4

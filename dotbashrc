@@ -1,8 +1,18 @@
 #!/bin/bash
+# define current path and then way to reset path
+export PATH00=$PATH
+alias resetpathorig="export PATH=$PATH0"
 
 # don't break scp with echo in .bashrc
 if [ -z "$PS1" ]; then
     return
+fi
+
+# Source NAS-preferred stuff
+if [ -f /opt/cray/pe/modules/default/init/bash ]; then
+  source /opt/cray/pe/modules/default/init/bash
+else
+  source /usr/local/lib/global.profile
 fi
 
 # the buffer string
@@ -110,15 +120,12 @@ if [[ "$host" == "lfe"* ]] || [[ "$host" == "ldan"* ]]; then
     sbconda
 fi
 
-# PFE or AFE or ATHFE hosts (almost the same except for conda)
+# PFE and AFE hosts are the same for now
 if [[ "$host" == "pfe"* ]] || [[ "$host" == "afe"* ]] || [[ "$host" == "athfe"* ]]; then
     # Enable auto-completion in git
     source /usr/share/bash-completion/completions/git
     sbpfe
-    #if [[ "$host" == "pfe"* ]]; then
-    # also get into conda environment
     sbconda
-    #fi
 fi
 
 # LCD hosts
