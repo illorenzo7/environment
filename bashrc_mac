@@ -91,6 +91,7 @@ sbcommon
 #
 # publication repositories
 export tachapj=$pub/Tacho_ApJ_Low_Sigma
+export tachapjzen=$pub/Tacho_ApJ_Low_Sigma_Zenodo
 export tachlett=$pub/Matilsky_Korre_Brummell_Tacho_ApJL_2025
 export tachapjnotebooks=$tachapj/notebooks
 export tachlettnotebooks=$tachlett/notebooks
