@@ -198,6 +198,32 @@ export tachlettnotebooks=$nb/Matilsky_Korre_Brummell_Tacho_ApJL_2025/notebooks
 export superrot=$nb/Superrotation_and_Jet_Migration
 export superrotnotebooks=$superrot/notebooks
 
+export ZENODO_TOKEN=FHgU3hYZwsKLcCILQrXBApwKQ0UpBVRAHQ82gSzd8Fp30sqS4qvSeHuGj7iU
+
+zenup() {
+    # 1. Extract the ID from the URL
+    DEP_ID=$(echo "$2" | grep -oE '[0-9]+$')
+
+    # 2. Get the bucket URL
+    BUCKET=$(curl -s -H "Authorization: Bearer $ZENODO_TOKEN" "https://zenodo.org/api/deposit/depositions/$DEP_ID" | sed -n 's/.*"bucket": *"\([^"]*\)".*/\1/p')
+
+    # 3. Check if we actually got a bucket URL
+    if [ -z "$BUCKET" ]; then
+        echo "Error: Could not find bucket URL. Check your ZENODO_TOKEN or Repository ID."
+        return 1
+    fi
+
+    # 4. Upload with progress bar and hide the JSON response (-o /dev/null)
+    echo "Uploading $1 to Repository $DEP_ID..."
+    curl -H "Authorization: Bearer $ZENODO_TOKEN" \
+         --progress-bar \
+         -o /dev/null \
+         --upload-file "$1" \
+         "$BUCKET/$1"
+
+    echo -e "\nDone! Refresh your browser: $2"
+}
+
 # source the common stuff AGAIN (sloppy way of dealing with the issue
 # that some commons subdirectory structures technically depend on 
 # specific root directories

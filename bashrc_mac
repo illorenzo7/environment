@@ -112,10 +112,37 @@ alias custom='conda activate custom'
 alias radev='conda activate radev'
 alias de='conda deactivate'
 
+export ZENODO_TOKEN=FHgU3hYZwsKLcCILQrXBApwKQ0UpBVRAHQ82gSzd8Fp30sqS4qvSeHuGj7iU
+
+zenup() {
+    # 1. Extract the ID from the URL
+    DEP_ID=$(echo "$2" | grep -oE '[0-9]+$')
+
+    # 2. Get the bucket URL
+    BUCKET=$(curl -s -H "Authorization: Bearer $ZENODO_TOKEN" "https://zenodo.org/api/deposit/depositions/$DEP_ID" | sed -n 's/.*"bucket": *"\([^"]*\)".*/\1/p')
+
+    # 3. Check if we actually got a bucket URL
+    if [ -z "$BUCKET" ]; then
+        echo "Error: Could not find bucket URL. Check your ZENODO_TOKEN or Repository ID."
+        return 1
+    fi
+
+    # 4. Upload with progress bar and hide the JSON response (-o /dev/null)
+    echo "Uploading $1 to Repository $DEP_ID..."
+    curl -H "Authorization: Bearer $ZENODO_TOKEN" \
+         --progress-bar \
+         -o /dev/null \
+         --upload-file "$1" \
+         "$BUCKET/$1"
+
+    echo -e "\nDone! Refresh your browser: $2"
+}
+
 # command to link to a jupyter notebook on a Pleiades node
 jbridge() {
     ssh -l lmatilsk -o "StrictHostKeyChecking ask" -L 8080:/tmp/user.sock -o ProxyJump=sfe,$1 $2
 }
+
 
 # moved from dotbashrc
 # >>> conda initialize >>>
