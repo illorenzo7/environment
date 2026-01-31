@@ -160,5 +160,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# allows X window to work properly
+export DISPLAY=:0
+
 # get into 'custom' environment on login
 custom
