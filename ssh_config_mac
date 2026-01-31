@@ -73,7 +73,9 @@ Host sfe sfe?.nas.nasa.gov sup*.nas.nasa.gov
     ProxyCommand            none
 
 Host pfe pfe-last pfe.nas.nasa.gov pfe-last.nas.nasa.gov
-    ProxyCommand            ssh -ax -oCompression=no sfe ssh-balance %h
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    ProxyCommand            ssh -Y -oCompression=no sfe ssh-balance %h
 
 Host lfe lfe-last lfe.nas.nasa.gov lfe-last.nas.nasa.gov
     ProxyCommand            ssh -ax -oCompression=no sfe ssh-balance %h
