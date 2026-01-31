@@ -202,3 +202,5 @@ export superrotnotebooks=$superrot/notebooks
 # that some commons subdirectory structures technically depend on 
 # specific root directories
 sbcommon
+
+export MPLBACKEND=TkAGG
