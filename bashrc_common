@@ -375,5 +375,57 @@ ffmovie () {
     fi
 }
 
+export ZENODO_TOKEN=FHgU3hYZwsKLcCILQrXBApwKQ0UpBVRAHQ82gSzd8Fp30sqS4qvSeHuGj7iU
+
+zenup() {
+    local REPO_URL="${@: -1}"
+    local DEP_ID=$(echo "$REPO_URL" | grep -oE '[0-9]+$')
+    local BUCKET=$(curl -s -H "Authorization: Bearer $ZENODO_TOKEN" "https://zenodo.org/api/deposit/depositions/$DEP_ID" | sed -n 's/.*"bucket": *"\([^"]*\)".*/\1/p')
+
+    if [ -z "$BUCKET" ]; then
+        echo "Error: Could not find bucket URL. Check your ZENODO_TOKEN or Repository ID."
+        return 1
+    fi
+
+    local TOTAL_ARGS=$#
+    local FILE_COUNT=0
+    
+    # Iterate through files
+    for (( i=1; i<$TOTAL_ARGS; i++ )); do
+        local FILE="${!i}"
+        
+        if [ ! -f "$FILE" ]; then
+            echo "Warning: File '$FILE' not found. Skipping..."
+            continue
+        fi
+
+        echo "Uploading $FILE to Repository $DEP_ID..."
+        
+        # --fail: tells curl to return an error code on server errors
+        # --retry: attempts to re-upload if it fails due to transient issues
+        # --retry-delay: waits between retries
+        if curl -H "Authorization: Bearer $ZENODO_TOKEN" \
+                --progress-bar \
+                --fail \
+                --retry 3 \
+                --retry-delay 5 \
+                -o /dev/null \
+                --upload-file "$FILE" \
+                "$BUCKET/$(basename "$FILE")"; then
+            ((FILE_COUNT++))
+        else
+            echo -e "\nCritical Error: Failed to upload '$FILE'. Stopping execution."
+            return 1
+        fi
+    done
+
+    if [ "$FILE_COUNT" -gt 0 ]; then
+        echo -e "\nSuccessfully uploaded $FILE_COUNT file(s)! Refresh your browser: $REPO_URL"
+    else
+        echo "No files were uploaded."
+    fi
+}
+
+
 # say now we've sourced common
 sourced_common_already=1
