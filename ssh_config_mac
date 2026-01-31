@@ -66,6 +66,8 @@ Host sfe sfe?.nas.nasa.gov
     #ControlPersist         1
     #ControlPath            ~/.ssh/master-%r@%h:%p
     ForwardX11              yes
+    ForwardX11Trusted       yes
+    ProxyCommand            none
     ServerAliveInterval     5m
 
 Host sfe sfe?.nas.nasa.gov sup*.nas.nasa.gov
@@ -78,18 +80,23 @@ Host pfe pfe-last pfe.nas.nasa.gov pfe-last.nas.nasa.gov
     ProxyCommand            ssh -Y -oCompression=no sfe ssh-balance %h
 
 Host lfe lfe-last lfe.nas.nasa.gov lfe-last.nas.nasa.gov
-    ProxyCommand            ssh -ax -oCompression=no sfe ssh-balance %h
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    ProxyCommand            ssh -Y -oCompression=no sfe ssh-balance %h
 
 Host lou lou-last lou.nas.nasa.gov lou-last.nas.nasa.gov
-    ProxyCommand            ssh -ax -oCompression=no sfe ssh-balance %h
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    ProxyCommand            ssh -Y -oCompression=no sfe ssh-balance %h
 
 # Add additional hosts to the list below as needed
 Host *.nas.nasa.gov lou lou? ?fe *fe* *-last pbspl?
     HostbasedAuthentication no
-    ProxyCommand            ssh -ax -oCompression=no sfe ssh-proxy %h
+    ProxyCommand            ssh -Y -oCompression=no sfe ssh-proxy %h
     ServerAliveInterval     5m
     # Uncomment the line below to enable X11 Forwarding
-    #ForwardX11              yes
+    ForwardX11              yes
+    ForwardX11Trusted       yes
     # Uncomment out EnableEscapeCommandLine yes if you use OpenSSH 9.2 
     # or newer and you are not able to escape into the SSH subshell/tunnel 
     # with the use of SHIFT-<TILDA>-C keys when setting up VNC
