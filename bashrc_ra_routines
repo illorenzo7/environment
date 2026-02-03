@@ -97,6 +97,7 @@ alias thermoshav="python $rapl/shav/thermo.py"
 # timetrace routines
 alias amomtr="python $rapl/timetrace/amomtrace_quad.py"
 alias etr="python $rapl/timetrace/etrace_quad.py"
+alias etrold="python $rapl/timetrace/etrace_quad_old.py"
 alias timetr="python $rapl/timetrace/timetrace_quad.py"
 alias timey="python $rapl/timetrace/timey.py"
 alias torsosc="python $rapl/timetrace/tors_osc.py"
